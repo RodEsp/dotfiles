@@ -151,6 +151,7 @@ in {
     gitui
     helix
     libnotify
+    nil
     nixfmt-rfc-style
     signal-desktop
     slack

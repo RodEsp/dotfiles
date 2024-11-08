@@ -23,6 +23,14 @@ alejandra . &>/dev/null \
 # Shows your changes
 git diff -U0 '*.nix'
 
+echo "Do you wish to rebuilt NixOS with these changes?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
+
 echo "NixOS Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
