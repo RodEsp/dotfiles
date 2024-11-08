@@ -68,11 +68,11 @@ in {
   services = {
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
+      # desktopManager.gnome.enable = true;
+      # displayManager.gdm = {
+      # enable = true;
+      # wayland = true;
+      # };
       # Configure keymap in X11
       xkb = {
         layout = "us";
@@ -86,13 +86,15 @@ in {
     enable = true;
     xwayland.enable = true;
   };
-
   programs.waybar.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
+  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
