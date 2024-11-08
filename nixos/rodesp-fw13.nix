@@ -165,6 +165,9 @@ in {
     dunst # notification daemon
     rofi-wayland # app launcher
     swww # wallpaper daemon
+    (waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+    })) # task bar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
