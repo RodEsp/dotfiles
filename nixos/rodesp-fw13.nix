@@ -160,7 +160,7 @@ in {
     git
     gitui
     helix
-    libnotify
+    gnome.nautilus
     nil
     nixfmt-rfc-style
     signal-desktop
@@ -169,10 +169,14 @@ in {
     wl-clipboard
     unstable.warp-terminal
 
-    # Hyprland
-    dunst # notification daemon
+    # Hyprland/Desktop Environment
+
     unstable.hyprgui
     rofi-wayland # app launcher
+    ## notification center
+    swaynotificationcenter # notification daemon
+    libnotify # notification library
+    ## end notification center
     swww # wallpaper daemon
     # (waybar.overrideAttrs (oldAttrs: {
     #   mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
