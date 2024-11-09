@@ -46,6 +46,10 @@ in {
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -68,11 +72,11 @@ in {
   services = {
     xserver = {
       enable = true;
-      desktopManager.gnome.enable = true;
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
+      # desktopManager.gnome.enable = true;
+      # displayManager.gdm = {
+      #   enable = true;
+      #   wayland = true;
+      # };
       # Configure keymap in X11
       xkb = {
         layout = "us";
@@ -88,7 +92,7 @@ in {
   };
   programs.waybar.enable = true;
   xdg.portal.enable = true;
-  # xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -147,8 +151,8 @@ in {
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     alejandra
-    blueman
-    bluez
+    # blueman
+    # bluez
     eza
     fastfetch
     fprintd
