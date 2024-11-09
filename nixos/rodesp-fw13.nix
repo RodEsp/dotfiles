@@ -147,6 +147,8 @@ in {
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     alejandra
+    blueman
+    bluez
     eza
     fastfetch
     fprintd
@@ -168,9 +170,9 @@ in {
     unstable.hyprgui
     rofi-wayland # app launcher
     swww # wallpaper daemon
-    (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-    })) # task bar
+    # (waybar.overrideAttrs (oldAttrs: {
+    #   mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
+    # })) # task bar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
