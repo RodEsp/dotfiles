@@ -165,6 +165,7 @@ in {
 
     # Hyprland
     dunst # notification daemon
+    unstable.hyprgui
     rofi-wayland # app launcher
     swww # wallpaper daemon
     (waybar.overrideAttrs (oldAttrs: {
