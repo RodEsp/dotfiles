@@ -68,11 +68,11 @@ in {
   services = {
     xserver = {
       enable = true;
-      # desktopManager.gnome.enable = true;
-      # displayManager.gdm = {
-      # enable = true;
-      # wayland = true;
-      # };
+      desktopManager.gnome.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
       # Configure keymap in X11
       xkb = {
         layout = "us";
@@ -88,7 +88,7 @@ in {
   };
   programs.waybar.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  # xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
