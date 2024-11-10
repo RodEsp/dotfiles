@@ -158,6 +158,7 @@ in {
     alejandra
     eza
     fastfetch
+    flameshot
     fprintd
     framework-tool
     git
