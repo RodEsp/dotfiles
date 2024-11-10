@@ -178,6 +178,7 @@ in {
     libnotify # notification library
     ## end notification center
     swww # wallpaper daemon
+    unstable.hyprgui
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
