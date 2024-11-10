@@ -88,7 +88,7 @@ in {
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
+    xwayland.enable = false;
   };
   programs.waybar.enable = true;
   xdg.portal.enable = true;
