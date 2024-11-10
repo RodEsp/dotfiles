@@ -172,7 +172,6 @@ in {
     unstable.warp-terminal
 
     # Hyprland/Desktop Environment
-    unstable.hyprgui
     rofi-wayland # app launcher
     ## notification center
     swaynotificationcenter # notification daemon
