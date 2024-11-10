@@ -85,11 +85,13 @@ in {
     };
   };
 
-  # Enable Hyprland
+  # Enable Hyprland/Desktop Environment
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+  programs.hyprlock.enable = true;
+  services.hypridle.enable = true;
   programs.waybar.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
