@@ -177,14 +177,6 @@ in {
     ## notification center
     swaynotificationcenter # notification daemon
     libnotify # notification library
-    gtk3
-    gtk-layer-shell
-    gobject-introspection
-    libgee
-    libhandy
-    gvfs
-    pantheon.granite
-    libpulseaudio
     ## end notification center
     swww # wallpaper daemon
   ];
