@@ -168,6 +168,7 @@ in {
     nil
     nixfmt-rfc-style
     nix-search-cli
+    nwg-displays
     signal-desktop
     slack
     wget
