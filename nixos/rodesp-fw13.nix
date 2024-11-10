@@ -161,6 +161,7 @@ in {
     gnome.nautilus
     nil
     nixfmt-rfc-style
+    nix-search-cli
     signal-desktop
     slack
     wget
