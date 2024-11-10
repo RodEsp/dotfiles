@@ -88,7 +88,7 @@ in {
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
-    xwayland.enable = false;
+    xwayland.enable = true;
   };
   programs.waybar.enable = true;
   xdg.portal.enable = true;
@@ -107,11 +107,11 @@ in {
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true;
+    # jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    # media-session.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -151,8 +151,6 @@ in {
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     alejandra
-    # blueman
-    # bluez
     eza
     fastfetch
     fprintd
@@ -170,7 +168,6 @@ in {
     unstable.warp-terminal
 
     # Hyprland/Desktop Environment
-
     unstable.hyprgui
     rofi-wayland # app launcher
     ## notification center
@@ -178,9 +175,6 @@ in {
     libnotify # notification library
     ## end notification center
     swww # wallpaper daemon
-    # (waybar.overrideAttrs (oldAttrs: {
-    #   mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
-    # })) # task bar
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
