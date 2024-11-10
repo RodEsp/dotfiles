@@ -149,7 +149,6 @@ in {
 
   # System packages
   environment.systemPackages = with pkgs; [
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     alejandra
     eza
     fastfetch
@@ -158,6 +157,7 @@ in {
     git
     gitui
     helix
+    nano
     gnome.nautilus
     nil
     nixfmt-rfc-style
