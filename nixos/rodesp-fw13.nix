@@ -182,6 +182,7 @@ in {
     ## end notification center
     swww # wallpaper daemon
     unstable.hyprgui
+    unstable.hyprpolkitagent
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
