@@ -95,7 +95,10 @@ in {
   services.hypridle.enable = true;
   programs.waybar.enable = true;
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  xdg.portal.extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
+  ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
