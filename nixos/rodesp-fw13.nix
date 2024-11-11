@@ -172,6 +172,7 @@ in {
     jq
     nano
     gnome.nautilus
+    networkmanagerapplet
     nil
     nixfmt-rfc-style
     nix-search-cli
