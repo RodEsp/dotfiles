@@ -31,8 +31,6 @@ select yn in "Yes" "No"; do
     esac
 done
 
-echo "NixOS Rebuilding..."
-
 # Rebuild, output simplified errors, log trackebacks
 sudo nixos-rebuild switch 2>&1 | tee nixos-switch.log
 # (cat nixos-switch.log | grep --color error && exit 1)
