@@ -158,7 +158,7 @@ in {
     alejandra
     eza
     fastfetch
-    flameshot
+    # flameshot
     fprintd
     framework-tool
     git
@@ -172,6 +172,7 @@ in {
     nixfmt-rfc-style
     nix-search-cli
     nwg-displays
+    satty
     signal-desktop
     slack
     slurp
