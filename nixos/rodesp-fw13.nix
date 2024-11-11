@@ -73,10 +73,10 @@ in {
     xserver = {
       enable = true;
       # desktopManager.gnome.enable = true;
-      # displayManager.gdm = {
-      #   enable = true;
-      #   wayland = true;
-      # };
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
       # Configure keymap in X11
       xkb = {
         layout = "us";
@@ -199,10 +199,11 @@ in {
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.ssh.startAgent = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 
