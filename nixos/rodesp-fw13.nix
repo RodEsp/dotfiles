@@ -97,7 +97,6 @@ in {
   xdg.portal.extraPortals = with pkgs; [
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
-    xdg-desktop-portal-kde
   ];
 
   # Enable CUPS to print documents.
