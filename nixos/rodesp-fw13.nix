@@ -142,10 +142,12 @@ in {
   # Fonts
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
+    font-awesome
     (nerdfonts.override {
       fonts = [
+        "NerdFontsSymbolsOnly"
         "FiraCode"
-        "FiraMono"
+        # "FiraMono"
       ];
     })
   ];
