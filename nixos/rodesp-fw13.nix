@@ -160,6 +160,7 @@ in {
     eza
     fastfetch
     # flameshot
+    font-awesome
     fprintd
     framework-tool
     git
