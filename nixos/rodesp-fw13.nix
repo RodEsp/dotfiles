@@ -156,6 +156,7 @@ in {
   # System packages
   environment.systemPackages = with pkgs; [
     alejandra
+    brightnessctl
     eza
     fastfetch
     # flameshot
