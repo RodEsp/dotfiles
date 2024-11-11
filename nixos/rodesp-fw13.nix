@@ -45,7 +45,6 @@ in {
 
   # Enable networking
   networking.networkmanager.enable = true;
-  programs.nm-applet.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -173,6 +172,7 @@ in {
     jq
     nano
     gnome.nautilus
+    networkmanagerapplet
     nil
     nixfmt-rfc-style
     nix-search-cli
