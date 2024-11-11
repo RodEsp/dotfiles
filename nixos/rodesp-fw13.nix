@@ -176,6 +176,7 @@ in {
     nixfmt-rfc-style
     nix-search-cli
     nwg-displays
+    nwg-look
     satty
     signal-desktop
     slack
