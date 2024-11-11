@@ -163,7 +163,9 @@ in {
     framework-tool
     git
     gitui
+    grim
     helix
+    jq
     nano
     gnome.nautilus
     nil
@@ -172,11 +174,13 @@ in {
     nwg-displays
     signal-desktop
     slack
+    slurp
     wget
     wl-clipboard
     unstable.warp-terminal
 
     # Hyprland/Desktop Environment
+    hyprpicker
     rofi-wayland # app launcher
     ## notification center
     swaynotificationcenter # notification daemon
