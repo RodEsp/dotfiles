@@ -156,6 +156,7 @@ in {
 
   # System packages
   environment.systemPackages = with pkgs; [
+    gnome.adwaita-icon-theme
     alejandra
     brightnessctl
     eza
