@@ -98,7 +98,6 @@ in {
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
-  services.clipcat.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
