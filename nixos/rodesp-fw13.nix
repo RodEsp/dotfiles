@@ -212,10 +212,7 @@ in {
     unstable.hyprpolkitagent
   ];
 
-  services.espanso = {
-    enable = true;
-    wayland = true;
-  };
+  services.espanso.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
