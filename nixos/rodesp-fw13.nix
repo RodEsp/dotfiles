@@ -188,6 +188,7 @@ in {
 
     # Hyprland/Desktop Environment
     hyprpicker
+    rofi-power-menu
     rofi-wayland # app launcher
     ## notification center
     swaynotificationcenter # notification daemon
