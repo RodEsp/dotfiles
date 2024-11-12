@@ -15,6 +15,10 @@
       };
     };
 in {
+  imports = [
+    ./main-user.nix
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -36,7 +40,6 @@ in {
   services.power-profiles-daemon.enable = lib.mkDefault true;
   ## End AMD Specifics
 
-  networking.hostName = "rodesp-fw13"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -122,18 +125,21 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable main-user module.
+  main-user.enable = true;
+  main-user.userName = "rodesp";
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.rodesp = {
-    isNormalUser = true;
-    description = "Rodrigo Espinosa de los Monteros";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
-  };
+  # users.users.rodesp = {
+  #   isNormalUser = true;
+  #   description = "Rodrigo Espinosa de los Monteros";
+  #   extraGroups = [
+  #     "networkmanager"
+  #     "wheel"
+  #   ];
+  #   packages = with pkgs; [
+  #     #  thunderbird
+  #   ];
+  # };
 
   # Install firefox.
   programs.firefox.enable = true;
