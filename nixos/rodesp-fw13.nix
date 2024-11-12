@@ -17,6 +17,7 @@
 in {
   imports = [
     ./main-user.nix
+    ./steam.nix
   ];
 
   # Bootloader.
