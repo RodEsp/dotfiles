@@ -184,6 +184,7 @@ in {
     slurp
     wget
     wl-clipboard
+    xcur2png
     unstable.warp-terminal
 
     # Hyprland/Desktop Environment
