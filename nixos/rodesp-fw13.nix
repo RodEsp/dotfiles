@@ -166,6 +166,7 @@ in {
     gnome.adwaita-icon-theme
     alejandra
     brightnessctl
+    espanso-wayland
     eza
     fastfetch
     font-awesome
