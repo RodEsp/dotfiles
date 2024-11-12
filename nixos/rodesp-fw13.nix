@@ -187,6 +187,7 @@ in {
     wl-clipboard
     xcur2png
     yazi
+    zoxide
     unstable.clipse
     unstable.warp-terminal
 
