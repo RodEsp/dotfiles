@@ -173,6 +173,7 @@ in {
     git
     gitui
     glib
+    google-chrome
     grim
     helix
     jq
