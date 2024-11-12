@@ -161,7 +161,6 @@ in {
     brightnessctl
     eza
     fastfetch
-    # flameshot
     font-awesome
     fprintd
     framework-tool
@@ -171,6 +170,7 @@ in {
     grim
     helix
     jq
+    kitty
     nano
     gnome.nautilus
     networkmanagerapplet
