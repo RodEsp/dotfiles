@@ -166,6 +166,7 @@ in {
     framework-tool
     git
     gitui
+    glib
     grim
     helix
     jq
