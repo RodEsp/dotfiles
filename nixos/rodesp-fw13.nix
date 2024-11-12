@@ -159,7 +159,6 @@ in {
     gnome.adwaita-icon-theme
     alejandra
     brightnessctl
-    clipse
     eza
     fastfetch
     # flameshot
@@ -187,6 +186,7 @@ in {
     wget
     wl-clipboard
     xcur2png
+    unstable.clipse
     unstable.warp-terminal
 
     # Hyprland/Desktop Environment
