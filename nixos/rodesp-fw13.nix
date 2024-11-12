@@ -166,7 +166,7 @@ in {
     gnome.adwaita-icon-theme
     alejandra
     brightnessctl
-    espanso-wayland
+    # espanso-wayland
     eza
     fastfetch
     font-awesome
@@ -213,10 +213,10 @@ in {
     unstable.hyprpolkitagent
   ];
 
-  services.espanso = {
-    enable = true;
-    package = pkgs.espanso-wayland;
-  };
+  # services.espanso = {
+  #   enable = true;
+  #   package = pkgs.espanso-wayland;
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
