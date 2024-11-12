@@ -186,6 +186,7 @@ in {
     wget
     wl-clipboard
     xcur2png
+    yazi
     unstable.clipse
     unstable.warp-terminal
 
