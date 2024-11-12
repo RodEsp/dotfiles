@@ -160,6 +160,7 @@ in {
     gnome.adwaita-icon-theme
     alejandra
     brightnessctl
+    clipse
     eza
     fastfetch
     # flameshot
