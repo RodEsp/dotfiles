@@ -195,6 +195,7 @@ in {
     signal-desktop
     slack
     slurp
+    stow
     wget
     wl-clipboard
     xcur2png
