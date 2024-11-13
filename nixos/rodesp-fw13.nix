@@ -102,6 +102,9 @@ in {
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
   ];
+  environment.variables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
