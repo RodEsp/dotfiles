@@ -1,11 +1,4 @@
-clipse/clipboard_history.json
-clipse/clipse.log
-clipse/tmp_files
-dconf/user
-google-chrome
-Signal
-Slack
-warp-terminal/user_preferences.json
 clipse/.config/clipse/clipboard_history.json
 clipse/.config/clipse/clipse.log
+clipse/.config/clipse/tmp_files
 dconf/.config/dconf/user
