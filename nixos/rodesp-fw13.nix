@@ -201,6 +201,7 @@ in {
     yazi
     zoxide
     unstable.clipse
+    unstable.everforest-gtk-theme
     unstable.warp-terminal
 
     # Hyprland/Desktop Environment
