@@ -1,0 +1,4 @@
+theme = "everforest_dark_high_contrast"
+
+[editor]
+auto-save = true

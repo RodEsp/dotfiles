@@ -1,0 +1,4 @@
+(
+    cmdbar_bg: Some("Green"),
+    command_fg: Some("Black")
+)

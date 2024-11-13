@@ -1,0 +1,105 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: FiraCode Nerd Font, FontAwesome;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: black;
+}
+
+#workspaces button {
+    color: black;
+    background: transparent;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #c9545d;
+    border-top: 2px solid #c9545d;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#custom-media,
+#disk,
+#idle_inhibitor,
+#memory,
+#mode,
+#mpd,
+#network,
+#power-profiles-daemon, 
+#pulseaudio,
+#scratchpad,
+#temperature,
+#tray,
+#wireplumber 
+#custom-powermenu {  
+    padding: 0 3px;
+    margin: 0 2px;
+}
+
+#clock {}
+
+#battery {}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {}
+
+@keyframes blink {
+    to {
+        background-color: red;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+    /* color: white; */
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {}
+
+#memory {}
+
+#network {}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {}
+
+
+#pulseaudio.muted {}
+
+#tray {}
+
+#custom-powermenu {}
+
