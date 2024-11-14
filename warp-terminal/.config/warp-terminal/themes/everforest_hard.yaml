@@ -1,0 +1,25 @@
+name: "Everforest Hard"
+accent: "#7a8478" # Accent color for UI elements
+cursor: "#7a8478"
+background: "#000000" #"#2b3339" # Terminal background color
+details: darker # Whether the theme is lighter or darker
+foreground: "#d3c6aa" # The foreground color.
+terminal_colors: # Ansi escape colors.  
+  bright:
+    black: "#445055"
+    red: "#e67e80"
+    green: "#a7c080"
+    yellow: "#dbbc7f"
+    blue: "#7fbbb3"
+    magenta: "#d699b6"
+    cyan: "#83c092"
+    white: "#d3c6aa"
+  normal:
+    black: "#445055"
+    red: "#e67e80"
+    green: "#a7c080"
+    yellow: "#dbbc7f"
+    blue: "#7fbbb3"
+    magenta: "#d699b6"
+    cyan: "#83c092"
+    white: "#d3c6aa"
