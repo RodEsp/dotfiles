@@ -104,6 +104,7 @@ in {
   ];
   environment.variables = {
     NIXOS_OZONE_WL = "1";
+    XDG_DATA_HOME = "$HOME/.config/";
   };
 
   # Enable CUPS to print documents.
