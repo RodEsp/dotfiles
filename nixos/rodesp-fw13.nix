@@ -184,6 +184,7 @@ in {
     helix
     jq
     kitty
+    libreoffice
     nano
     gnome.nautilus
     networkmanagerapplet
