@@ -179,6 +179,7 @@ in {
     git
     gitui
     glib
+    gnome.gnome-tweaks
     google-chrome
     grim
     helix
