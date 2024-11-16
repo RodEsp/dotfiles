@@ -200,6 +200,7 @@ in {
     nix-search-cli
     nwg-displays
     nwg-look
+    pavucontrol
     satty
     signal-desktop
     slack
