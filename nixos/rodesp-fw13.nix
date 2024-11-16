@@ -14,6 +14,13 @@
         allowUnfree = true;
       };
     };
+  master =
+    import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master")
+    {
+      config = {
+        allowUnfree = true;
+      };
+    };
 in {
   imports = [
     ./main-user.nix
@@ -205,7 +212,7 @@ in {
     zoxide
     unstable.clipse
     unstable.everforest-gtk-theme
-    unstable.warp-terminal
+    master.warp-terminal
 
     # Hyprland/Desktop Environment
     hyprpicker
