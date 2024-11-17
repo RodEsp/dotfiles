@@ -27,11 +27,21 @@ in {
     ./steam.nix
   ];
 
-  # Bootloader.
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.05"; # Did you read the comment?
+
+  # ===== Boot Configuration =====
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  ## Framework Laptop Specifics
+  # ===== Framework Laptop Specifics =====
+
   services.fwupd.enable = true;
   # we need fwupd 1.9.7 to downgrade the fingerprint sensor firmware
   services.fwupd.package =
@@ -40,55 +50,71 @@ in {
       sha256 = "sha256:003qcrsq5g5lggfrpq31gcvj82lb065xvr7bpfa8ddsw8x4dnysk";
     }) {inherit (pkgs) system;})
     .fwupd;
-  ## End Framework Specifics
 
-  ## AMD Specifics
-  # AMD has better battery life with PPD over TLP:
-  # https://community.frame.work/t/responded-amd-7040-sleep-states/38101/13
-  services.power-profiles-daemon.enable = lib.mkDefault true;
-  ## End AMD Specifics
+  # ===== Hardware Configuration =====
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/New_York";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    pulseaudio = {
+      enable = true;
+    };
   };
 
-  # Desktop Environment
+  # ===== Security =====
+
+  security = {
+    rtkit.enable = true; # PulseAudio server (or others) uses this to acquire realtime priority
+  };
+
+  # ===== Networking =====
+  networking.networkmanager.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+
+  # ===== System Configuration =====
+  time.timeZone = "America/New_York";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
+  };
+
+  # ===== System Services =====
+
+  sound.enable = true; # Enable ALSA sound
   services = {
+    power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
+    blueman.enable = true;
+    fprintd.enable = true; # Enable fingerprint sensor
+    hypridle.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+    printing.enable = true; # Enable CUPS to print documents.
     xserver = {
       enable = true;
-      # desktopManager.gnome.enable = true;
       displayManager.gdm = {
         enable = true;
         wayland = true;
       };
-      # Configure keymap in X11
       xkb = {
         layout = "us";
         variant = "";
@@ -96,174 +122,128 @@ in {
     };
   };
 
-  # Enable Hyprland/Desktop Environment
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  programs.hyprlock.enable = true;
-  services.hypridle.enable = true;
-  programs.waybar.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
-  ];
-  environment.variables = {
-    NIXOS_OZONE_WL = "1";
-    XDG_DATA_HOME = "$HOME/.config/";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    # media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Enable main-user module.
+  # ===== User Configuration =====
   main-user.enable = true;
   main-user.userName = "rodesp";
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.rodesp = {
-  #   isNormalUser = true;
-  #   description = "Rodrigo Espinosa de los Monteros";
-  #   extraGroups = [
-  #     "networkmanager"
-  #     "wheel"
-  #   ];
-  #   packages = with pkgs; [
-  #     #  thunderbird
-  #   ];
-  # };
 
-  # Enable programs
-  programs.firefox.enable = true;
-  # programs.starship.enable = true;
+  # ===== System Fonts =====
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      font-awesome
+      (nerdfonts.override {
+        fonts = [
+          "NerdFontsSymbolsOnly"
+          "FiraCode"
+        ];
+      })
+    ];
+  };
 
-  # Fonts
-  fonts.enableDefaultPackages = true;
-  fonts.packages = with pkgs; [
-    font-awesome
-    (nerdfonts.override {
-      fonts = [
-        "NerdFontsSymbolsOnly"
-        "FiraCode"
-        # "FiraMono"
+  # ===== XDG Portal =====
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-hyprland
       ];
-    })
-  ];
+    };
+  };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # ===== System Programs =====
 
-  # System packages
+  programs = {
+    # _1password.enable = true;
+    # _1password-gui.enable = true;
+    firefox.enable = true;
+    git = {
+      enable = true;
+      config = {
+        user = {
+          name = "RodEsp";
+          email = "1084688+RodEsp@users.noreply.github.com";
+        };
+        init.defaultbranch = "main";
+        commit.gpgsign = true;
+      };
+    };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    hyprlock.enable = true;
+    nm-applet.enable = true;
+    # winbox.enable = true;
+    waybar.enable = true;
+    yazi.enable = true;
+  };
+
+  # ===== System packages =====
+  nixpkgs.config.allowUnfree = true; # Allow unfree packages
+
   environment.systemPackages = with pkgs; [
-    gnome.adwaita-icon-theme
-    alejandra
+    alejandra # nix language formater
     bat
-    brightnessctl
+    brightnessctl # control screen/device brightness
     btop
-    # espanso-wayland
     eza
     fastfetch
     font-awesome
-    fprintd
+    # fprintd
     framework-tool
     git
     gitui
     glib
+    gnome.adwaita-icon-theme
+    gnome.nautilus
     google-chrome
-    grim
+    grim # screenshot tool (grabs images from wayland compositors)
     helix
+    hyprpicker
     jq
     kitty
+    libnotify # notification library
     libreoffice
     nano
-    gnome.nautilus
-    networkmanagerapplet
-    nil
-    nixfmt-rfc-style
-    nix-search-cli
-    nwg-displays
-    nwg-look
-    pavucontrol
-    satty
+    # networkmanagerapplet
+    nil # nix language server
+    nix-search-cli # nix-search command
+    nixfmt-rfc-style # official formatter for Nix code
+    nwg-displays # GUI for managing monitors/displays
+    nwg-look # GTK3 settings editor for wlroots-based Wayland environments
+    pavucontrol # sound/volume device controller
+    rofi-power-menu
+    rofi-wayland # app launcher/system level menu
+    satty # screenshot/image annotation tool
     signal-desktop
     slack
-    slurp
+    slurp # region selector for wayland compositors (for screenshots)
     stow
+    swaynotificationcenter # notification daemon
+    swww # wallpaper daemon
     wget
     wl-clipboard
     xcur2png
-    yazi
     zoxide
+
+    # nixos-unstable branch
     unstable.clipse
     unstable.everforest-gtk-theme
-    master.warp-terminal
-
-    # Hyprland/Desktop Environment
-    hyprpicker
-    rofi-power-menu
-    rofi-wayland # app launcher
-    ## notification center
-    swaynotificationcenter # notification daemon
-    libnotify # notification library
-    ## end notification center
-    swww # wallpaper daemon
     unstable.hyprgui
     unstable.hyprpolkitagent
+
+    # master branch
+    master.warp-terminal
   ];
 
-  # services.espanso = {
-  #   enable = true;
-  #   package = pkgs.espanso-wayland;
-  # };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.ssh.startAgent = true; # Can't enable this at the same time as gnupg.enableSSHSupport
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
+  # ===== System Env Vars =====
+  environment.variables = {
+    NIXOS_OZONE_WL = "1"; # Allow/force applications to run directly on wayland (without xwayland)
+    XDG_DATA_HOME = "$HOME/.config/";
   };
-
-  # List services that you want to enable:
-
-  # Enable fingerprint sensor
-  services.fprintd.enable = true;
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
 }
