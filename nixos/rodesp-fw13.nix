@@ -153,8 +153,9 @@ in {
   #   ];
   # };
 
-  # Install firefox.
+  # Enable programs
   programs.firefox.enable = true;
+  programs.starship.enable = true;
 
   # Fonts
   fonts.enableDefaultPackages = true;
