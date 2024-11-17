@@ -6,6 +6,10 @@
     min-height: 0;
 }
 
+window.eDP-1 * {
+  font-size: 15px;
+}
+
 #waybar {
 	background: transparent;
 	color: #2b3339;
