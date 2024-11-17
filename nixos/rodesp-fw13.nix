@@ -155,7 +155,7 @@ in {
 
   # Enable programs
   programs.firefox.enable = true;
-  programs.starship.enable = true;
+  # programs.starship.enable = true;
 
   # Fonts
   fonts.enableDefaultPackages = true;
@@ -177,6 +177,7 @@ in {
   environment.systemPackages = with pkgs; [
     gnome.adwaita-icon-theme
     alejandra
+    bat
     brightnessctl
     btop
     # espanso-wayland
