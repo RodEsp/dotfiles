@@ -67,6 +67,7 @@ in {
   };
 
   # ===== Networking =====
+
   networking.networkmanager.enable = true;
 
   # Open ports in the firewall.
@@ -120,10 +121,12 @@ in {
   };
 
   # ===== User Configuration =====
+
   main-user.enable = true;
   main-user.userName = "rodesp";
 
   # ===== System Fonts =====
+
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -138,6 +141,7 @@ in {
   };
 
   # ===== XDG Portal =====
+
   xdg = {
     portal = {
       enable = true;
@@ -181,6 +185,7 @@ in {
   };
 
   # ===== System packages =====
+
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
   environment.systemPackages = with pkgs; [
@@ -207,7 +212,6 @@ in {
     libnotify # notification library
     libreoffice
     nano
-    # networkmanagerapplet
     nil # nix language server
     nix-search-cli # nix-search command
     nixfmt-rfc-style # official formatter for Nix code
@@ -239,6 +243,7 @@ in {
   ];
 
   # ===== System Env Vars =====
+
   environment.variables = {
     NIXOS_OZONE_WL = "1"; # Allow/force applications to run directly on wayland (without xwayland)
     XDG_DATA_HOME = "$HOME/.config/";
