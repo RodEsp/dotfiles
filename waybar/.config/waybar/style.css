@@ -62,7 +62,7 @@ window.eDP-1 * {
 @keyframes blink {
     to {
         background-color: red;
-        color: black;
+        /* color: black; */
     }
 }
 

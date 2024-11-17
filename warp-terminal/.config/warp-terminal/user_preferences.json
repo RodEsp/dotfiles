@@ -31,6 +31,6 @@
     "TelemetryEnabled": "false",
     "Theme": "{\"Custom\":{\"name\":\"Everforest Hard\",\"path\":\"/home/rodesp/.local/share/warp-terminal/themes/everforest_hard.yaml\"}}",
     "WelcomeTipsCompleted": "true",
-    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"AiCommandSearch\"},{\"Hint\":\"BlockAction\"},{\"Hint\":\"BlockSelect\"},{\"Action\":\"SplitPane\"},{\"Action\":\"OpenWarpDrive\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"CommandSearch\"},{\"Action\":\"CommandPalette\"},{\"Action\":\"ThemePicker\"}]",
+    "WelcomeTipsFeaturesUsed": "[{\"Action\":\"AiCommandSearch\"},{\"Hint\":\"BlockAction\"},{\"Hint\":\"BlockSelect\"},{\"Action\":\"SplitPane\"},{\"Action\":\"OpenWarpDrive\"},{\"Hint\":\"CreateBlock\"},{\"Action\":\"CommandSearch\"},{\"Action\":\"CommandPalette\"},{\"Action\":\"ThemePicker\"}]"
   }
 }
