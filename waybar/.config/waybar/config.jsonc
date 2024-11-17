@@ -33,7 +33,7 @@
     ],
     // Modules configuration
     "hyprland/workspaces": {
-        "format": "<sub>{icon}</sub>{windows}",
+        "format": "{windows}",
         "all-outputs": false,
         "show-special": true,
         "special-visible-only": true,
@@ -41,8 +41,6 @@
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
         "format-icons": {
-            // "1": "",
-            // "2": "",
             // "3": "",
             // "4": "",
             // "5": "",
@@ -58,7 +56,9 @@
             "class<firefox>": "󰈹", // Windows whose classes are "firefox"
             "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "class<firefox> title<.*reddit.*>": "",
-            "class<.*warp.*>": "",
+            "class<google-chrome>": "",
+            "class<dev.warp.Warp>": "",
+            "class<.*kitty.*>": "",
             "class<slack>": "󰒱",
             "code": "󰨞",
         }
