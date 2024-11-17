@@ -178,7 +178,6 @@ in {
       xwayland.enable = true;
     };
     hyprlock.enable = true;
-    nm-applet.enable = true;
     # winbox.enable = true;
     waybar.enable = true;
     yazi.enable = true;
@@ -212,6 +211,7 @@ in {
     libnotify # notification library
     libreoffice
     nano
+    networkmanagerapplet
     nil # nix language server
     nix-search-cli # nix-search command
     nixfmt-rfc-style # official formatter for Nix code
