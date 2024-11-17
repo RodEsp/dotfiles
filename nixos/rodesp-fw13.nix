@@ -177,6 +177,7 @@ in {
     gnome.adwaita-icon-theme
     alejandra
     brightnessctl
+    btop
     # espanso-wayland
     eza
     fastfetch

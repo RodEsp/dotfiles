@@ -7,16 +7,12 @@
 }
 
 window.eDP-1 * {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 #waybar {
 	background: transparent;
 	color: #2b3339;
-}
-
-#workspaces button {
-	padding: 2px 5px;
 }
 
 #backlight,
@@ -52,10 +48,11 @@ window.eDP-1 * {
 
 #workspaces button {
   background-color: rgba(46, 52, 64, 0.7);
+	padding: 2px 5px;
   border-radius: 5px;
   margin-right: 5px;
   margin-top: 5px;
-  color: #151515;
+  color: #9DA9A0;
 }
 
 #custom-powermenu {
