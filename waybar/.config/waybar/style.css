@@ -49,7 +49,7 @@ window.eDP-1 * {
 #workspaces button {
   background-color: rgba(46, 52, 64, 0.7);
 	padding: 2px 5px;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-right: 5px;
   margin-top: 5px;
   color: #9DA9A0;
