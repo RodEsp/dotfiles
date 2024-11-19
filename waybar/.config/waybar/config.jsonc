@@ -232,7 +232,7 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/powermenu": {
-        "on-click": "rofi -show power-menu -modi power-menu:rofi-power-menu",
+        "on-click": "~/.config/rofi/scripts/powermenu_t1 style-5", // "rofi -show power-menu -modi power-menu:rofi-power-menu",
         "format": "",
         "tooltip": false
     }

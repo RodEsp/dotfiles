@@ -15,7 +15,7 @@ configuration {
 	scroll-method: 0;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Tela-circle-black";
+	icon-theme: "Papirus";
 /*	cache-dir: ;*/
 	steal-focus: false;
 /*	dpi: -1;*/
@@ -82,8 +82,8 @@ configuration {
 	display-filebrowser: "Files";
 
 	/*---------- Misc setting ----------*/
-	terminal: "rofi-sensible-terminal";
-	font: "Mono 12";
+	terminal: "kitty";
+	font: "FiraCode Nerd Font Mono 12";
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
@@ -179,6 +179,3 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
-
-@import "~/.config/rofi/launcher.rasi"
-//@import "~/.config/rofi/powermenu.rasi"
