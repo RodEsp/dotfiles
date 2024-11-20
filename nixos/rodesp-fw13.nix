@@ -247,5 +247,6 @@ in {
   environment.variables = {
     NIXOS_OZONE_WL = "1"; # Allow/force applications to run directly on wayland (without xwayland)
     XDG_DATA_HOME = "$HOME/.config/";
+    XDG_CONFIG_HOME = "$HOME/.config/";
   };
 }
