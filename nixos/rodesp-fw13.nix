@@ -243,6 +243,7 @@ in {
     unstable.everforest-gtk-theme
     unstable.hyprgui
     unstable.hyprpolkitagent
+    unstable.zed-editor
 
     # master branch
     master.warp-terminal
