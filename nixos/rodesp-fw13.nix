@@ -180,7 +180,13 @@ in {
     hyprlock.enable = true;
     # winbox.enable = true;
     waybar.enable = true;
-    yazi.enable = true;
+    yazi = {
+      enable = true;
+      settings = {
+        yazi = lib.importTOML /home/rodesp/.config/yazi/yazi.toml;
+        theme = lib.importTOML /home/rodesp/.config/yazi/theme.toml;
+      };
+    };
   };
 
   # ===== System packages =====

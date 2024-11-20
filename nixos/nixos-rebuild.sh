@@ -33,7 +33,9 @@ done
 
 # Rebuild, output simplified errors, log trackebacks
 sudo nixos-rebuild switch 2>&1 | tee nixos-switch.log
-# (cat nixos-switch.log | grep --color error && exit 1)
+if $(grep -q "error" nixos-switch.log); then
+   notify-send -e "NixOS failed to build!" -a nixos -e -i dialog-error  && exit 1
+fi
 
 # Get current generation metadata
 current=$(nixos-rebuild list-generations | grep current)
