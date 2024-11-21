@@ -2,13 +2,14 @@
  *
  * Author : Aditya Shakya (adi1090x)
  * Github : @adi1090x
- * 
+ *
  * Configuration For Rofi Version: 1.7.3
  **/
 
 configuration {
 	/*---------- General setting ----------*/
-	modi: "drun,run,filebrowser,window";
+	modes: [ drun, run, window ];
+/*  combi-modes: [ drun,run,filebrowser,window ];*/
 	case-sensitive: false;
 	cycle: true;
 	filter: "";
@@ -179,3 +180,5 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
+
+@theme "~/.config/rofi/launchers/type-4/style-4.rasi"
