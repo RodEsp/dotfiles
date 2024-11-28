@@ -219,11 +219,12 @@ in {
     nano
     networkmanagerapplet
     nil # nix language server
-    nix-search-cli # nix-search command
     nixfmt-rfc-style # official formatter for Nix code
+    nix-search-cli # nix-search command
     nwg-displays # GUI for managing monitors/displays
     nwg-look # GTK3 settings editor for wlroots-based Wayland environments
     pavucontrol # sound/volume device controller
+    playerctl
     rofi-power-menu
     rofi-wayland # app launcher/system level menu
     satty # screenshot/image annotation tool

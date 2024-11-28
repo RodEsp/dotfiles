@@ -59,8 +59,9 @@
             "class<google-chrome>": "",
             "class<dev.warp.Warp>": "",
             "class<.*kitty.*>": "",
-            "class<slack>": "󰒱",
+            "slack": "󰒱",
             "code": "󰨞",
+            "steam": ""
         }
     },
     "keyboard-state": {
