@@ -243,6 +243,7 @@ in {
     unstable.clipse
     unstable.everforest-gtk-theme
     unstable.hyprgui
+    unstable.hyprls
     unstable.hyprpolkitagent
     unstable.zed-editor
 

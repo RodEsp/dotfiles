@@ -41,3 +41,11 @@ formatter = { command = "taplo", args = ["fmt", "-"] }
 [[language]]
 name = "dockerfile"
 language-servers = ["docker-langserver"]
+
+[[language]]
+name = "hyprlang"
+language-servers = [ "hyprls" ]
+
+[language-server.hyprls]
+command = "hyprls"
+
