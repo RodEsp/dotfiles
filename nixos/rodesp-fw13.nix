@@ -231,6 +231,7 @@ in {
     signal-desktop
     slack
     slurp # region selector for wayland compositors (for screenshots)
+    smartgithg
     stow
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
