@@ -35,6 +35,11 @@ in {
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+  # ===== Autoupgrade NixOS =====
+
+  # system.autoUpgrade.enable = true;
+  # system.autoUpgrade.allowReboot = true;
+
   # ===== Boot Configuration =====
 
   boot.loader.systemd-boot.enable = true;
@@ -93,7 +98,6 @@ in {
 
   # ===== System Services =====
 
-  sound.enable = true; # Enable ALSA sound
   services = {
     power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
     blueman.enable = true;
@@ -194,20 +198,17 @@ in {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
   environment.systemPackages = with pkgs; [
+    adwaita-icon-theme
     alejandra # nix language formater
     bat
     brightnessctl # control screen/device brightness
     btop
     eza
     fastfetch
-    font-awesome
-    # fprintd
     framework-tool
     git
     gitui
     glib
-    gnome.adwaita-icon-theme
-    gnome.nautilus
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
     helix
@@ -217,6 +218,7 @@ in {
     libnotify # notification library
     libreoffice
     nano
+    nautilus
     networkmanagerapplet
     nil # nix language server
     nixfmt-rfc-style # official formatter for Nix code
