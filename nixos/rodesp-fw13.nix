@@ -23,6 +23,7 @@
     };
 in {
   imports = [
+    ./dev.nix
     ./main-user.nix
     ./steam.nix
   ];
@@ -162,21 +163,6 @@ in {
     # _1password.enable = true;
     # _1password-gui.enable = true;
     firefox.enable = true;
-    git = {
-      enable = true;
-      config = {
-        user = {
-          name = "RodEsp";
-          email = "1084688+RodEsp@users.noreply.github.com";
-        };
-        init.defaultbranch = "main";
-        commit.gpgsign = true;
-      };
-    };
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
     hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -206,22 +192,17 @@ in {
     eza
     fastfetch
     framework-tool
-    git
-    gitui
     glib
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
     helix
     hyprpicker
-    jq
     kitty
     libnotify # notification library
     libreoffice
     nano
     nautilus
     networkmanagerapplet
-    nil # nix language server
-    nixfmt-rfc-style # official formatter for Nix code
     nix-search-cli # nix-search command
     nwg-displays # GUI for managing monitors/displays
     nwg-look # GTK3 settings editor for wlroots-based Wayland environments
@@ -233,7 +214,6 @@ in {
     signal-desktop
     slack
     slurp # region selector for wayland compositors (for screenshots)
-    smartgithg
     stow
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
@@ -248,7 +228,6 @@ in {
     unstable.hyprgui
     unstable.hyprls
     unstable.hyprpolkitagent
-    unstable.zed-editor
 
     # master branch
     master.warp-terminal
