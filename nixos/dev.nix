@@ -57,6 +57,8 @@ in {
     nil # nix language server
     nixfmt-rfc-style # official formatter for Nix code
     python314
+    python312Packages.python-lsp-server
+    python312Packages.python-lsp-ruff
     smartgithg
 
     # nixos-unstable branch
