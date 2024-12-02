@@ -51,19 +51,21 @@ in {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
   environment.systemPackages = with pkgs; [
+    alejandra # nix language formatter
     git
     gitui
+    hyprls # hypr config language lsp
     jq
-    nil # nix language server
+    nil # nix lsp
     nixfmt-rfc-style # official formatter for Nix code
     python312
-    python312Packages.python-lsp-server
     python312Packages.python-lsp-ruff
+    python312Packages.python-lsp-server
     ruff
     smartgithg
 
     # nixos-unstable branch
-    unstable.zed-editor
+    unstable.code-cursor
 
     # master branch
   ];

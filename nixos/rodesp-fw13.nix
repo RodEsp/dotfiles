@@ -185,10 +185,11 @@ in {
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
-    alejandra # nix language formater
     bat
     brightnessctl # control screen/device brightness
     btop
+    clipse
+    everforest-gtk-theme
     eza
     fastfetch
     framework-tool
@@ -197,6 +198,7 @@ in {
     grim # screenshot tool (grabs images from wayland compositors)
     helix
     hyprpicker
+    hyprpolkitagent
     kitty
     libnotify # notification library
     libreoffice
@@ -221,13 +223,8 @@ in {
     wl-clipboard
     xcur2png
     zoxide
-
     # nixos-unstable branch
-    unstable.clipse
-    unstable.everforest-gtk-theme
     unstable.hyprgui
-    unstable.hyprls
-    unstable.hyprpolkitagent
 
     # master branch
     master.warp-terminal
@@ -239,5 +236,7 @@ in {
     NIXOS_OZONE_WL = "1"; # Allow/force applications to run directly on wayland (without xwayland)
     XDG_DATA_HOME = "$HOME/.config/";
     XDG_CONFIG_HOME = "$HOME/.config/";
+    EDITOR = "hx";
+    TERMINAL = "warp-terminal";
   };
 }
