@@ -1,6 +1,9 @@
 # PATH
 export PATH="$PATH"
 
+# ENV VARS
+source ~/.env
+
 # ALIASES
 alias l='eza --icons --hyperlink --sort=type -la'
 alias ls='eza --icons --sort=type'
