@@ -67,6 +67,7 @@ in {
       enable = true;
       powerOnBoot = true;
     };
+    keyboard.zsa.enable = true;
   };
 
   # ===== Security =====
@@ -122,8 +123,9 @@ in {
         wayland = true;
       };
       xkb = {
-        layout = "us";
+        layout = "us,latam";
         variant = "";
+        options = "grp:alt_shift_toggle";
       };
     };
   };
@@ -200,6 +202,7 @@ in {
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
     helix
+    hyprgui
     hyprpicker
     hyprpolkitagent
     kitty
@@ -227,7 +230,6 @@ in {
     xcur2png
     zoxide
     # nixos-unstable branch
-    unstable.hyprgui
 
     # master branch
     master.warp-terminal
