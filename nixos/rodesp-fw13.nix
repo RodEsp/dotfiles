@@ -37,7 +37,7 @@ in {
   system.stateVersion = "24.05"; # Did you read the comment?
 
   # ===== Nix Settings =====
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  # nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # ===== Autoupgrade NixOS =====
 
@@ -230,6 +230,7 @@ in {
     xcur2png
     zoxide
     # nixos-unstable branch
+    unstable.ghostty
 
     # master branch
     master.warp-terminal
