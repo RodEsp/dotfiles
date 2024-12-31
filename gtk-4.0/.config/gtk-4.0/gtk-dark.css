@@ -19,6 +19,11 @@
   }
 }
 
+/** Ghostty **/
+.raised.top-bar {
+  background-color: #000000E6;
+}
+
 /***************
  * Base States *
  ***************/
