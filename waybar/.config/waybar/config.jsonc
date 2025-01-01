@@ -24,7 +24,7 @@
         "memory",
         "temperature",
         // "backlight",
-        "keyboard-state",
+        // "keyboard-state",
         // "hyprland/language",
         "battery",
         "tray",
@@ -169,9 +169,9 @@
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C 󰈸!",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "battery": {
         "states": {
