@@ -187,6 +187,9 @@ in {
   # ===== System packages =====
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-runtime-7.0.20"
+  ];
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
@@ -234,6 +237,9 @@ in {
 
     # master branch
     master.warp-terminal
+
+    # games
+    (callPackage ./vintagestory.nix {})
   ];
 
   # ===== System Env Vars =====

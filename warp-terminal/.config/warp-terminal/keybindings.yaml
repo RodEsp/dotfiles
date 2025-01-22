@@ -1,3 +1,4 @@
 ---
-"pane_group:navigate_prev": "alt-'"
+"terminal:clear_blocks": cmd-k
 "pane_group:navigate_next": "alt-shift-\""
+"pane_group:navigate_prev": "alt-'"
