@@ -235,11 +235,11 @@ in {
     # nixos-unstable branch
     unstable.ghostty
 
-    # master branch
-    master.warp-terminal
-
     # games
     (callPackage ./vintagestory.nix {})
+
+    # warp terminal
+    (callPackage ./warp-terminal/package.nix {})
   ];
 
   # ===== System Env Vars =====
