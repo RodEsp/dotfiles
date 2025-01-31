@@ -22,6 +22,9 @@
       };
     };
 in {
+  # ===== Docker =====
+  virtualisation.docker.enable = true;
+
   # ===== System Services =====
 
   # services = {};
