@@ -46,6 +46,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
       # Make sure to use the correct Bus ID values for your system!
       amdgpuBusId = "PCI:193:0:0"; # For AMD GPU
       nvidiaBusId = "PCI:100:0:0"; # NVidia GPU
