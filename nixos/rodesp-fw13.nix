@@ -19,6 +19,7 @@ in {
     ./dev.nix
     ./main-user.nix
     ./steam.nix
+    ./nvidia.nix
   ];
 
   # This value determines the NixOS release from which the default
@@ -101,7 +102,6 @@ in {
   # ===== System Services =====
 
   services = {
-    power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
     blueman.enable = true;
     fprintd.enable = true; # Enable fingerprint sensor
     hypridle.enable = true;
@@ -112,7 +112,13 @@ in {
       pulse.enable = true;
       jack.enable = true;
     };
+    power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
     printing.enable = true; # Enable CUPS to print documents.
+    udev.extraRules = ''
+      # Always authorize thunderbolt connections when they are plugged in.
+      # This is to make sure the USB hub of Thunderbolt is working.
+      ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
+    '';
     xserver = {
       enable = true;
       displayManager.gdm = {
@@ -190,22 +196,22 @@ in {
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
-    bat
+    bat # better cat
     brightnessctl # control screen/device brightness
-    btop
-    clipse
+    btop # tui system resource monitor
+    clipse # clipboard manager
     everforest-gtk-theme
-    eza
-    fastfetch
+    eza # modern alternative to ls
+    fastfetch # system information display tool (better neofetch)
     framework-tool
-    glib
+    glib # system libraries in C, mainly for GNOME stuff
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
-    helix
-    hyprgui
-    hyprpicker
-    hyprpolkitagent
-    kitty
+    helix # terminal text editor/IDE
+    hyprgui # GUI for configuring Hyprland
+    hyprpicker # wlroot-compatible wayland screen color picker
+    hyprpolkitagent # a polkit authentication daemon. It is required for GUI applications to be able to request elevated privileges.
+    kitty # terminal emulator
     libnotify # notification library
     libreoffice
     nano
@@ -222,15 +228,15 @@ in {
     signal-desktop
     slack
     slurp # region selector for wayland compositors (for screenshots)
-    stow
+    stow # symlink farm manager (for adding dotfiles to ~/.config folder)
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
     wget
-    wl-clipboard
-    xcur2png
-    zoxide
+    wl-clipboard # commandline copy/paste utils for wayland
+    xcur2png # converts x cursor images to PNG
+    zoxide # smarter cd command
     # nixos-unstable branch
-    unstable.ghostty
+    unstable.ghostty # terminal emulator
 
     # games
     (callPackage ./vintagestory.nix {})
