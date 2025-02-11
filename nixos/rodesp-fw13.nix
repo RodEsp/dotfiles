@@ -231,6 +231,7 @@ in {
     stow # symlink farm manager (for adding dotfiles to ~/.config folder)
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
+    ueberzugpp # allows drawing images on the terminal on Wayland (for yazi image preview)
     wget
     wl-clipboard # commandline copy/paste utils for wayland
     xcur2png # converts x cursor images to PNG
