@@ -15,6 +15,7 @@ alias nvoff='/home/rodesp/dotfiles/nixos/nvidia-offload'
 alias edit-bashP='hx ~/.bash_profile'
 alias ff='fastfetch'
 alias ft='framework_tool'
+alias mgamedrv = 'udisksctl mount -b /dev/sda1'
 
 # ALIAS FUNCTIONS
 function y() {
