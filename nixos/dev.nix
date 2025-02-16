@@ -56,7 +56,7 @@ in {
   environment.systemPackages = with pkgs; [
     alejandra # nix language formatter
     git
-    gitui
+    unstable.gitui
     hyprls # hypr config language lsp
     jq
     nil # nix lsp
