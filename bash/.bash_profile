@@ -26,5 +26,13 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Enable starship (but not in warp)
+if [[ "$TERM" == *kitty* || "$TERM" == *ghostty* ]]; then
+	eval "$(starship init bash)"
+fi
+
 # Enable zoxide
 eval "$(zoxide init bash)"
+
+# Enable fnm
+eval "$(fnm env --shell bash)"

@@ -55,8 +55,8 @@ in {
 
   environment.systemPackages = with pkgs; [
     alejandra # nix language formatter
+    fnm # nodejs version manager
     git
-    unstable.gitui
     hyprls # hypr config language lsp
     jq
     nil # nix lsp
@@ -69,6 +69,7 @@ in {
 
     # nixos-unstable branch
     unstable.code-cursor
+    unstable.gitui
 
     # master branch
   ];

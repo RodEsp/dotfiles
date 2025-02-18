@@ -23,3 +23,5 @@ selection-background = 4c3743
 selection-foreground = d3c6aa
 
 background-opacity = .9
+
+font-family = FiraCode Nerd Font

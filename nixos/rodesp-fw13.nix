@@ -228,6 +228,7 @@ in {
     signal-desktop
     slack
     slurp # region selector for wayland compositors (for screenshots)
+    starship # terminal prompt manager
     stow # symlink farm manager (for adding dotfiles to ~/.config folder)
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
@@ -236,6 +237,7 @@ in {
     wl-clipboard # commandline copy/paste utils for wayland
     xcur2png # converts x cursor images to PNG
     zoxide # smarter cd command
+
     # nixos-unstable branch
     unstable.ghostty # terminal emulator
 
