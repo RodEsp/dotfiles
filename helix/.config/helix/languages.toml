@@ -3,9 +3,14 @@ biome = { command = "biome", args = ["lsp-proxy"] }
 
 [[language]]
 name = "nix"
+file-types = [ "nix" ]
 formatter = { command = "alejandra" }
-language-servers = [ "lsp" ]
+language-servers = [ "nil" ]
 auto-format = true
+
+[language-server.nil]
+command = "nil"
+args = ["--stdio"]
 
 [[language]]
 name = "javascript"
@@ -26,10 +31,6 @@ language-servers = [ { name = "typescript-language-server", except-features = [ 
 name = "jsx"
 auto-format = true
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-
-[[language]]
-name = "json"
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"

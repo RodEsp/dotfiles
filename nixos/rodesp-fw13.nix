@@ -207,7 +207,6 @@ in {
     glib # system libraries in C, mainly for GNOME stuff
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
-    helix # terminal text editor/IDE
     hyprgui # GUI for configuring Hyprland
     hyprpicker # wlroot-compatible wayland screen color picker
     hyprpolkitagent # a polkit authentication daemon. It is required for GUI applications to be able to request elevated privileges.
@@ -240,6 +239,9 @@ in {
 
     # nixos-unstable branch
     unstable.ghostty # terminal emulator
+    unstable.helix # terminal text/code editor
+
+    # (flameshot.override {enableWlrSupport = true;})
 
     # games
     (callPackage ./vintagestory.nix {})
