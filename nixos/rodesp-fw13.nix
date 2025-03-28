@@ -78,8 +78,15 @@ in {
 
   networking.networkmanager.enable = true;
 
+  # networking.firewall.enable = false;
+
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedTCPPortRanges = [
+  #   {
+  #     from = 1500;
+  #     to = 3100;
+  #   }
+  # ];
   # networking.firewall.allowedUDPPorts = [ ... ];
 
   # ===== System Configuration =====
@@ -211,6 +218,7 @@ in {
     hyprpicker # wlroot-compatible wayland screen color picker
     hyprpolkitagent # a polkit authentication daemon. It is required for GUI applications to be able to request elevated privileges.
     kitty # terminal emulator
+    legcord # Discord client
     libnotify # notification library
     libreoffice
     nano
@@ -236,6 +244,8 @@ in {
     wl-clipboard # commandline copy/paste utils for wayland
     xcur2png # converts x cursor images to PNG
     zoxide # smarter cd command
+
+    bambu-studio
 
     # nixos-unstable branch
     unstable.ghostty # terminal emulator
