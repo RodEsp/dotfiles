@@ -76,20 +76,17 @@ in {
 
   # ===== Networking =====
 
-  networking.networkmanager.enable = true;
-
-  # networking.firewall.enable = false;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPortRanges = [
-  #   {
-  #     from = 1500;
-  #     to = 3100;
-  #   }
-  # ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking = {
+    networkmanager.enable = true;
+    firewall = {
+      enable = true; # To connect to Bambu Lab printer we must disable the firewall because NixOS's firewall does not support SSDP and multicast yet
+      # Bambu Lab Printer Ports - https://wiki.bambulab.com/en/general/printer-network-ports
+      # allowedTCPPorts = [1990 2021 3000 322 6000 990];
+    };
+  };
 
   # ===== System Configuration =====
+
   time.timeZone = "America/New_York";
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -251,7 +248,7 @@ in {
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
 
-    # (flameshot.override {enableWlrSupport = true;})
+    (flameshot.override {enableWlrSupport = true;})
 
     # games
     (callPackage ./vintagestory.nix {})
