@@ -58,7 +58,6 @@ in {
     git
     jq
     python312
-    smartgithg
 
     # LSPs formatters
     alejandra # nix language formatter
@@ -73,6 +72,7 @@ in {
     # nixos-unstable branch
     unstable.code-cursor
     unstable.gitui
+    unstable.smartgithg
 
     # master branch
   ];
