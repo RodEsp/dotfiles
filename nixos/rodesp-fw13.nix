@@ -123,6 +123,8 @@ in {
       # This is to make sure the USB hub of Thunderbolt is working.
       ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
     '';
+    gvfs.enable = true; # GNOME virtual file system - allows things to interact with various filesystems & protocols
+    udisks2.enable = true; # daemon that implements D-Bus interfaces used to query & manipulate storage devices
     xserver = {
       enable = true;
       displayManager.gdm = {
