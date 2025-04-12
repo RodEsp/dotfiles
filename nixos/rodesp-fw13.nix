@@ -202,13 +202,9 @@ in {
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
-    bat # better cat
     brightnessctl # control screen/device brightness
-    btop # tui system resource monitor
     clipse # clipboard manager
     everforest-gtk-theme
-    eza # modern alternative to ls
-    fastfetch # system information display tool (better neofetch)
     framework-tool
     glib # system libraries in C, mainly for GNOME stuff
     google-chrome
@@ -216,14 +212,12 @@ in {
     hyprgui # GUI for configuring Hyprland
     hyprpicker # wlroot-compatible wayland screen color picker
     hyprpolkitagent # a polkit authentication daemon. It is required for GUI applications to be able to request elevated privileges.
-    kitty # terminal emulator
     legcord # Discord client
     libnotify # notification library
     libreoffice
     nano
     nautilus
     networkmanagerapplet
-    nix-search-cli # nix-search command
     nwg-displays # GUI for managing monitors/displays
     nwg-look # GTK3 settings editor for wlroots-based Wayland environments
     pavucontrol # sound/volume device controller
@@ -234,22 +228,32 @@ in {
     signal-desktop
     slack
     slurp # region selector for wayland compositors (for screenshots)
-    starship # terminal prompt manager
     stow # symlink farm manager (for adding dotfiles to ~/.config folder)
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
-    ueberzugpp # allows drawing images on the terminal on Wayland (for yazi image preview)
-    wget
-    wl-clipboard # commandline copy/paste utils for wayland
     xcur2png # converts x cursor images to PNG
+
+    # terminal related
+    bat # better cat
+    btop # tui system resource monitor
+    eza # modern alternative to ls
+    fastfetch # system information display tool (better neofetch)
+    kitty # terminal emulator
+    nix-search-cli # nix-search command
+    starship # terminal prompt manager
+    ueberzugpp # allows drawing images on the terminal on Wayland (for yazi image preview)
+    wl-clipboard # commandline copy/paste utils for wayland
     zoxide # smarter cd command
 
+    # 3d printing
     bambu-studio
+    freecad-wayland
 
     # nixos-unstable branch
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
 
+    # overrides
     (flameshot.override {enableWlrSupport = true;})
 
     # games
