@@ -16,3 +16,5 @@
 	initializenew = true
 [push]
 	recurseSubmodules = check
+[tag]
+	gpgsign = true
