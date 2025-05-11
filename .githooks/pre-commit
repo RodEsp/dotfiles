@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+# To enable this hook, add the .githooks directory to your git config's core.hooksPath
+# Run: git config core.hooksPath .githooks
+
+set -euo pipefail
+
+INPUT_JSON_FILE="$HOME/dotfiles/warp-terminal/.config/warp-terminal/user_preferences.json"
+
+# Function to clean up the temporary file on exit
+cleanup() {
+    rm -f "$tmp_sorted_file"
+}
+trap cleanup EXIT
+
+validate_file() {
+    if [[ ! -f "$INPUT_JSON_FILE" ]]; then
+        printf "Error: JSON file '%s' does not exist.\n" "$INPUT_JSON_FILE" >&2
+        exit 1
+    fi
+
+    if [[ ! -r "$INPUT_JSON_FILE" || ! -w "$INPUT_JSON_FILE" ]]; then
+        printf "Error: JSON file '%s' must be readable and writable.\n" "$INPUT_JSON_FILE" >&2
+        exit 1
+    fi
+}
+
+sort_and_check_diff() {
+    tmp_sorted_file=$(mktemp)
+
+    if ! sorted=$(jq -S . "$INPUT_JSON_FILE" 2>/dev/null); then
+        printf "Error: Failed to parse or sort JSON in '%s'.\n" "$INPUT_JSON_FILE" >&2
+        exit 1
+    fi
+
+    if [[ -z "${sorted// }" ]]; then
+        printf "Error: Parsed JSON is empty in '%s'.\n" "$INPUT_JSON_FILE" >&2
+        exit 1
+    fi
+
+    printf "%s\n" "$sorted" > "$tmp_sorted_file"
+
+    if ! cmp -s "$tmp_sorted_file" "$INPUT_JSON_FILE"; then
+        mv "$tmp_sorted_file" "$INPUT_JSON_FILE"
+        git add "$INPUT_JSON_FILE"
+        printf "Error: JSON file '%s' was not sorted. It has been corrected. Please re-stage and re-commit.\n" "$INPUT_JSON_FILE" >&2
+        exit 1
+    fi
+}
+
+main() {
+    validate_file
+    sort_and_check_diff
+}
+
+main
+
