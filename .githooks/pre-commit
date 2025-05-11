@@ -5,7 +5,11 @@
 
 set -euo pipefail
 
-INPUT_JSON_FILE="$HOME/dotfiles/warp-terminal/.config/warp-terminal/user_preferences.json"
+# Get the root directory of the Git repository
+REPO_ROOT=$(git rev-parse --show-toplevel)
+
+# Define the relative path to the user_preferences.json file from the repository's root
+INPUT_JSON_FILE="$REPO_ROOT/warp-terminal/.config/warp-terminal/user_preferences.json"
 
 # Function to clean up the temporary file on exit
 cleanup() {
@@ -42,8 +46,7 @@ sort_and_check_diff() {
 
     if ! cmp -s "$tmp_sorted_file" "$INPUT_JSON_FILE"; then
         mv "$tmp_sorted_file" "$INPUT_JSON_FILE"
-        git add "$INPUT_JSON_FILE"
-        printf "Error: JSON file '%s' was not sorted. It has been corrected. Please re-stage and re-commit.\n" "$INPUT_JSON_FILE" >&2
+        printf "Error: '%s' was sorted by pre-commit hook. Please re-stage and re-commit.\n" "$INPUT_JSON_FILE" >&2
         exit 1
     fi
 }
