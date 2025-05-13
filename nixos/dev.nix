@@ -55,6 +55,10 @@ in {
     fnm # nodejs version manager
     git
     jq
+    unstable.k3d
+    unstable.k3s
+    kubectl
+    lens
     python312
 
     # LSPs formatters
@@ -71,6 +75,7 @@ in {
     unstable.code-cursor
     unstable.gitui
     unstable.smartgithg
+    unstable.zig
 
     # master branch
   ];

@@ -238,6 +238,7 @@ in {
     btop # tui system resource monitor
     eza # modern alternative to ls
     fastfetch # system information display tool (better neofetch)
+    glow # terminal markdown renderer
     kitty # terminal emulator
     nix-search-cli # nix-search command
     starship # terminal prompt manager
