@@ -76,6 +76,7 @@ in {
     unstable.gitui
     unstable.smartgithg
     unstable.zig
+    unstable.zls
 
     # master branch
   ];

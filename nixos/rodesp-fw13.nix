@@ -204,6 +204,7 @@ in {
     adwaita-icon-theme
     brightnessctl # control screen/device brightness
     clipse # clipboard manager
+    espanso-wayland # text expander
     everforest-gtk-theme
     framework-tool
     glib # system libraries in C, mainly for GNOME stuff
