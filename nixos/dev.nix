@@ -55,11 +55,10 @@ in {
     fnm # nodejs version manager
     git
     jq
-    unstable.k3d
-    unstable.k3s
     kubectl
     lens
     python312
+    rustup
 
     # LSPs formatters
     alejandra # nix language formatter
@@ -74,6 +73,8 @@ in {
     # nixos-unstable branch
     unstable.code-cursor
     unstable.gitui
+    unstable.k3d
+    unstable.k3s
     unstable.smartgithg
     unstable.zig
     unstable.zls
