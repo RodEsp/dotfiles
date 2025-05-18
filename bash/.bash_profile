@@ -11,6 +11,7 @@ alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias cd='z'
 alias cdi='zi'
 alias nixRS='/home/rodesp/dotfiles/nixos/nixos-rebuild.sh'
+alias list-generations="nixos-rebuild list-generations"
 alias nvoff='/home/rodesp/dotfiles/nixos/nvidia-offload'
 alias edit-bashP='hx ~/.bash_profile'
 alias ff='fastfetch'
