@@ -83,6 +83,7 @@ in {
       # Bambu Lab Printer Ports - https://wiki.bambulab.com/en/general/printer-network-ports
       # allowedTCPPorts = [1990 2021 3000 322 6000 990];
     };
+    nameservers = ["10.10.10.10" "199.167.59.10"];
   };
 
   # ===== System Configuration =====
