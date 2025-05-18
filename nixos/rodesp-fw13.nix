@@ -182,7 +182,7 @@ in {
       xwayland.enable = true;
     };
     hyprlock.enable = true;
-    # winbox.enable = true;
+    winbox.enable = true;
     waybar.enable = true;
     yazi = {
       enable = true;

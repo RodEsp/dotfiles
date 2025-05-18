@@ -3,9 +3,9 @@ biome = { command = "biome", args = ["lsp-proxy"] }
 
 [[language]]
 name = "nix"
-file-types = [ "nix" ]
+file-types = ["nix"]
 formatter = { command = "alejandra" }
-language-servers = [ "nil" ]
+language-servers = ["nil"]
 auto-format = true
 
 [language-server.nil]
@@ -14,23 +14,44 @@ args = ["--stdio"]
 
 [[language]]
 name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
+formatter = { command = "biome format"}
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 auto-format = true
 
 [[language]]
 name = "tsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 
 [[language]]
 name = "jsx"
 auto-format = true
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+language-servers = [
+  { name = "typescript-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+]
 
 [language-server.rust-analyzer.config.check]
 command = "clippy"
@@ -45,8 +66,7 @@ language-servers = ["docker-langserver"]
 
 [[language]]
 name = "hyprlang"
-language-servers = [ "hyprls" ]
+language-servers = ["hyprls"]
 
 [language-server.hyprls]
 command = "hyprls"
-
