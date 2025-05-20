@@ -8,6 +8,7 @@ alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias cd='z'
 alias cdi='zi'
 alias ff='fastfetch'
+alias ct='cargo xtask'
 
 # ALIAS FUNCTIONS
 function y() {
