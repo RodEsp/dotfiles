@@ -1,5 +1,6 @@
 # Personal
 cask "font-fira-code-nerd-font"
+brew "bat"
 
 # Junction
 brew "fnm"
