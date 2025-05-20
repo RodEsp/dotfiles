@@ -1,3 +1,6 @@
+# Personal
+brew "font-fira-code-nerd-font"
+
 # Junction
 brew "fnm"
 brew "postgresql@17", restart_service: :changed, link: true
