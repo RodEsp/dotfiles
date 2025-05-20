@@ -1,5 +1,5 @@
 # Personal
-brew "font-fira-code-nerd-font"
+cask "font-fira-code-nerd-font"
 
 # Junction
 brew "fnm"
