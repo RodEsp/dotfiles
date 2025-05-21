@@ -3,6 +3,7 @@ brew "bat"
 brew "eza"
 brew "fnm"
 brew "gitui"
+brew "glow"
 brew "gnupg"
 brew "helix"
 brew "stow"
@@ -28,4 +29,4 @@ brew "postgresql@17", restart_service: :changed, link: true
 brew "protobuf"
 brew "sqlfluff"
 brew "sqlx-cli"
-
+cask "orbstack"
