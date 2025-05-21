@@ -54,6 +54,7 @@ in {
   environment.systemPackages = with pkgs; [
     fnm # nodejs version manager
     git
+    gnumake
     jq
     kubectl
     lens
