@@ -9,6 +9,7 @@ brew "helix"
 brew "stow"
 cask "flameshot"
 cask "font-fira-code-nerd-font"
+cask "maccy"
 
 # for yazi
 brew "fd" # for file searching
