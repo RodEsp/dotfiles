@@ -9,6 +9,9 @@ alias cd='z'
 alias cdi='zi'
 alias ff='fastfetch'
 alias ct='cargo xtask'
+alias bbic="brew update &&\
+    brew bundle install --cleanup --file=~/dotfiles/Brewfile &&\
+    brew upgrade"
 
 # ALIAS FUNCTIONS
 function y() {
