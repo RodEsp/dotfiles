@@ -70,3 +70,8 @@ language-servers = ["hyprls"]
 
 [language-server.hyprls]
 command = "hyprls"
+
+[[language]]
+name = "markdown"
+formatter = { command = "dprint", args = ["-c", "~/.config/.dprint.jsonc", "fmt", "--stdin", "md"]}
+

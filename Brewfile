@@ -1,11 +1,13 @@
 # Personal
 brew "bat"
+brew "dprint"
 brew "eza"
 brew "fnm"
 brew "gitui"
 brew "glow"
 brew "gnupg"
 brew "helix"
+brew "marksman"
 brew "stow"
 cask "flameshot"
 cask "font-fira-code-nerd-font"
