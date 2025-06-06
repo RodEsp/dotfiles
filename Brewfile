@@ -1,14 +1,17 @@
 # Personal
-brew "bat"
-brew "eza"
-brew "fnm"
-brew "gitui"
-brew "glow"
-brew "gnupg"
-brew "helix"
-brew "stow"
-cask "flameshot"
-cask "font-fira-code-nerd-font"
+brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
+brew "dprint" # Auto-formats source code based on the specified plugins.
+brew "eza" # better ls
+brew "fnm" # Node.js manager written in Rust
+brew "gitui" # TUI for git
+brew "glow" # TUI markdown viewer
+brew "gnupg" # https://www.gnupg.org/
+brew "helix" # Post-modern text editor for the terminal
+brew "marksman" # LSP for markdown
+brew "stow" # a symlink farm manager 
+cask "flameshot" # screenshot tool
+cask "font-fira-code-nerd-font" # font for coding w/ ligatures
+cask "maccy" # clipboard manager
 
 # for yazi
 brew "fd" # for file searching
@@ -21,7 +24,7 @@ brew "ripgrep" # for file content searching
 brew "sevenzip" # for archive extraction and preview
 brew "zoxide" # for historical directories navigation, requires fzf
 cask "font-symbols-only-nerd-font" # for cool symbols
-brew "yazi"
+brew "yazi" # TUI file browser
 
 # Junction
 brew "fnm"

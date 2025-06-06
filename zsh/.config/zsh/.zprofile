@@ -3,12 +3,16 @@ export PATH="$PATH"
 
 # ALIASES
 alias l='eza --icons --hyperlink --sort=type -la'
-alias ls='eza --icons --sort=type'
+alias ls='eza --icons --sort=type -l'
 alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias cd='z'
 alias cdi='zi'
 alias ff='fastfetch'
 alias ct='cargo xtask'
+alias bbic="brew update &&\
+    brew bundle install --cleanup --file=~/dotfiles/Brewfile &&\
+    brew upgrade"
+alias psql_log="cd /opt/homebrew/var/postgresql@17/pg_log"
 
 # ALIAS FUNCTIONS
 function y() {
