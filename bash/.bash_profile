@@ -6,7 +6,7 @@ source ~/.env
 
 # ALIASES
 alias l='eza --icons --hyperlink --sort=type -la'
-alias ls='eza --icons --sort=type'
+alias ls='eza --icons --sort=type -l'
 alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias cd='z'
 alias cdi='zi'
