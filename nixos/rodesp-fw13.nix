@@ -150,12 +150,8 @@ in {
     enableDefaultPackages = true;
     packages = with pkgs; [
       font-awesome
-      (nerdfonts.override {
-        fonts = [
-          "NerdFontsSymbolsOnly"
-          "FiraCode"
-        ];
-      })
+      nerd-fonts.fira-code
+      fira-code-symbols
     ];
   };
 
@@ -210,7 +206,7 @@ in {
     glib # system libraries in C, mainly for GNOME stuff
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
-    hyprgui # GUI for configuring Hyprland
+    # hyprgui # GUI for configuring Hyprland -- Was removed in 25.05
     hyprpicker # wlroot-compatible wayland screen color picker
     hyprpolkitagent # a polkit authentication daemon. It is required for GUI applications to be able to request elevated privileges.
     legcord # Discord client
