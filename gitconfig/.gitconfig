@@ -18,5 +18,4 @@
 	recurseSubmodules = check
 [tag]
 	gpgsign = true
-[core]
-	hooksPath = .githooks
+
