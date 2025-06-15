@@ -125,6 +125,11 @@ in {
     '';
     gvfs.enable = true; # GNOME virtual file system - allows things to interact with various filesystems & protocols
     udisks2.enable = true; # daemon that implements D-Bus interfaces used to query & manipulate storage devices
+    unifi = {
+      enable = true;
+      unifiPackage = pkgs.unifi;
+      mongodbPackage = pkgs.mongodb-ce;
+    };
     xserver = {
       enable = true;
       displayManager.gdm = {
