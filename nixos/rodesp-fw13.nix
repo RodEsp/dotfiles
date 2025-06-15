@@ -81,7 +81,9 @@ in {
     firewall = {
       enable = true; # To connect to Bambu Lab printer we must disable the firewall because NixOS's firewall does not support SSDP and multicast yet
       # Bambu Lab Printer Ports - https://wiki.bambulab.com/en/general/printer-network-ports
-      # allowedTCPPorts = [1990 2021 3000 322 6000 990];
+      # UniFi ports - https://help.ui.com/hc/en-us/articles/218506997-Required-Ports-Reference
+      allowedTCPPorts = [22 53 443 1900 6789 8080 8443 8880 8883];
+      allowedUDPPorts = [10001 53 3478 443 123];
     };
   };
 
