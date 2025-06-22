@@ -10,10 +10,10 @@ hx ~/dotfiles/nixos/rodesp-fw13.nix # TODO: Use $EDITOR instead of hx
 pushd ~/dotfiles/nixos/
 
 # Early return if no changes were detected (thanks @singiamtel!)
-if git diff --quiet '*.nix'; then
-    echo "No changes detected, exiting."
-    popd
-    exit 0
+if git diff --quiet '*.nix' && git diff --quiet '**/versions.json'; then
+  echo "No changes detected. Exiting."
+  popd
+  exit 0
 fi
 
 # Autoformat your nix files
@@ -33,7 +33,7 @@ done
 
 # Rebuild, output simplified errors, log trackebacks
 sudo nixos-rebuild switch 2>&1 | tee nixos-switch.log
-if $(grep -q "error" nixos-switch.log); then
+if $(grep -P '(?<!-)\berror\b(?!-)' nixos-switch.log); then
    notify-send -e "NixOS failed to build!" -a nixos -e -i dialog-error  && exit 1
 fi
 
