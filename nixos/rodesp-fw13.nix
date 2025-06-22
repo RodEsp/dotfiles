@@ -47,6 +47,14 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # ===== Filesystems (drives) =====
+
+  fileSystems."/run/media/rodesp/WDBLACK_P40_EXT4" = {
+    device = "/dev/disk/by-uuid/0f8a5ea4-e05a-4e0b-ab92-ccc5ad11c556";
+    fsType = "ext4";
+    options = ["defaults" "nofail"];
+  };
+
   # ===== Framework Laptop Specifics =====
 
   services.fwupd.enable = true;
