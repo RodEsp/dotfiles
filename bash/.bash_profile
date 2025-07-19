@@ -32,8 +32,8 @@ if [[ "$TERM" == *kitty* || "$TERM" == *ghostty* ]]; then
 	eval "$(starship init bash)"
 fi
 
-# Enable zoxide
-eval "$(zoxide init bash)"
-
 # Enable fnm
 eval "$(fnm env --shell bash)"
+
+# Enable zoxide
+eval "$(zoxide init bash)"
