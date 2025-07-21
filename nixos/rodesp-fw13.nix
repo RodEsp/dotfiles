@@ -187,12 +187,18 @@ in {
   programs = {
     # _1password.enable = true;
     # _1password-gui.enable = true;
+    bash.interactiveShellInit = ''
+      source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+    '';
+    command-not-found.enable = false;
     firefox.enable = true;
     hyprland = {
       enable = true;
       xwayland.enable = true;
     };
     hyprlock.enable = true;
+    nix-index.enable = true;
+    nix-ld.enable = true;
     winbox.enable = true;
     waybar.enable = true;
     yazi = {
