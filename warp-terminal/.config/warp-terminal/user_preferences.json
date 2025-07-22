@@ -2,7 +2,7 @@
   "prefs": {
     "AIAssistantRequestLimitInfo": "{\"limit\":100,\"num_requests_used_since_refresh\":0,\"next_refresh_time\":\"2025-01-23T16:54:44.517461Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Monthly\",\"accepted_autosuggestions_limit\":250,\"is_unlimited_autosuggestions\":false,\"accepted_autosuggestions_since_last_refresh\":0}",
     "AIAutoDetectionEnabled": "false",
-    "AIRequestLimitInfo": "{\"limit\":150,\"num_requests_used_since_refresh\":4,\"next_refresh_time\":\"2025-07-28T16:54:44.517461Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Monthly\",\"accepted_autosuggestions_limit\":999999,\"is_unlimited_autosuggestions\":true,\"accepted_autosuggestions_since_last_refresh\":22,\"is_unlimited_voice\":false,\"voice_request_limit\":10000,\"voice_token_limit\":30000,\"voice_requests_used_since_last_refresh\":0,\"voice_tokens_used_since_last_refresh\":0,\"is_unlimited_codebase_indices\":false,\"max_codebase_indices\":3,\"max_files_per_repo\":5000}",
+    "AIRequestLimitInfo": "{\"limit\":150,\"num_requests_used_since_refresh\":4,\"next_refresh_time\":\"2025-07-28T16:54:44.517461Z\",\"is_unlimited\":false,\"request_limit_refresh_duration\":\"Monthly\",\"accepted_autosuggestions_limit\":999999,\"is_unlimited_autosuggestions\":true,\"accepted_autosuggestions_since_last_refresh\":24,\"is_unlimited_voice\":false,\"voice_request_limit\":10000,\"voice_token_limit\":30000,\"voice_requests_used_since_last_refresh\":0,\"voice_tokens_used_since_last_refresh\":0,\"is_unlimited_codebase_indices\":false,\"max_codebase_indices\":3,\"max_files_per_repo\":5000}",
     "AIRequestQuotaInfoSetting": "{\"cycle_history\":[{\"end_date\":\"2025-04-26T16:54:44.517461Z\",\"was_quota_exceeded\":false,\"banner_state\":{\"dismissed\":true}},{\"end_date\":\"2025-05-27T16:54:44.517461Z\",\"was_quota_exceeded\":false,\"banner_state\":{\"dismissed\":true}},{\"end_date\":\"2025-06-27T16:54:44.517461Z\",\"was_quota_exceeded\":false,\"banner_state\":{\"dismissed\":true}},{\"end_date\":\"2025-07-28T16:54:44.517461Z\",\"was_quota_exceeded\":false,\"banner_state\":{\"dismissed\":false}}]}",
     "AgentModeCodebaseContextAutoIndexing": "true",
     "AgentModeCommandExecutionDenylist": "[{\"AnchoredRegex\":\"^bash(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^fish(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^pwsh(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^sh(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^zsh(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^curl(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^eval(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^rm(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^wget(\\\\s.*)?$\"},{\"AnchoredRegex\":\"^nix(.*)$\"}]",
@@ -34,7 +34,7 @@
     "IsAnyAIEnabled": "true",
     "LigatureRenderingEnabled": "true",
     "LineHeightRatio": "1.2",
-    "MCPExecutionPath": "\"/run/user/1000/fnm_multishells/18218_1753039179018/bin:/run/user/1000/fnm_multishells/40025_1739845303783/bin:/run/wrappers/bin:/home/rodesp/.nix-profile/bin:/nix/profile/bin:/home/rodesp/.local/state/nix/profile/bin:/etc/profiles/per-user/rodesp/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin\"",
+    "MCPExecutionPath": "\"/run/user/1000/fnm_multishells/3122_1753145214410/bin:/run/user/1000/fnm_multishells/40025_1739845303783/bin:/run/wrappers/bin:/home/rodesp/.nix-profile/bin:/nix/profile/bin:/home/rodesp/.local/state/nix/profile/bin:/etc/profiles/per-user/rodesp/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin\"",
     "MatchNotebookToMonospaceFontSize": "true",
     "NewGitChipFeatureDismissed": "true",
     "NewTabPlacement": "\"AfterAllTabs\"",
