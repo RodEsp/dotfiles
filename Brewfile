@@ -11,6 +11,7 @@ brew "marksman" # LSP for markdown
 brew "stow" # a symlink farm manager 
 cask "flameshot" # screenshot tool
 cask "font-fira-code-nerd-font" # font for coding w/ ligatures
+cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
 
 # for yazi
