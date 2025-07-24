@@ -1,5 +1,9 @@
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.nil]
+command = "nil"
+args = ["--stdio"]
 
 [[language]]
 name = "nix"
@@ -7,10 +11,17 @@ file-types = ["nix"]
 formatter = { command = "alejandra" }
 language-servers = ["nil"]
 auto-format = true
+indent = { tab-width = 2, unit = "  " }
 
-[language-server.nil]
-command = "nil"
-args = ["--stdio"]
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+
+[[language]]
+name = "json"
+language-servers = ["biome"]
+formatter = { command = "biome format" }
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "javascript"
@@ -20,8 +31,9 @@ language-servers = [
   ] },
   "biome",
 ]
-formatter = { command = "biome format"}
+formatter = { command = "biome format" }
 auto-format = true
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "typescript"
@@ -32,6 +44,7 @@ language-servers = [
   "biome",
 ]
 auto-format = true
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "tsx"
@@ -42,6 +55,7 @@ language-servers = [
   ] },
   "biome",
 ]
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "jsx"
@@ -52,26 +66,34 @@ language-servers = [
   ] },
   "biome",
 ]
-
-[language-server.rust-analyzer.config.check]
-command = "clippy"
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
+indent = { tab-width = 2, unit = "  " }
 
 [[language]]
 name = "dockerfile"
 language-servers = ["docker-langserver"]
-
-[[language]]
-name = "hyprlang"
-language-servers = ["hyprls"]
+indent = { tab-width = 2, unit = "  " }
 
 [language-server.hyprls]
 command = "hyprls"
 
 [[language]]
+name = "hyprlang"
+language-servers = ["hyprls"]
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
 name = "markdown"
-formatter = { command = "dprint", args = ["-c", "~/.config/.dprint.jsonc", "fmt", "--stdin", "md"]}
+formatter = { command = "dprint", args = [
+  "-c",
+  "~/.config/.dprint.jsonc",
+  "fmt",
+  "--stdin",
+  "md",
+] }
+indent = { tab-width = 2, unit = "  " }
 
