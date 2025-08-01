@@ -1,6 +1,7 @@
 # Personal
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "dprint" # Auto-formats source code based on the specified plugins.
+brew "biome" # JS linter & formatter
 brew "eza" # better ls
 brew "fnm" # Node.js manager written in Rust
 brew "gitui" # TUI for git

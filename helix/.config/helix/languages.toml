@@ -18,12 +18,11 @@ auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
 [language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
+biome = { command = "biome", args = ["lsp-proxy"], provideFormatter = true }
 
 [[language]]
 name = "json"
 language-servers = ["biome"]
-formatter = { command = "biome format" }
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
@@ -35,7 +34,6 @@ language-servers = [
   ] },
   "biome",
 ]
-formatter = { command = "biome format" }
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
