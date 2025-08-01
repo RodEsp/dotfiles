@@ -1,6 +1,10 @@
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
+[[language]]
+name = "rust"
+auto-format = true
+
 [language-server.nil]
 command = "nil"
 args = ["--stdio"]

@@ -2,16 +2,19 @@
 export PATH="$PATH"
 
 # ALIASES
-alias l='eza --icons --hyperlink --sort=type -la'
-alias ls='eza --icons --sort=type -l'
-alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
-alias cd='z'
-alias cdi='zi'
-alias ff='fastfetch'
-alias ct='cargo xtask'
 alias bbic="brew update &&\
     brew bundle install --cleanup --file=~/dotfiles/Brewfile &&\
     brew upgrade"
+alias cd='z'
+alias cdi='zi'
+alias cr='cargo run -q --'
+alias ct='cargo xtask'
+alias ff='fastfetch'
+alias k='kubectl'
+alias j="jctl"
+alias l='eza --icons --hyperlink --sort=type -la'
+alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
+alias ls='eza --icons --sort=type -l'
 alias psql_log="cd /opt/homebrew/var/postgresql@17/pg_log"
 
 # ALIAS FUNCTIONS

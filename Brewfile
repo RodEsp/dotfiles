@@ -7,8 +7,10 @@ brew "gitui" # TUI for git
 brew "glow" # TUI markdown viewer
 brew "gnupg" # https://www.gnupg.org/
 brew "helix" # Post-modern text editor for the terminal
+brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
 brew "stow" # a symlink farm manager 
+cask "bluesnooze" # Disable bluetooth when Mac sleeps
 cask "flameshot" # screenshot tool
 cask "font-fira-code-nerd-font" # font for coding w/ ligatures
 cask "legcord" # OpenSource Discord Client 
@@ -28,7 +30,11 @@ cask "font-symbols-only-nerd-font" # for cool symbols
 brew "yazi" # TUI file browser
 
 # Junction
+brew "awscli"
+brew "buf"
 brew "fnm"
+brew "grpcurl"
+brew "k3d"
 brew "postgresql@17", restart_service: :changed, link: true
 brew "protobuf"
 brew "sqlfluff"
