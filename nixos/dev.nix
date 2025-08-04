@@ -65,6 +65,7 @@ in {
     # LSPs formatters
     alejandra # nix language formatter
     biome # toolchain for web dev
+    docker-language-server
     hyprls # hypr config language lsp
     nil # nix lsp
     nixfmt-rfc-style # official formatter for Nix code
@@ -72,7 +73,7 @@ in {
     python312Packages.python-lsp-server
     ruff # python linter & formatter
     taplo # TOML toolkit (formatter)
-    typescript-language-server
+    # typescript-language-server
     vscode-langservers-extracted
 
     # nixos-unstable branch
