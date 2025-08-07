@@ -8,10 +8,10 @@ alias bbic="brew update &&\
 alias cd='z'
 alias cdi='zi'
 alias cr='cargo run -q --'
-alias ct='cargo xtask'
+alias cx='cargo xtask'
 alias ff='fastfetch'
-alias k='kubectl'
 alias j="jctl"
+alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'
 alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias ls='eza --icons --sort=type -l'

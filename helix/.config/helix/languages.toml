@@ -17,12 +17,16 @@ language-servers = ["nil"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"], provideFormatter = true }
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+provideFormatter = true
+display-messages = true
 
 [[language]]
 name = "json"
 language-servers = ["biome"]
+# formatter = { command = "biome", args = ["format", "%s", "--indent-style=space", "--indent-width=2"] } # Example formatter command
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 

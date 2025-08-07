@@ -35,6 +35,7 @@ brew "awscli"
 brew "buf"
 brew "fnm"
 brew "grpcurl"
+brew "helm"
 brew "k3d"
 brew "postgresql@17", restart_service: :changed, link: true
 brew "protobuf"
