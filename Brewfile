@@ -10,6 +10,7 @@ brew "gnupg" # https://www.gnupg.org/
 brew "helix" # Post-modern text editor for the terminal
 brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
+brew "starship" # Lightweight multiplatform terminal prompt
 brew "stow" # a symlink farm manager 
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
 cask "flameshot" # screenshot tool
