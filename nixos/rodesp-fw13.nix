@@ -254,6 +254,7 @@ in {
     # terminal related
     bat # better cat
     btop # tui system resource monitor
+    blesh # Better BASH autocomplete
     eza # modern alternative to ls
     fastfetch # system information display tool (better neofetch)
     glow # terminal markdown renderer
