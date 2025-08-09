@@ -1,28 +1,29 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# format="""
-# $directory\
-# $git_branch\
-# $git_status\
-# $fill \
-# $all\
-# $line_break\
-# $character
-# """
-
 scan_timeout = 30
 
 format = '''
-[┌──────────────────$os ](green)
-[│ ](bold green)$character$directory$git_branch$git_status$git_state$fill $all
+[┌─\[](green)$character$directory\] $git_branch$git_status$git_state$fill $all
 [└─$os ](green)'''
+
+# Custom
+[directory]
+read_only = " 󰌾"
+format = '[$path](green)[$read_only](red)'
+truncation_length = 5
+truncation_symbol = '.../'
+truncate_to_repo = false
 
 [fill]
 symbol = ' '
-style = 'green'
 
+[os]
+format = "[$symbol](green)"
+disabled = false
+
+# Disabled
 [character]
-format = ''
+disabled = true
 
 [line_break]
 disabled = true
@@ -57,9 +58,6 @@ symbol = " "
 
 [deno]
 symbol = " "
-
-[directory]
-read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
@@ -147,10 +145,6 @@ symbol = " "
 
 [ocaml]
 symbol = " "
-
-[os]
-format = "[$symbol](green)"
-disabled = false
 
 [os.symbols]
 Alpaquita = " "
