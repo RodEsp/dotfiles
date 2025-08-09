@@ -41,7 +41,7 @@
     "IsSettingsSyncEnabled": "true",
     "LigatureRenderingEnabled": "true",
     "LineHeightRatio": "1.2",
-    "MCPExecutionPath": "\"/run/user/1000/fnm_multishells/44496_1754706326217/bin:/run/user/1000/fnm_multishells/40025_1739845303783/bin:/run/wrappers/bin:/home/rodesp/.nix-profile/bin:/nix/profile/bin:/home/rodesp/.local/state/nix/profile/bin:/etc/profiles/per-user/rodesp/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin\"",
+    "MCPExecutionPath": "\"/run/user/1000/fnm_multishells/104994_1754710793783/bin:/run/user/1000/fnm_multishells/40025_1739845303783/bin:/run/wrappers/bin:/home/rodesp/.nix-profile/bin:/nix/profile/bin:/home/rodesp/.local/state/nix/profile/bin:/etc/profiles/per-user/rodesp/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin\"",
     "MatchNotebookToMonospaceFontSize": "true",
     "NewGitChipFeatureDismissed": "true",
     "NewTabPlacement": "\"AfterAllTabs\"",

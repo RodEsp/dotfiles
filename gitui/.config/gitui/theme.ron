@@ -1,8 +1,8 @@
 (
     cmdbar_bg: Some("Green"),
-    cmdbar_extra_lines_bg: Some("LightGreen"),
+    cmdbar_extra_lines_bg: Some("Green"),
     command_fg: Some("Black"),
-    selection_bg: Some("LightGreen"),
+    selection_bg: Some("Green"),
     selection_fg: Some("Black"),
     branch_fg: Some("Reset")
 )
