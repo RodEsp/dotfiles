@@ -290,6 +290,6 @@ in {
     XDG_DATA_HOME = "$HOME/.config/";
     XDG_CONFIG_HOME = "$HOME/.config/";
     EDITOR = "hx";
-    TERMINAL = "warp-terminal";
+    TERMINAL = "ghostty";
   };
 }

@@ -15,7 +15,7 @@ scan_timeout = 30
 format = '''
 [┌──────────────────$os ](green)
 [│ ](bold green)$character$directory$git_branch$git_status$git_state$fill $all
-[└─$os](green) '''
+[└─$os ](green)'''
 
 [fill]
 symbol = ' '
