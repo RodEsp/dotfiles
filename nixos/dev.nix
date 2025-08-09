@@ -52,10 +52,11 @@ in {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
   environment.systemPackages = with pkgs; [
-    gcc # c compiler
     fnm # nodejs version manager
+    gcc # c compiler
     git
     gnumake
+    go
     jq
     kubectl
     lens
