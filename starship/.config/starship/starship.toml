@@ -1,15 +1,31 @@
-format="""
-$directory\
-$git_branch\
-$git_status\
-$fill \
-$all\
-$line_break \
-$character
-"""
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# format="""
+# $directory\
+# $git_branch\
+# $git_status\
+# $fill \
+# $all\
+# $line_break\
+# $character
+# """
+
+scan_timeout = 30
+
+format = '''
+[┌──────────────────$os ](green)
+[│ ](bold green)$character$directory$git_branch$git_status$git_state$fill $all
+[└─$os](green) '''
 
 [fill]
-symbol = "="
+symbol = ' '
+style = 'green'
+
+[character]
+format = ''
+
+[line_break]
+disabled = true
 
 # Nerd Font Symbols
 [aws]
@@ -64,10 +80,25 @@ symbol = " "
 symbol = "  "
 
 [git_branch]
-symbol = " "
+symbol = " "
+format = "$symbol$branch "
 
 [git_commit]
 tag_symbol = '  '
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+ahead = ' ${count}'
+diverged = '󱪕  ${ahead_count} ${behind_count}'
+behind = ' ${count}'
+conflicted = '[](orange) '
+up_to_date = ''
+untracked = '[](blue) '
+stashed = '[](blue) '
+modified = '[󱇧](yellow) '
+staged = '[$count󰸩 ](green)'
+renamed = ' '
+deleted = '🗑'
 
 [golang]
 symbol = " "
@@ -116,6 +147,10 @@ symbol = " "
 
 [ocaml]
 symbol = " "
+
+[os]
+format = "[$symbol](green)"
+disabled = false
 
 [os.symbols]
 Alpaquita = " "
