@@ -4,17 +4,19 @@
   "height": 30, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   "spacing": 4, // Gaps between modules (4px)
+  "reload_style_on_change": true,
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces",
     "hyprland/submap",
-    "custom/media"
+    "custom/media",
+    "clock"
+    // "hyprland/window",
   ],
   "modules-center": [
-    "hyprland/window",
-    "privacy"
+    "hyprland/workspaces"
   ],
   "modules-right": [
+    "privacy",
     "mpd",
     // "idle_inhibitor",
     "pulseaudio",
@@ -29,12 +31,11 @@
     "battery",
     // "custom/espanso",
     "tray",
-    "clock",
     "custom/powermenu"
   ],
   // Modules configuration
   "hyprland/workspaces": {
-    "format": "{windows}",
+    "format": "{id} {windows}",
     "all-outputs": false,
     "show-special": true,
     "special-visible-only": true,
@@ -70,7 +71,8 @@
       "slack": "󰒱",
       "code": "󰨞",
       "steam": "",
-      "cursor": ""
+      "cursor": "",
+      "ghostty": ""
     }
   },
   "keyboard-state": {
@@ -93,7 +95,7 @@
   },
   "privacy": {
     "icon-spacing": 4,
-    "icon-size": 18,
+    "icon-size": 20,
     "transition-duration": 250,
     "modules": [
       {
