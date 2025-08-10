@@ -278,9 +278,6 @@ in {
 
     # games
     (callPackage ./vintagestory.nix {})
-
-    # warp terminal
-    (callPackage ./warp-terminal/package.nix {})
   ];
 
   # ===== System Env Vars =====

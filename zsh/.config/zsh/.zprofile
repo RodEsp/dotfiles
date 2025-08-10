@@ -30,10 +30,8 @@ function y() {
 # Enable brew - has to be first, before other brew installed packages
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Enable starship (but not in warp)
-if [[ "$TERM" == *kitty* || "$TERM" == *ghostty* ]]; then
-        eval "$(starship init bash)"
-fi
+# Enable starship prompt
+eval "$(starship init bash)"
 
 # Enable zoxide
 eval "$(zoxide init bash)"

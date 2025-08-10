@@ -59,13 +59,15 @@ in {
     go
     jq
     kubectl
-    lens
+    lens # k8s IDE/GUI
+    protobuf
     python312
     rustup
 
     # LSPs formatters
     alejandra # nix language formatter
-    biome # toolchain for web dev
+
+    biome # toolchain for web dev and JS ecosystem LSP
     docker-language-server
     hyprls # hypr config language lsp
     nil # nix lsp

@@ -28,11 +28,9 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# Enable starship (but not in warp)
-if [[ "$TERM" == *kitty* || "$TERM" == *ghostty* ]]; then
-	export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-	eval "$(starship init bash)"
-fi
+# Enable starship prompt
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init bash)"
 
 # Enable fnm
 eval "$(fnm env --shell bash)"

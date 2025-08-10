@@ -8,53 +8,15 @@ set -euo pipefail
 # Get the root directory of the Git repository
 REPO_ROOT=$(git rev-parse --show-toplevel)
 
-# Define the relative path to the user_preferences.json file from the repository's root
-INPUT_JSON_FILE="$REPO_ROOT/warp-terminal/.config/warp-terminal/user_preferences.json"
-
 # Function to clean up the temporary file on exit
-cleanup() {
-    rm -f "$tmp_sorted_file"
-}
-trap cleanup EXIT
-
-validate_file() {
-    if [[ ! -f "$INPUT_JSON_FILE" ]]; then
-        printf "Error: JSON file '%s' does not exist.\n" "$INPUT_JSON_FILE" >&2
-        exit 1
-    fi
-
-    if [[ ! -r "$INPUT_JSON_FILE" || ! -w "$INPUT_JSON_FILE" ]]; then
-        printf "Error: JSON file '%s' must be readable and writable.\n" "$INPUT_JSON_FILE" >&2
-        exit 1
-    fi
-}
-
-sort_and_check_diff() {
-    tmp_sorted_file=$(mktemp)
-
-    if ! sorted=$(jq -S . "$INPUT_JSON_FILE" 2>/dev/null); then
-        printf "Error: Failed to parse or sort JSON in '%s'.\n" "$INPUT_JSON_FILE" >&2
-        exit 1
-    fi
-
-    if [[ -z "${sorted// }" ]]; then
-        printf "Error: Parsed JSON is empty in '%s'.\n" "$INPUT_JSON_FILE" >&2
-        exit 1
-    fi
-
-    printf "%s\n" "$sorted" > "$tmp_sorted_file"
-
-    if ! cmp -s "$tmp_sorted_file" "$INPUT_JSON_FILE"; then
-        mv "$tmp_sorted_file" "$INPUT_JSON_FILE"
-        printf "Error: '%s' was sorted by pre-commit hook. Please re-stage and re-commit.\n" "$INPUT_JSON_FILE" >&2
-        exit 1
-    fi
-}
+# cleanup() {
+#     rm -f "$tmp_sorted_file"
+# }
+# trap cleanup EXIT
 
 main() {
-    validate_file
-    sort_and_check_diff
+   echo "Do something"
 }
 
-main
+# main
 

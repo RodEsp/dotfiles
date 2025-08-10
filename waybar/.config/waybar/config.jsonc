@@ -66,7 +66,6 @@
       "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
       "class<firefox> title<.*reddit.*>": "",
       "class<google-chrome>": "",
-      "class<dev.warp.Warp>": "",
       "class<.*kitty.*>": "",
       "slack": "󰒱",
       "code": "󰨞",
