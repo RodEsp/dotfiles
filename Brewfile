@@ -1,4 +1,5 @@
 # Personal
+brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "dprint" # Auto-formats source code based on the specified plugins.
 brew "biome" # JS linter & formatter

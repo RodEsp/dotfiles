@@ -1,6 +1,9 @@
 # PATH
 export PATH="$PATH"
 
+# ENV VARS
+source ~/.env
+
 # ALIASES
 alias bbic="brew update &&\
     brew bundle install --cleanup --file=~/dotfiles/Brewfile &&\
