@@ -76,6 +76,14 @@ tooltip {
   color: @fg;
 }
 
+#tray window {
+  background: @bg0;
+}
+
+#tray menu *:hover {
+  background: @bg1;
+}
+
 #clock {
   margin-left: 7px;
 }
