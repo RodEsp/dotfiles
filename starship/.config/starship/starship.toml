@@ -96,7 +96,7 @@ stashed = '[](blue) '
 modified = '[󱇧](yellow) '
 staged = '[$count󰸩 ](green)'
 renamed = ' '
-deleted = '🗑'
+deleted = '🗑 '
 
 [golang]
 symbol = " "
