@@ -31,11 +31,12 @@ function y() {
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Enable starship prompt
-eval "$(starship init bash)"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
 
 # Enable zoxide
-eval "$(zoxide init bash)"
+eval "$(zoxide init zsh)"
 
 # Enable fnm
-eval "$(fnm env --shell bash)"
+eval "$(fnm env --shell zsh)"
 

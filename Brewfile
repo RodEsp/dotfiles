@@ -15,6 +15,7 @@ brew "stow" # a symlink farm manager
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
 cask "flameshot" # screenshot tool
 cask "font-fira-code-nerd-font" # font for coding w/ ligatures
+cask "ghostty" # Terminal
 cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
 
