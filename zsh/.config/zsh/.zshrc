@@ -51,10 +51,14 @@ eval "$(fnm env --shell zsh)"
 source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
 # Completions
+fpath+=($ZDOTDIR/completions)
+
+rustup completions zsh > $ZDOTDIR/completions/_rustup
+rustup completions zsh cargo > $ZDOTDIR/completions//_cargo
+ 
 autoload -Uz compinit
 compinit
 
-source <(rustup completions zsh)
 source <(kubectl completion zsh)
 source <(gwctl completion zsh)
 source <(k3d completion zsh)
