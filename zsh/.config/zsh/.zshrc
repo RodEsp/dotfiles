@@ -1,5 +1,8 @@
-# PATH
-export PATH="$PATH"
+# Set PATH
+export PATH="/Users/rodesp/git/gwctl/bin:/Users/rodesp/git/cloud/target/release:/Users/rodesp/.local/bin:/Library/Developer/CommandLineTools/usr/bin:$PATH"
+
+# zsh completion for .files
+setopt globdots
 
 # ENV VARS
 source ~/.env
@@ -43,3 +46,15 @@ eval "$(zoxide init zsh)"
 # Enable fnm
 eval "$(fnm env --shell zsh)"
 
+# added by orbstack: command-line tools and integration
+# this won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# Completions
+autoload -Uz compinit
+compinit
+
+source <(kubectl completion zsh)
+source <(gwctl completion zsh)
+source <(k3d completion zsh)
+source <(jctl autocomplete zsh)
