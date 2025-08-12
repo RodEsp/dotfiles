@@ -1,5 +1,5 @@
 # Set PATH
-export PATH="/Users/rodesp/git/gwctl/bin:/Users/rodesp/git/cloud/target/release:/Users/rodesp/.local/bin:/Library/Developer/CommandLineTools/usr/bin:$PATH"
+export PATH="/Users/rodesp/git/gwctl/bin:/Users/rodesp/git/cloud/target/release:/Users/rodesp/.local/bin:$PATH:/Library/Developer/CommandLineTools/usr/bin"
 
 # zsh completion for .files
 setopt globdots
@@ -54,6 +54,7 @@ source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 autoload -Uz compinit
 compinit
 
+source <(rustup completions zsh)
 source <(kubectl completion zsh)
 source <(gwctl completion zsh)
 source <(k3d completion zsh)
