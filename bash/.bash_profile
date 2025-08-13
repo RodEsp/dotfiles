@@ -10,6 +10,7 @@ alias cd='z'
 alias edit-bashP='hx ~/.bash_profile'
 alias ff='fastfetch'
 alias ft='framework_tool'
+alias grep="rg --colors='match:fg:yellow'"
 alias k="kubectl"
 alias l='eza --icons --hyperlink --sort=type -la'
 alias list-generations="nixos-rebuild list-generations"

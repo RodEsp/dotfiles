@@ -240,6 +240,7 @@ in {
     nwg-look # GTK3 settings editor for wlroots-based Wayland environments
     pavucontrol # sound/volume device controller
     playerctl
+    ripgrep # grep but better and written in Rust
     rofi-power-menu
     rofi-wayland # app launcher/system level menu
     satty # screenshot/image annotation tool
