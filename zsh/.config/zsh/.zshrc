@@ -1,5 +1,5 @@
 # Set PATH
-export PATH="/Users/rodesp/git/gwctl/bin:/Users/rodesp/git/cloud/target/release:/Users/rodesp/.local/bin:$PATH:/Library/Developer/CommandLineTools/usr/bin"
+export PATH="$PATH:/Users/rodesp/git/gwctl/bin:/Users/rodesp/git/cloud/target/release:/Users/rodesp/.local/bin:/Library/Developer/CommandLineTools/usr/bin"
 
 # zsh completion for .files
 setopt globdots
