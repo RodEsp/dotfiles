@@ -16,6 +16,7 @@ alias cdi='zi'
 alias cr='cargo run -q --'
 alias cx='cargo xtask'
 alias ff='fastfetch'
+alias grep="ggrep --color=always"
 alias j="jctl"
 alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'

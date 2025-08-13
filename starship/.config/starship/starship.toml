@@ -141,7 +141,7 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = "󰎙 "
 
 [ocaml]
 symbol = " "
@@ -218,7 +218,7 @@ symbol = "󰟔 "
 symbol = " "
 
 [rust]
-symbol = "󱘗 "
+symbol = "🦀 "
 
 [scala]
 symbol = " "

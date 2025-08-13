@@ -1,13 +1,14 @@
 # Personal
 brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
-brew "dprint" # Auto-formats source code based on the specified plugins.
 brew "biome" # JS linter & formatter
+brew "dprint" # Auto-formats source code based on the specified plugins.
 brew "eza" # better ls
 brew "fnm" # Node.js manager written in Rust
 brew "gitui" # TUI for git
 brew "glow" # TUI markdown viewer
 brew "gnupg" # https://www.gnupg.org/
+brew "grep" # ggrep - GNU Grep (because Mac comes with BSD)
 brew "helix" # Post-modern text editor for the terminal
 brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
