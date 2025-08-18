@@ -16,7 +16,7 @@ alias cdi='zi'
 alias cr='cargo run -q --'
 alias cx='cargo xtask'
 alias ff='fastfetch'
-alias grep="ggrep --color=always"
+alias grep="rg --colors='match:fg:yellow'"
 alias j="jctl"
 alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'
@@ -64,3 +64,6 @@ source <(kubectl completion zsh)
 source <(gwctl completion zsh)
 source <(k3d completion zsh)
 source <(jctl autocomplete zsh)
+
+# Print important TODOs
+todui ls --format json-pretty | jq '.[] | select(.name|test("!!!.*!!!")) | .name ' | tr -d '"'

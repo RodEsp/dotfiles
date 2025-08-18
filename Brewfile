@@ -8,12 +8,13 @@ brew "fnm" # Node.js manager written in Rust
 brew "gitui" # TUI for git
 brew "glow" # TUI markdown viewer
 brew "gnupg" # https://www.gnupg.org/
-brew "grep" # ggrep - GNU Grep (because Mac comes with BSD)
 brew "helix" # Post-modern text editor for the terminal
 brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
+brew "ripgrep" # grep but better and written in Rust
 brew "starship" # Lightweight multiplatform terminal prompt
-brew "stow" # a symlink farm manager 
+brew "stow" # a symlink farm manager
+cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
 cask "flameshot" # screenshot tool
 cask "font-fira-code-nerd-font" # font for coding w/ ligatures
