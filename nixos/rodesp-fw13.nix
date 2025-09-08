@@ -19,7 +19,7 @@ in {
     ./dev.nix
     ./main-user.nix
     ./steam.nix
-    ./nvidia.nix
+    # ./nvidia.nix
   ];
 
   # This value determines the NixOS release from which the default
@@ -33,6 +33,11 @@ in {
   # ===== Linux Kernel =====
 
   boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.initrd.kernelModules = ["amdgpu"];
+  boot.kernelParams = [
+    "video=card2-eDP-1:2256x1504@60"
+    "video=DP-2:2560x1600@59.97"
+  ];
 
   # ===== Nix Settings =====
   # nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -74,6 +79,7 @@ in {
       powerOnBoot = true;
     };
     keyboard.zsa.enable = true;
+    amdgpu.amdvlk.enable = true;
   };
 
   # ===== Security =====
@@ -142,6 +148,7 @@ in {
     };
     xserver = {
       enable = true;
+      videoDrivers = ["amdgpu"];
       displayManager.gdm = {
         enable = true;
         wayland = true;
@@ -210,6 +217,11 @@ in {
     };
   };
 
+  # Linux AMDGPU Controller
+  # environment.systemPackages = with pkgs; [lact];
+  systemd.packages = with pkgs; [lact];
+  systemd.services.lactd.wantedBy = ["multi-user.target"];
+
   # ===== System packages =====
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
@@ -218,6 +230,8 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
+    lact # Linux AMDGPU Controller
+
     adwaita-icon-theme
     brightnessctl # control screen/device brightness
     clipse # clipboard manager
