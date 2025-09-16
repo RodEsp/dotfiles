@@ -3,3 +3,6 @@ theme = everforest
 background-opacity = .9
 
 font-family = FiraCode Nerd Font Mono
+maximize = true
+window-height = 9999
+window-width = 9999

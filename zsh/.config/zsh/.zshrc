@@ -11,6 +11,7 @@ source ~/.env
 alias bbic="brew update &&\
     brew bundle install --cleanup --file=~/dotfiles/Brewfile &&\
     brew upgrade"
+alias bat='bat --paging=never'
 alias cd='z'
 alias cdi='zi'
 alias cr='cargo run -q --'
@@ -32,6 +33,14 @@ function y() {
                 builtin cd -- "$cwd"
         fi
         rm -f -- "$tmp"
+}
+
+highlight() {
+    local HIGHLIGHT=$1
+    shift  # remove the highlight term from $@
+
+    # Print file contents, with grep injecting color around matches
+    rg --colors='match:fg:yellow' "$HIGHLIGHT|$" "$@"
 }
 
 # Enable brew - has to be first, before other brew installed packages
@@ -64,6 +73,10 @@ source <(kubectl completion zsh)
 source <(gwctl completion zsh)
 source <(k3d completion zsh)
 source <(jctl autocomplete zsh)
+eval "$(uv generate-shell-completion zsh)"
 
 # Print important TODOs
-todui ls --format json-pretty | jq '.[] | select(.name|test("!!!.*!!!")) | .name ' | tr -d '"'
+todui ls --format json-pretty | jq '.[] | select(.group=="important") | .name' | tr -d '"'
+
+# Enable shift+arrow-key selection in terminal
+source ~/git/zsh-shift-select/zsh-shift-select.plugin.zsh

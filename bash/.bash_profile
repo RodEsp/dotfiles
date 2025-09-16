@@ -5,6 +5,7 @@ export PATH="$PATH"
 source ~/.env
 
 # ALIASES
+alias bat='bat --paging=never'
 alias cdi='zi'
 alias cd='z'
 alias edit-bashP='hx ~/.bash_profile'
@@ -27,6 +28,14 @@ function y() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+highlight() {
+    local HIGHLIGHT=$1
+    shift  # remove the highlight term from $@
+
+    # Print file contents, with grep injecting color around matches
+    rg --colors='match:fg:yellow' "$HIGHLIGHT|$" "$@"
 }
 
 # Enable starship prompt

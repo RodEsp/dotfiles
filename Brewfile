@@ -2,6 +2,7 @@
 brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "biome" # JS linter & formatter
+brew "btop" # System resource monitor
 brew "dprint" # Auto-formats source code based on the specified plugins.
 brew "eza" # better ls
 brew "fnm" # Node.js manager written in Rust
@@ -21,6 +22,7 @@ cask "font-fira-code-nerd-font" # font for coding w/ ligatures
 cask "ghostty" # Terminal
 cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
+cask "sublime-text"
 
 # for yazi
 brew "fd" # for file searching
@@ -41,6 +43,7 @@ brew "buf"
 brew "fnm"
 brew "grpcurl"
 brew "helm"
+brew "juicefs"
 brew "k3d"
 brew "postgresql@17", restart_service: :changed, link: true
 brew "protobuf"
