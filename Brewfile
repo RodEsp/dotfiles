@@ -41,6 +41,7 @@ brew "yazi" # TUI file browser
 brew "awscli"
 brew "buf"
 brew "fnm"
+brew "git-lfs"
 brew "grpcurl"
 brew "helm"
 brew "juicefs"
