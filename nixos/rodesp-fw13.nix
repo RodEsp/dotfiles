@@ -32,7 +32,8 @@ in {
 
   # ===== Linux Kernel =====
 
-  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  # boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelParams = [
     "video=card2-eDP-1:2256x1504@60"
@@ -74,6 +75,7 @@ in {
   # ===== Hardware Configuration =====
 
   hardware = {
+    enableRedistributableFirmware = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -217,11 +219,6 @@ in {
     };
   };
 
-  # Linux AMDGPU Controller
-  # environment.systemPackages = with pkgs; [lact];
-  systemd.packages = with pkgs; [lact];
-  systemd.services.lactd.wantedBy = ["multi-user.target"];
-
   # ===== System packages =====
 
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
@@ -230,8 +227,6 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    lact # Linux AMDGPU Controller
-
     adwaita-icon-theme
     brightnessctl # control screen/device brightness
     clipse # clipboard manager
@@ -253,6 +248,7 @@ in {
     nwg-displays # GUI for managing monitors/displays
     nwg-look # GTK3 settings editor for wlroots-based Wayland environments
     pavucontrol # sound/volume device controller
+    pciutils # Collection of programs for inspecting and manipulating configuration of PCI devices
     playerctl
     ripgrep # grep but better and written in Rust
     rofi-power-menu
@@ -285,8 +281,10 @@ in {
     freecad-wayland
 
     # nixos-unstable branch
+    unstable.affine # second-brain/note taking app
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
+    unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
 
     # overrides
     (flameshot.override {enableWlrSupport = true;})
