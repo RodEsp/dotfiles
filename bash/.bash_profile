@@ -47,3 +47,7 @@ eval "$(fnm env --shell bash)"
 
 # Enable zoxide
 eval "$(zoxide init bash)"
+
+# Auto completion
+source <(kubectl completion bash)
+complete -o default -F __start_kubectl k
