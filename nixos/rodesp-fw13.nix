@@ -143,11 +143,11 @@ in {
     '';
     gvfs.enable = true; # GNOME virtual file system - allows things to interact with various filesystems & protocols
     udisks2.enable = true; # daemon that implements D-Bus interfaces used to query & manipulate storage devices
-    unifi = {
-      enable = true;
-      unifiPackage = pkgs.unifi;
-      mongodbPackage = pkgs.mongodb-ce;
-    };
+    # unifi = {
+    # enable = true;
+    # unifiPackage = pkgs.unifi;
+    # mongodbPackage = pkgs.mongodb-ce;
+    # };
     xserver = {
       enable = true;
       videoDrivers = ["amdgpu"];
@@ -242,7 +242,6 @@ in {
     legcord # Discord client
     libnotify # notification library
     libreoffice
-    nano
     nautilus
     networkmanagerapplet
     nwg-displays # GUI for managing monitors/displays
@@ -250,7 +249,6 @@ in {
     pavucontrol # sound/volume device controller
     pciutils # Collection of programs for inspecting and manipulating configuration of PCI devices
     playerctl
-    ripgrep # grep but better and written in Rust
     rofi-power-menu
     rofi-wayland # app launcher/system level menu
     satty # screenshot/image annotation tool
@@ -261,6 +259,7 @@ in {
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
     xcur2png # converts x cursor images to PNG
+    zulip # IM client
 
     # terminal related
     bat # better cat
@@ -270,7 +269,9 @@ in {
     fastfetch # system information display tool (better neofetch)
     glow # terminal markdown renderer
     kitty # terminal emulator
+    nano
     nix-search-cli # nix-search command
+    ripgrep # grep but better and written in Rust
     starship # terminal prompt manager
     ueberzugpp # allows drawing images on the terminal on Wayland (for yazi image preview)
     wl-clipboard # commandline copy/paste utils for wayland
