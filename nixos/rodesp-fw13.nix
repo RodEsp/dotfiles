@@ -76,12 +76,12 @@ in {
 
   hardware = {
     enableRedistributableFirmware = true;
+    graphics.enable = true;
     bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
     keyboard.zsa.enable = true;
-    amdgpu.amdvlk.enable = true;
   };
 
   # ===== Security =====
@@ -282,7 +282,7 @@ in {
     freecad-wayland
 
     # nixos-unstable branch
-    unstable.affine # second-brain/note taking app
+    # unstable.affine temp disabled because of EOL electron dep # second-brain/note taking app
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
