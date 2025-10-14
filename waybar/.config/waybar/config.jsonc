@@ -181,11 +181,11 @@
     }
   },
   "cpu": {
-    "format": "{usage}% ",
+    "format": " {usage}%",
     "tooltip": true
   },
   "memory": {
-    "format": "{}% "
+    "format": " {}%"
   },
   "backlight": {
     // "device": "acpi_video1",
