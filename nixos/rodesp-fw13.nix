@@ -42,6 +42,10 @@ in {
 
   # ===== Nix Settings =====
   # nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+  };
 
   # ===== Autoupgrade NixOS =====
 

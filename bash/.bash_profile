@@ -43,7 +43,9 @@ export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init bash)"
 
 # Enable fnm
-eval "$(fnm env --shell bash)"
+if [ -z "${IN_NIX_SHELL:-}" ]; then
+	eval "$(fnm env --shell bash)"
+fi
 
 # Enable zoxide
 eval "$(zoxide init bash)"
