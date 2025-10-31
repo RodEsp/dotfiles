@@ -80,15 +80,15 @@ in {
     vscode-langservers-extracted
 
     # nixos-unstable branch
-    unstable.code-cursor
     unstable.gitui
     unstable.k3d
     unstable.k3s
-    unstable.smartgithg
+    unstable.smartgit
     unstable.zig
     unstable.zls
 
-    # master branch
+    # custom
+    (callPackage ./cursor-ide.nix {})
   ];
 
   # ===== System Env Vars =====

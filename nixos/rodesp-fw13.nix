@@ -131,6 +131,7 @@ in {
     blueman.enable = true;
     fprintd.enable = true; # Enable fingerprint sensor
     hypridle.enable = true;
+    tailscale.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -200,6 +201,10 @@ in {
   programs = {
     # _1password.enable = true;
     # _1password-gui.enable = true;
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
     bash.interactiveShellInit = ''
       source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
     '';
@@ -262,6 +267,7 @@ in {
     stow # symlink farm manager (for adding dotfiles to ~/.config folder)
     swaynotificationcenter # notification daemon
     swww # wallpaper daemon
+    vlc # media player
     xcur2png # converts x cursor images to PNG
     zulip # IM client
 
