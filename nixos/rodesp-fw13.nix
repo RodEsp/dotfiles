@@ -292,7 +292,7 @@ in {
     freecad-wayland
 
     # nixos-unstable branch
-    # unstable.affine temp disabled because of EOL electron dep # second-brain/note taking app
+    unstable.affine # second-brain/note taking app
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
