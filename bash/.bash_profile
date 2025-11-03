@@ -7,20 +7,17 @@ source ~/.env
 # ALIASES
 alias bat='bat --paging=never'
 alias cdi='zi'
-alias cd='z'
-alias edit-bashP='hx ~/.bash_profile'
 alias ff='fastfetch'
 alias ft='framework_tool'
-alias grep="rg --colors='match:fg:yellow'"
 alias k="kubectl"
 alias l='eza --icons --hyperlink --sort=type -la'
 alias list-generations="nixos-rebuild list-generations"
-alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
-alias ls='eza --icons --sort=type -l'
 alias nixRS='/home/rodesp/dotfiles/nixos/nixos-rebuild.sh'
-alias nvoff='/home/rodesp/dotfiles/nixos/nvidia-offload'
 
 # ALIAS FUNCTIONS
+function nix-shell-unstable() {
+  nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz "$@"
+}
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -47,8 +44,21 @@ if [ -z "${IN_NIX_SHELL:-}" ]; then
 	eval "$(fnm env --shell bash)"
 fi
 
-# Enable zoxide
-eval "$(zoxide init bash)"
+# Only run this stuff in interactive shells
+case $- in
+  *i*) # Interactive shell 
+    alias cd='z'
+    alias grep="rg --colors='match:fg:yellow'"
+		alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
+		alias ls='eza --icons --sort=type -l'
+
+		# Enable zoxide
+		eval "$(zoxide init bash)"
+    ;;
+  *)
+  	echo "Non interactive mode" 
+    ;;
+esac
 
 # Auto completion
 source <(kubectl completion bash)
