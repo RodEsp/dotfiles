@@ -67,7 +67,6 @@ in {
     # LSPs formatters
     alejandra # nix language formatter
 
-    biome # toolchain for web dev and JS ecosystem LSP
     docker-language-server
     hyprls # hypr config language lsp
     nil # nix lsp
@@ -80,6 +79,7 @@ in {
     vscode-langservers-extracted
 
     # nixos-unstable branch
+    unstable.biome # toolchain for web dev and JS ecosystem LSP
     unstable.gitui
     unstable.k3d
     unstable.k3s
