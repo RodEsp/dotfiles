@@ -88,7 +88,7 @@ in {
     unstable.zls
 
     # custom
-    (callPackage ./cursor-ide.nix {})
+    (callPackage ./cursor/default.nix {})
   ];
 
   # ===== System Env Vars =====
