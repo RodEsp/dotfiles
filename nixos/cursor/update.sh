@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#!nix-shell -i bash -p curl jq coreutils common-updater-scripts
+#!nix-shell -i bash -p curl jq coreutils
 set -euo pipefail
 
 # Name of your package (must match the attr name in your flake or default.nix)
@@ -55,7 +55,16 @@ echo "New hash: $hash"
 
 # Update derivation in-place
 echo "Updating derivation..."
-update-source-version "$PACKAGE_NAME" "$latestVersion" "$hash" "$downloadUrl"
+default_nix="${SCRIPT_DIR}/default.nix"
+
+# Update version attribute
+sed -i "s/version = \".*\";/version = \"${latestVersion}\";/" "$default_nix"
+
+# Update URL for fetchurl
+sed -i "s|url = \".*\";|url = \"${downloadUrl}\";|" "$default_nix"
+
+# Update hash for fetchurl
+sed -i "s|hash = \".*\";|hash = \"${hash}\";|" "$default_nix"
 
 echo "✅ Updated $PACKAGE_NAME to version $latestVersion"
 

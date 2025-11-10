@@ -4,11 +4,11 @@
   fetchurl,
 }: let
   pname = "cursor";
-  version = "2.0.63";
+  version = "2.0.69";
 
   src = fetchurl {
-    url = "https://downloads.cursor.com/production/505046dcfad2acda3d066e32b7cd8b6e2dc1fdcd/linux/x64/Cursor-2.0.63-x86_64.AppImage";
-    hash = "sha256-7wA1R0GeUSXSViviXAK+mc14CSE2aTgFrbcBKj5dTbI=";
+    url = "https://downloads.cursor.com/production/63fcac100bd5d5749f2a98aa47d65f6eca61db39/linux/x64/Cursor-2.0.69-x86_64.AppImage";
+    hash = "sha256-dwhYqX3/VtutxDSDPoHicM8D/sUvkWRnOjrSOBPiV+s=";
   };
 
   appimageContents = appimageTools.extractType2 {inherit pname version src;};
@@ -52,4 +52,6 @@ in
       platforms = ["x86_64-linux"];
       mainProgram = "cursor";
     };
+
+    passthru.updateScript = ./update.sh;
   }

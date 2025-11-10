@@ -62,7 +62,10 @@ in {
   fileSystems."/run/media/rodesp/WDBLACK_P40_EXT4" = {
     device = "/dev/disk/by-uuid/0f8a5ea4-e05a-4e0b-ab92-ccc5ad11c556";
     fsType = "ext4";
-    options = ["defaults" "nofail"];
+    options = [
+      "defaults"
+      "nofail"
+    ];
   };
 
   # ===== Framework Laptop Specifics =====
@@ -73,8 +76,7 @@ in {
     (import (builtins.fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/bb2009ca185d97813e75736c2b8d1d8bb81bde05.tar.gz";
       sha256 = "sha256:003qcrsq5g5lggfrpq31gcvj82lb065xvr7bpfa8ddsw8x4dnysk";
-    }) {inherit (pkgs) system;})
-    .fwupd;
+    }) {inherit (pkgs) system;}).fwupd;
 
   # ===== Hardware Configuration =====
 
@@ -102,8 +104,24 @@ in {
       enable = true; # To connect to Bambu Lab printer we must disable the firewall because NixOS's firewall does not support SSDP and multicast yet
       # Bambu Lab Printer Ports - https://wiki.bambulab.com/en/general/printer-network-ports
       # UniFi ports - https://help.ui.com/hc/en-us/articles/218506997-Required-Ports-Reference
-      allowedTCPPorts = [22 53 443 1900 6789 8080 8443 8880 8883];
-      allowedUDPPorts = [10001 53 3478 443 123];
+      allowedTCPPorts = [
+        22
+        53
+        443
+        1900
+        6789
+        8080
+        8443
+        8880
+        8883
+      ];
+      allowedUDPPorts = [
+        10001
+        53
+        3478
+        443
+        123
+      ];
     };
   };
 
