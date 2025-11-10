@@ -83,6 +83,8 @@ in {
     unstable.gitui
     unstable.k3d
     unstable.k3s
+    unstable.shellcheck # shellscript/bash linter
+    unstable.shfmt # shellscript/bash formatter
     unstable.smartgit
     unstable.zig
     unstable.zls
