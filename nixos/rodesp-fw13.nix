@@ -319,7 +319,7 @@ in {
     (flameshot.override {enableWlrSupport = true;})
 
     # games
-    (callPackage ./vintagestory.nix {})
+    (callPackage ./vintagestory/default.nix {})
   ];
 
   # ===== System Env Vars =====
