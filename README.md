@@ -31,4 +31,4 @@ To modify and rebuild NixOS I use the [`nixos/nixos-rebuild.sh`](./nixos/nixos-r
 
 ## Licensing
 
-All files, configuration, and source code in this repo are licensed under [LICENSE](/LICENSE) unless otherwise specified within the file itself.
+All files, configuration, and source code in this repo are licensed under the [LICENSE](/LICENSE) unless otherwise specified within the file itself.
