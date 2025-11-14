@@ -28,3 +28,7 @@ in {
 ```
 
 To modify and rebuild NixOS I use the [`nixos/nixos-rebuild.sh`](./nixos/nixos-rebuild.sh) script.
+
+## Licensing
+
+All files, configuration, and source code in this repo are licensed under [LICENSE](/LICENSE) unless otherwise specified within the file itself.
