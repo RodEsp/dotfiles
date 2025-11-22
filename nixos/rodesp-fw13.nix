@@ -149,7 +149,7 @@ in {
     blueman.enable = true;
     fprintd.enable = true; # Enable fingerprint sensor
     hypridle.enable = true;
-    tailscale.enable = true;
+    # tailscale.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
