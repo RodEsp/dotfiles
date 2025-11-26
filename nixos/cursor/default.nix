@@ -4,11 +4,11 @@
   fetchurl,
 }: let
   pname = "cursor";
-  version = "2.1.19";
+  version = "2.1.36";
 
   src = fetchurl {
-    url = "https://downloads.cursor.com/production/39a966b4048ef6b8024b27d4812a50d88de29cc3/linux/x64/Cursor-2.1.19-x86_64.AppImage";
-    hash = "sha256-urZTFthEH3LOvAiKNrstbiivL/AfU6OUwPRxX8J29no=";
+    url = "https://downloads.cursor.com/production/9cd7c8b6cebcbccc1242df211dee45a4b6fe15e4/linux/x64/Cursor-2.1.36-x86_64.AppImage";
+    hash = "sha256-aaprRB2BAaUCHj7m5aGacCBHisjN2pVZ+Ca3u1ifxBA=";
   };
 
   appimageContents = appimageTools.extractType2 {inherit pname version src;};

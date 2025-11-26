@@ -48,7 +48,7 @@ fi
 case $- in
   *i*) # Interactive shell 
     alias cd='z'
-    alias grep="rg --colors='match:fg:yellow'"
+    alias grep="rg -i --colors='match:fg:yellow'"
 		alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 		alias ls='eza --icons --sort=type -l'
 
