@@ -147,6 +147,10 @@ in {
 
   services = {
     blueman.enable = true;
+    espanso = {
+      enable = true;
+      package = pkgs.espanso-wayland;
+    };
     fprintd.enable = true; # Enable fingerprint sensor
     hypridle.enable = true;
     # tailscale.enable = true;
@@ -166,11 +170,11 @@ in {
     '';
     gvfs.enable = true; # GNOME virtual file system - allows things to interact with various filesystems & protocols
     udisks2.enable = true; # daemon that implements D-Bus interfaces used to query & manipulate storage devices
-    # unifi = {
-    # enable = true;
-    # unifiPackage = pkgs.unifi;
-    # mongodbPackage = pkgs.mongodb-ce;
-    # };
+    unifi = {
+      enable = true;
+      unifiPackage = pkgs.unifi;
+      mongodbPackage = pkgs.mongodb-ce;
+    };
     xserver = {
       enable = true;
       videoDrivers = ["amdgpu"];
@@ -257,7 +261,6 @@ in {
     adwaita-icon-theme
     brightnessctl # control screen/device brightness
     clipse # clipboard manager
-    espanso-wayland # text expander
     everforest-gtk-theme
     framework-tool
     glib # system libraries in C, mainly for GNOME stuff
