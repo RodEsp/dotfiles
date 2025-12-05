@@ -52,6 +52,7 @@ in {
   nixpkgs.config.allowUnfree = true; # Allow unfree packages
 
   environment.systemPackages = with pkgs; [
+    cruise # docker TUI
     fnm # nodejs version manager
     gcc # c compiler
     git
@@ -66,7 +67,6 @@ in {
 
     # LSPs formatters
     alejandra # nix language formatter
-
     docker-language-server
     hyprls # hypr config language lsp
     nil # nix lsp
