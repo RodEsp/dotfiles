@@ -175,13 +175,13 @@ in {
       unifiPackage = pkgs.unifi;
       mongodbPackage = pkgs.mongodb-ce;
     };
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
     xserver = {
       enable = true;
       videoDrivers = ["amdgpu"];
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
       xkb = {
         layout = "us,latam";
         variant = "";
@@ -280,7 +280,7 @@ in {
     pciutils # Collection of programs for inspecting and manipulating configuration of PCI devices
     playerctl
     rofi-power-menu
-    rofi-wayland # app launcher/system level menu
+    rofi # app launcher/system level menu
     satty # screenshot/image annotation tool
     signal-desktop
     slack
