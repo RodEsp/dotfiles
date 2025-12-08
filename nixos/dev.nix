@@ -58,11 +58,11 @@ in {
     git
     gnumake
     go
-    jq
+    jq # json command line parser
     kubectl
     lens # k8s IDE/GUI
     protobuf
-    python312
+    python314
     rustup
 
     # LSPs formatters
@@ -81,15 +81,11 @@ in {
     # nixos-unstable branch
     unstable.biome # toolchain for web dev and JS ecosystem LSP
     unstable.gitui
-    unstable.k3d
-    unstable.k3s
     unstable.jjui # tui for jujutsu
     unstable.jujutsu # version control CLI
     unstable.shellcheck # shellscript/bash linter
     unstable.shfmt # shellscript/bash formatter
     unstable.smartgit
-    unstable.zig
-    unstable.zls
 
     # custom
     (callPackage ./cursor/default.nix {})

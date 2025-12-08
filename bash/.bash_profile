@@ -63,3 +63,6 @@ esac
 # Auto completion
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
+
+# uv
+export PATH="/home/rodesp/.config/../bin:$PATH"
