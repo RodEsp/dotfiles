@@ -1,0 +1,16 @@
+[user]
+name = "RodEsp"
+email = "1084688+RodEsp@users.noreply.github.com"
+
+[signing]
+behavior = "own"
+backend = "gpg"
+key = "816707F3E5E0C81E"
+
+[revsets]
+log = 'all()'
+
+[colors]
+# Highlight hunks with background
+"diff removed token" = { fg = "#d88383", underline = false }
+"diff added token" = { fg = "#abbf86", underline = false }

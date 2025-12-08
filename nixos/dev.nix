@@ -83,6 +83,8 @@ in {
     unstable.gitui
     unstable.k3d
     unstable.k3s
+    unstable.jjui # tui for jujutsu
+    unstable.jujutsu # version control CLI
     unstable.shellcheck # shellscript/bash linter
     unstable.shfmt # shellscript/bash formatter
     unstable.smartgit
