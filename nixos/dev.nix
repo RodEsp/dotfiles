@@ -79,10 +79,12 @@ in {
     vscode-langservers-extracted
 
     # nixos-unstable branch
+    unstable.atac # http client tui
     unstable.biome # toolchain for web dev and JS ecosystem LSP
     unstable.gitui
     unstable.jjui # tui for jujutsu
     unstable.jujutsu # version control CLI
+    unstable.opencode # terminal AI coding agent (opensource)
     unstable.shellcheck # shellscript/bash linter
     unstable.shfmt # shellscript/bash formatter
     unstable.smartgit
