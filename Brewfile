@@ -15,6 +15,8 @@ brew "marksman" # LSP for markdown
 brew "ripgrep" # grep but better and written in Rust
 brew "starship" # Lightweight multiplatform terminal prompt
 brew "stow" # a symlink farm manager
+brew "jj" # version control system
+brew "jjui" # TUI for jj
 cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
 cask "flameshot" # screenshot tool
@@ -22,7 +24,6 @@ cask "font-fira-code-nerd-font" # font for coding w/ ligatures
 cask "ghostty" # Terminal
 cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
-cask "sublime-text"
 
 # for yazi
 brew "fd" # for file searching
@@ -37,17 +38,5 @@ brew "zoxide" # for historical directories navigation, requires fzf
 cask "font-symbols-only-nerd-font" # for cool symbols
 brew "yazi" # TUI file browser
 
-# Junction
+# Derapi
 brew "awscli"
-brew "buf"
-brew "fnm"
-brew "git-lfs"
-brew "grpcurl"
-brew "helm"
-brew "juicefs"
-brew "k3d"
-brew "postgresql@17", restart_service: :changed, link: true
-brew "protobuf"
-brew "sqlfluff"
-brew "sqlx-cli"
-cask "orbstack"
