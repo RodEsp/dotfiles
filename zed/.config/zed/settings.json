@@ -31,7 +31,7 @@
   "helix_mode": true,
   "agent": {
     "dock": "right",
-    "default_profile": "ask",
+    "default_profile": "write",
     "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
@@ -50,9 +50,9 @@
     "play_sound_when_agent_done": "always",
     "default_model": {
       "effort": "high",
-      "enable_thinking": false,
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "gemini-3.1-pro-preview",
+      "model": "claude-sonnet-4.6",
     },
     "favorite_models": [
       {
@@ -81,7 +81,7 @@
     "font_family": "FiraCode Nerd Font Mono",
   },
   "git": {
-    "git_gutter": "hide",
+    "git_gutter": "tracked_files",
     "enable_status": false,
     "inline_blame": {
       "show_commit_summary": true,

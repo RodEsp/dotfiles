@@ -45,7 +45,7 @@ auto-format = true
 [[language]]
 name = "json"
 language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-formatter = { command = "biome", args = ["format", "--stdin-file-path=test.json", "--indent-style=space", "--indent-width=2"] } # Example formatter command
+formatter = { command = "biome", args = ["format", "--stdin-file-path=test.json", "--indent-style=space", "--indent-width=2", "--format-with-errors=true"] } # Example formatter command
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 

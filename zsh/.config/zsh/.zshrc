@@ -127,8 +127,10 @@ _mise_local_autoload() {
             export __MISE_ORIG_PATH="$PATH"
         fi
         # Dynamically load the project environment without affecting global tools
+        echo "mise detected, enabling hooks"
         eval "$(mise hook-env -s zsh)"
     elif [[ -n "$__MISE_ORIG_PATH" ]]; then
+        echo "restoring PATH..."
         # Restore your original system PATH when leaving a mise project
         export PATH="$__MISE_ORIG_PATH"
         unset __MISE_ORIG_PATH

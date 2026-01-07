@@ -1,86 +1,97 @@
 {
-	"$schema": "https://opencode.ai/config.json",
-	"permission": {
-		"codesearch": "allow",
-		"doom_loop": "ask",
-		"external_directory": "ask",
-		"glob": "allow",
-		"grep": "allow",
-		"head": "allow",
-		"list": "allow",
-		"lsp": "allow",
-		"read": {
-			"*": "allow",
-			"*.env": "deny",
-			"*.env.*": "deny",
-			"*.env.example": "allow"
-		},
-		"task": {
-			"*": "ask",
-			"explore": "allow"
-		},
-		"todoread": "allow",
-		"todowrite": "allow",
-		"websearch": "allow",
-		"bash": {
-			"cat": "ask",
-			"echo": "allow",
-			"find": "allow",
-			"git": "ask",
-			"golangci-lint": "allow",
-			"grep": "allow",
-			"head": "allow",
-			"jj": "ask",
-			"ls": "allow",
-			"rg": "allow",
-			"sed": "ask",
-			"sort": "allow",
-			"tail": "allow",
-			"tree": "allow"
-		},
-		"skill": {
-			"caveman": "allow"
-		}
-	},
-	"agent": {
-		"ask": {
-			"description": "Answers general questions without modifying your code.",
-			"prompt": "You are an experienced but humble software engineer that can answer questions but does not modify code. You automatically use the webfetch tool to search the internet for relevant information, and also make use of the @explore subagent to understand the codebase deeply. Also, you NEVER modify or write files, no matter what. If you want to modify or write a file, you ALWAYS ask the user to do it for you.",
-			"tools": {
-				"write": false,
-				"edit": false
-			}
-		},
-		"code-reviewer": {
-			"description": "Reviews code for best practices and potential issues",
-			"prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
-			"tools": {
-				"write": false,
-				"edit": false
-			}
-		}
-	},
-	"mcp": {
-		"jj": {
-			"type": "local",
-			"command": ["npx", "-y", "jj-mcp-server"],
-			"enabled": true,
-			"environment": {
-				"MY_ENV_VAR": "my_env_var_value"
-			}
-		},
-		"github": {
-			"type": "remote",
-			"url": "https://api.githubcopilot.com/mcp/",
-			"headers": {
-				"Authorization": "Bearer {env:GH_OC_PAT}"
-			}
-		}
-	},
-	"plugin": ["@datadog/opencode-plugin"],
-	"compaction": {
-		"auto": true,
-		"prune": false,
-		"reserved": 10000
-	}
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "codesearch": "allow",
+    "doom_loop": "ask",
+    "external_directory": "ask",
+    "glob": "allow",
+    "grep": "allow",
+    "head": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "task": {
+      "*": "ask",
+      "explore": "allow"
+    },
+    "todoread": "allow",
+    "todowrite": "allow",
+    "websearch": "allow",
+    "bash": {
+      "cat": "ask",
+      "echo": "allow",
+      "find": "allow",
+      "git": "ask",
+      "golangci-lint": "allow",
+      "grep": "allow",
+      "head": "allow",
+      "jj": "ask",
+      "ls": "allow",
+      "rg": "allow",
+      "sed": "ask",
+      "sort": "allow",
+      "tail": "allow",
+      "tree": "allow"
+    },
+    "skill": {
+      "caveman": "allow"
+    }
+  },
+  "agent": {
+    "ask": {
+      "description": "Answers general questions without modifying your code.",
+      "prompt": "You are an experienced but humble software engineer that can answer questions but does not modify code. You automatically use the webfetch tool to search the internet for relevant information, and also make use of the @explore subagent to understand the codebase deeply. Also, you NEVER modify or write files, no matter what. If you want to modify or write a file, you ALWAYS ask the user to do it for you.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    },
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "tools": {
+        "write": false,
+        "edit": false
+      }
+    }
+  },
+  "mcp": {
+    "jj": {
+      "type": "local",
+      "command": ["npx", "-y", "jj-mcp-server"],
+      "enabled": true,
+      "environment": {
+        "MY_ENV_VAR": "my_env_var_value"
+      }
+    }
+  },
+  "plugin": ["opencode-anthropic-context-1m"],
+  "provider": {
+    "anthropic": {
+      "models": {
+        "claude-opus-4-6": {
+          "limit": { "context": 1000000, "output": 128000 }
+        },
+        "claude-sonnet-4-6": {
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-sonnet-4-5": {
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-sonnet-4-20250514": {
+          "limit": { "context": 1000000, "output": 64000 }
+        }
+      }
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "prune": false,
+    "reserved": 10000
+  }
 }

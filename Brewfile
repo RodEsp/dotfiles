@@ -6,6 +6,7 @@ brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "bellicose100xp/tap/jiq" # interactive jq
 brew "biome" # JS linter & formatter
 brew "btop" # System resource monitor
+brew "cargo-binstall"
 brew "dprint" # Auto-formats source code based on the specified plugins.
 brew "dyff" # Dif tool for yaml and sometimes json
 brew "eza" # better ls
