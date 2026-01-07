@@ -51,9 +51,16 @@ brew "zoxide" # for historical directories navigation, requires fzf
 cask "font-symbols-only-nerd-font" # for cool symbols
 brew "yazi" # TUI file browser
 
+# fzf tab completion
+brew "gawk"
+brew "grep"
+brew "gnu-sed"
+brew "coreutils"
+
 # Derapi
 brew "awscli"
 brew "gh"
 brew "mise"
+brew "restish"
 cask "notion"
 

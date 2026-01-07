@@ -76,6 +76,10 @@ autoload -Uz compinit
 compinit
 
 eval "$(uv generate-shell-completion zsh)"
+source <(restish completion zsh); compdef _restish restish
+
+source ~/.config/zsh/fzf-zsh-completion.sh
+bindkey '^I' fzf_completion
 
 # Enable shift+arrow-key selection in terminal
 source ~/git/zsh-shift-select/zsh-shift-select.plugin.zsh
