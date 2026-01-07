@@ -14,3 +14,12 @@ log = 'all()'
 # Highlight hunks with background
 "diff removed token" = { fg = "#d88383", underline = false }
 "diff added token" = { fg = "#abbf86", underline = false }
+
+[ui]
+graph.style = "ascii-large"
+
+[template-aliases]
+# See https://docs.jj-vcs.dev/latest/templates/#signature-type for possible values
+'format_short_signature(signature)' = 'signature.name()'
+# See https://docs.jj-vcs.dev/latest/templates/#timestamp-type for possible values
+'format_timestamp(timestamp)' = 'timestamp.format("%a %b,%-e %k:%M:%S")'

@@ -10,13 +10,15 @@ brew "gitui" # TUI for git
 brew "glow" # TUI markdown viewer
 brew "gnupg" # https://www.gnupg.org/
 brew "helix" # Post-modern text editor for the terminal
+brew "jj" # version control system
+brew "jjui" # TUI for jj
 brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
 brew "ripgrep" # grep but better and written in Rust
 brew "starship" # Lightweight multiplatform terminal prompt
 brew "stow" # a symlink farm manager
-brew "jj" # version control system
-brew "jjui" # TUI for jj
+brew "uv" # python version & package manager
+cask "affine" # mind mapping & note taking tool
 cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
 cask "flameshot" # screenshot tool
@@ -24,6 +26,8 @@ cask "font-fira-code-nerd-font" # font for coding w/ ligatures
 cask "ghostty" # Terminal
 cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
+cask "rectangle" # window manger for mac
+cask "slack"
 
 # for yazi
 brew "fd" # for file searching
@@ -40,3 +44,5 @@ brew "yazi" # TUI file browser
 
 # Derapi
 brew "awscli"
+brew "mise"
+cask "notion"

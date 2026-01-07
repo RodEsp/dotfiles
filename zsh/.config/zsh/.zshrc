@@ -1,5 +1,5 @@
 # Set PATH
-export PATH="$PATH:/Users/rodesp/git/gwctl/bin:/Users/rodesp/git/cloud/target/release:/Users/rodesp/.local/bin:/Library/Developer/CommandLineTools/usr/bin"
+export PATH="$PATH:/Users/rodesp/.local/bin:/Library/Developer/CommandLineTools/usr/bin"
 
 # zsh completion for .files
 setopt globdots
@@ -23,7 +23,6 @@ alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'
 alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias ls='eza --icons --sort=type -l'
-alias psql_log="cd /opt/homebrew/var/postgresql@17/pg_log"
 
 # ALIAS FUNCTIONS
 function y() {
@@ -56,27 +55,17 @@ eval "$(zoxide init zsh)"
 # Enable fnm
 eval "$(fnm env --shell zsh)"
 
-# added by orbstack: command-line tools and integration
-# this won't be added again if you remove it.
-source ~/.orbstack/shell/init.zsh 2>/dev/null || :
-
 # Completions
 fpath+=($ZDOTDIR/completions)
 
 rustup completions zsh > $ZDOTDIR/completions/_rustup
-rustup completions zsh cargo > $ZDOTDIR/completions//_cargo
+rustup completions zsh cargo > $ZDOTDIR/completions/_cargo
  
 autoload -Uz compinit
 compinit
 
-source <(kubectl completion zsh)
-source <(gwctl completion zsh)
-source <(k3d completion zsh)
-source <(jctl autocomplete zsh)
-eval "$(uv generate-shell-completion zsh)"
-
-# Print important TODOs
-todui ls --format json-pretty | jq '.[] | select(.group=="important") | .name' | tr -d '"'
+# eval "$(uv generate-shell-completion zsh)"
 
 # Enable shift+arrow-key selection in terminal
 source ~/git/zsh-shift-select/zsh-shift-select.plugin.zsh
+eval "$(mise activate zsh)"

@@ -1,6 +1,6 @@
 [ui.colors]
-"selected" = { bg = "#000000" }
-"confirmation selected" = { bg = "#000000" }
-"revisions details selected" = { bg = "#000000" }
-"revset completion selected" = { bg = "#000000" }
-"menu selected" = { bg = "#000000" }
+"selected" = { bg = "#151515" }
+"confirmation selected" = { bg = "#151515" }
+"revisions details selected" = { bg = "#151515" }
+"revset completion selected" = { bg = "#151515" }
+"menu selected" = { bg = "#151515" }
