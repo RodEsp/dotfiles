@@ -2,7 +2,7 @@
     cmdbar_bg: Some("Green"),
     cmdbar_extra_lines_bg: Some("Cyan"),
     command_fg: Some("Black"),
-    selection_bg: Some("#000000"),
+    selection_bg: Some("#202020"),
     selection_fg: Some("Black"),
     branch_fg: Some("Reset")
 )
