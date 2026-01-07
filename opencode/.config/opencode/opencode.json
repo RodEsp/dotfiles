@@ -70,9 +70,9 @@
       }
     }
   },
-  "plugin": ["opencode-anthropic-context-1m"],
+  "plugin": ["file://~/.config/opencode/plugins/copilot-1m.ts"],
   "provider": {
-    "anthropic": {
+    "github-copilot": {
       "models": {
         "claude-opus-4-6": {
           "limit": { "context": 1000000, "output": 128000 }
