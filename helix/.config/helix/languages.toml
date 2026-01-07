@@ -24,6 +24,13 @@ provideFormatter = true
 display-messages = true
 
 [[language]]
+name = "html"
+file-types = ["html", "htm", "shtml", "xhtml", "xht", "jsp", "asp", "aspx", "jshtm", "volt", "rhtml", "cshtml"]
+language-servers = [ "superhtml" ]
+formatter = { command ="superhtml" , args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
 name = "json"
 language-servers = ["biome"]
 # formatter = { command = "biome", args = ["format", "%s", "--indent-style=space", "--indent-width=2"] } # Example formatter command
@@ -73,6 +80,12 @@ language-servers = [
   "biome",
 ]
 indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+auto-format = true
 
 [[language]]
 name = "toml"

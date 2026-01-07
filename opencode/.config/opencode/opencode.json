@@ -7,6 +7,7 @@
 		"external_directory": "ask",
 		"glob": "allow",
 		"grep": "allow",
+		"head": "allow",
 		"list": "allow",
 		"lsp": "allow",
 		"read": {
@@ -20,21 +21,31 @@
 		"todowrite": "allow",
 		"websearch": "allow",
 		"bash": {
-			"*": "ask",
-			"head": "allow",
+			"cat": "ask",
+			"echo": "allow",
 			"find": "allow",
 			"git": "ask",
 			"golangci-lint": "allow",
 			"grep": "allow",
+			"head": "allow",
 			"jj": "ask",
 			"ls": "allow",
 			"rg": "allow",
+			"sed": "ask",
 			"sort": "allow",
 			"tail": "allow",
 			"tree": "allow"
 		}
 	},
 	"agent": {
+		"ask": {
+			"description": "Answers general questions without modifying your code.",
+			"prompt": "You are an experienced but humble software engineer that can answer questions but does not modify code. You automatically use the webfetch tool to search the internet for relevant information, and also make use of the @explore subagent to understand the codebase deeply. Also, you NEVER modify or write files, no matter what. If you want to modify or write a file, you ALWAYS ask the user to do it for you.",
+			"tools": {
+				"write": false,
+				"edit": false
+			}
+		},
 		"code-reviewer": {
 			"description": "Reviews code for best practices and potential issues",
 			"prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",

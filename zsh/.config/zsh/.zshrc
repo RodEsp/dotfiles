@@ -1,8 +1,14 @@
 # Set PATH
 export PATH="$PATH:/Users/rodesp/.local/bin:/Library/Developer/CommandLineTools/usr/bin"
 
-# zsh completion for .files
-setopt globdots
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt globdots # zsh completion for .files
+setopt APPEND_HISTORY # Append history to the history file, don't overwrite it
+setopt SHARE_HISTORY # Share history between sessions
+setopt INC_APPEND_HISTORY # Append to history file as soon as command is ran (hit enter)
+setopt HIST_IGNORE_DUPS # ignore running duplicate commands
+setopt HIST_IGNORE_ALL_DUPS # remove history lines that are dups
 
 # ENV VARS
 source ~/.env

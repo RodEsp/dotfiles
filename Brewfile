@@ -1,10 +1,12 @@
 # Personal
 brew "anomalyco/tap/opencode" # AI agent TUI
+brew "asciinema"
 brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "biome" # JS linter & formatter
 brew "btop" # System resource monitor
 brew "dprint" # Auto-formats source code based on the specified plugins.
+brew "dyff" # Dif tool for yaml and sometimes json
 brew "eza" # better ls
 brew "fnm" # Node.js manager written in Rust
 brew "gitui" # TUI for git
@@ -18,7 +20,9 @@ brew "marksman" # LSP for markdown
 brew "ripgrep" # grep but better and written in Rust
 brew "starship" # Lightweight multiplatform terminal prompt
 brew "stow" # a symlink farm manager
+brew "superhtml" # HTML LSP
 brew "uv" # python version & package manager
+brew "witr" # Why is this running?
 cask "affine" # mind mapping & note taking tool
 cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
@@ -27,8 +31,10 @@ cask "font-fira-code-nerd-font" # font for coding w/ ligatures
 cask "ghostty" # Terminal
 cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
+cask "obs"
 cask "rectangle" # window manger for mac
 cask "slack"
+cask "zed"
 
 # for yazi
 brew "fd" # for file searching
@@ -45,5 +51,6 @@ brew "yazi" # TUI file browser
 
 # Derapi
 brew "awscli"
+brew "gh"
 brew "mise"
 cask "notion"
