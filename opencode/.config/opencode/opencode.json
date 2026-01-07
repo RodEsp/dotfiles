@@ -2,19 +2,36 @@
 	"$schema": "https://opencode.ai/config.json",
 	"theme": "everforest",
 	"permission": {
-		"find": "allow",
-		"git": "ask",
-		"golangci-lint": "allow",
+		"codesearch": "allow",
+		"doom_loop": "allow",
+		"external_directory": "ask",
+		"glob": "allow",
 		"grep": "allow",
-		"head": "allow",
-		"jj": "ask",
-		"ls": "allow",
-		"rg": "allow",
-		"sort": "allow",
-		"tail": "allow",
-		"tree": "allow",
+		"list": "allow",
+		"lsp": "allow",
+		"read": {
+			"*": "allow",
+			"*.env": "deny",
+			"*.env.*": "deny",
+			"*.env.example": "allow"
+		},
+		"task": "ask",
+		"todoread": "allow",
+		"todowrite": "allow",
+		"websearch": "allow",
 		"bash": {
-			"*": "ask"
+			"*": "ask",
+			"head": "allow",
+			"find": "allow",
+			"git": "ask",
+			"golangci-lint": "allow",
+			"grep": "allow",
+			"jj": "ask",
+			"ls": "allow",
+			"rg": "allow",
+			"sort": "allow",
+			"tail": "allow",
+			"tree": "allow"
 		}
 	},
 	"agent": {
