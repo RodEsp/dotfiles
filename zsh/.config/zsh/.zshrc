@@ -77,6 +77,7 @@ compinit
 
 eval "$(uv generate-shell-completion zsh)"
 source <(restish completion zsh); compdef _restish restish
+source <(COMPLETE=zsh jj)
 
 source ~/.config/zsh/fzf-zsh-completion.sh
 bindkey '^I' fzf_completion

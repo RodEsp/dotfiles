@@ -78,6 +78,7 @@ bind -x '"\t": fzf_bash_completion'
 
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
+source <(COMPLETE=bash jj)
 
 # uv
 export PATH="/home/rodesp/.config/../bin:$PATH"
