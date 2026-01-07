@@ -1,6 +1,46 @@
-[ui.colors]
-"selected" = { bg = "#202020" }
-"confirmation selected" = { bg = "#202020" }
-"revisions details selected" = { bg = "#202020" }
-"revset completion selected" = { bg = "#202020" }
-"menu selected" = { bg = "#202020" }
+[[actions]]
+lua = """
+  jj_async("util", "exec", "--", "jj-hp", "push")
+  revisions.refresh()
+"""
+name = "jj-hp-push"
+
+[[actions]]
+lua = """
+  jj_async("util", "exec", "--", "jj-hp", "push", "-r", context.commit_id())
+  revisions.refresh()
+"""
+name = "jj-hp-push-selected"
+
+[[bindings]]
+action = "jj-hp-push"
+desc = "jj-hp push"
+scope = "revisions"
+seq = [
+    "x",
+    "p",
+]
+
+[[bindings]]
+action = "jj-hp-push-selected"
+desc = "jj-hp push selected bookmark(s)"
+scope = "revisions"
+seq = [
+    "x",
+    "P",
+]
+
+[ui.colors."confirmation selected"]
+bg = "#202020"
+
+[ui.colors."menu selected"]
+bg = "#202020"
+
+[ui.colors."revisions details selected"]
+bg = "#202020"
+
+[ui.colors."revset completion selected"]
+bg = "#202020"
+
+[ui.colors.selected]
+bg = "#202020"

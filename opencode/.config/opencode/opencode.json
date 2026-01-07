@@ -37,6 +37,9 @@
 			"sort": "allow",
 			"tail": "allow",
 			"tree": "allow"
+		},
+		"skill": {
+			"caveman": "allow"
 		}
 	},
 	"agent": {
@@ -65,6 +68,19 @@
 			"environment": {
 				"MY_ENV_VAR": "my_env_var_value"
 			}
+		},
+		"github": {
+			"type": "remote",
+			"url": "https://api.githubcopilot.com/mcp/",
+			"headers": {
+				"Authorization": "Bearer {env:GH_OC_PAT}"
+			}
 		}
+	},
+	"plugin": ["@datadog/opencode-plugin"],
+	"compaction": {
+		"auto": true,
+		"prune": false,
+		"reserved": 10000
 	}
 }

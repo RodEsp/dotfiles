@@ -10,6 +10,10 @@ key = "816707F3E5E0C81E"
 [revsets]
 log = 'all()'
 
+[revset-aliases]
+# Make all remote bookmarks (pushed changes) immutable
+'immutable_heads()' = "builtin_immutable_heads() | remote_bookmarks()"
+
 [colors]
 # Highlight hunks with background
 "diff removed token" = { fg = "#d88383", underline = false }
@@ -18,9 +22,16 @@ log = 'all()'
 [ui]
 default-command = ["log", "-n", "10"]
 graph.style = "ascii-large"
+merge-editor = "smerge"
 
 [template-aliases]
 # See https://docs.jj-vcs.dev/latest/templates/#signature-type for possible values
 'format_short_signature(signature)' = 'signature.name()'
 # See https://docs.jj-vcs.dev/latest/templates/#timestamp-type for possible values
 'format_timestamp(timestamp)' = 'timestamp.format("%a %b,%-e %k:%M:%S")'
+
+[aliases]
+push = ["util", "exec", "--", "jj-hp", "push"]
+
+[jj-hooks]
+advance-bookmarks = true

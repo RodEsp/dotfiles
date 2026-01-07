@@ -32,6 +32,7 @@
   "agent": {
     "dock": "right",
     "default_profile": "ask",
+    "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
         "terminal": {
@@ -48,8 +49,10 @@
     },
     "play_sound_when_agent_done": "always",
     "default_model": {
+      "effort": "high",
+      "enable_thinking": false,
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "gemini-3.1-pro-preview",
     },
     "favorite_models": [
       {
@@ -60,6 +63,8 @@
     "model_parameters": [],
   },
   "edit_predictions": {
+    "disabled_globs": ["*.env"],
+    "mode": "subtle",
     "provider": "copilot",
     "copilot": {
       "enable_next_edit_suggestions": false,
@@ -76,7 +81,10 @@
     "font_family": "FiraCode Nerd Font Mono",
   },
   "git": {
+    "git_gutter": "hide",
+    "enable_status": false,
     "inline_blame": {
+      "show_commit_summary": true,
       "enabled": true,
     },
   },
