@@ -22,6 +22,7 @@ alias cd='z'
 alias cdi='zi'
 alias cr='cargo run -q --'
 alias cx='cargo xtask'
+alias derapi="restish derapi"
 alias ff='fastfetch'
 alias grep="rg --colors='match:fg:yellow'"
 alias j="jctl"
@@ -54,8 +55,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Enable starship prompt
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-# eval "$(starship init zsh)"
-eval -- "$(PATH= /Users/rodesp/git/starship/target/debug/starship init zsh --print-full-init)"
+eval "$(starship init zsh)"
 
 # Enable zoxide
 eval "$(zoxide init zsh)"

@@ -7,6 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
   "disable_ai": false,
   "inlay_hints": {
     "enabled": false,
@@ -20,22 +30,23 @@
   },
   "helix_mode": true,
   "agent": {
+    "dock": "right",
     "default_profile": "ask",
     "tool_permissions": {
       "tools": {
         "terminal": {
           "always_allow": [
             {
-              "pattern": "^ls\\s"
-            }
-          ]
+              "pattern": "^ls\\s",
+            },
+          ],
         },
         "fetch": {
-          "default": "allow"
-        }
-      }
+          "default": "allow",
+        },
+      },
     },
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": "always",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4.6",
@@ -71,6 +82,7 @@
   },
   "base_keymap": "VSCode",
   "git_panel": {
+    "dock": "left",
     "button": false,
   },
   "autosave": "on_focus_change",

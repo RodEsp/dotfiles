@@ -3,6 +3,7 @@ brew "anomalyco/tap/opencode" # AI agent TUI
 brew "asciinema"
 brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
+brew "bellicose100xp/tap/jiq" # interactive jq
 brew "biome" # JS linter & formatter
 brew "btop" # System resource monitor
 brew "dprint" # Auto-formats source code based on the specified plugins.
@@ -15,6 +16,7 @@ brew "gnupg" # https://www.gnupg.org/
 brew "helix" # Post-modern text editor for the terminal
 brew "jj" # version control system
 brew "jjui" # TUI for jj
+brew "jq" # command line json processor
 brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
 brew "ripgrep" # grep but better and written in Rust
@@ -24,6 +26,7 @@ brew "superhtml" # HTML LSP
 brew "uv" # python version & package manager
 brew "witr" # Why is this running?
 brew "xan" # CSV file viewer & processor
+brew "yq" # command line yaml processor
 cask "affine" # mind mapping & note taking tool
 cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
