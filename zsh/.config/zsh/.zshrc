@@ -83,7 +83,6 @@ bindkey '^I' fzf_completion
 
 # Enable shift+arrow-key selection in terminal
 source ~/git/zsh-shift-select/zsh-shift-select.plugin.zsh
-eval "$(mise activate zsh)"
 
 #compdef opencode
 ###-begin-opencode-completions-###
@@ -112,4 +111,30 @@ else
   compdef _opencode_yargs_completions opencode
 fi
 ###-end-opencode-completions-###
+
+# AWS profile picker
+pick-aws-profile() {
+  AWS_PROFILE="$(grep profile "$HOME/.aws/config" | cut -d' ' -f2 | sed 's/\]//g' | fzf)"
+  export AWS_PROFILE
+}
+
+# Automatically activate/deactivate mise when changing directories
+_mise_local_autoload() {
+    # Check if a mise configuration file exists in the current directory tree
+    if [[ -f .mise.toml || -f mise.toml || -f .tool-versions ]]; then
+        if [[ -z "$__MISE_ORIG_PATH" ]]; then
+            export __MISE_ORIG_PATH="$PATH"
+        fi
+        # Dynamically load the project environment without affecting global tools
+        eval "$(mise hook-env -s zsh)"
+    elif [[ -n "$__MISE_ORIG_PATH" ]]; then
+        # Restore your original system PATH when leaving a mise project
+        export PATH="$__MISE_ORIG_PATH"
+        unset __MISE_ORIG_PATH
+    fi
+}
+
+# Register the function to run on shell startup and every directory change
+add-zsh-hook chpwd _mise_local_autoload
+_mise_local_autoload
 
