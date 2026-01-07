@@ -43,6 +43,10 @@ matches:
   - trigger: ":CENT"
     replace: "¢"
 
+  # Delta symbol
+  - trigger: ":DELTA"
+    replace: "Δ"
+
   # PR template
   - trigger: ":ghpr"
     replace: "What does this PR do?\n---\n"
