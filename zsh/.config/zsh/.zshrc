@@ -30,6 +30,19 @@ alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'
 alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias ls='eza --icons --sort=type -l'
+tn() {
+    local exit_code=$?
+    local cmd=${__tn_last_cmd%%' && tn'}
+    cmd=${cmd%%'; tn'}
+    cmd=${cmd%%'| tn'}
+    if [ $exit_code -eq 0 ]; then
+        terminal-notifier -title "$cmd" -message "Succeeded" -activate "com.mitchellh.ghostty"
+    else
+        terminal-notifier -title "$cmd" -message "Failed (exit $exit_code)" -activate "com.mitchellh.ghostty"
+    fi
+}
+
+preexec() { __tn_last_cmd=$1 }
 alias tf='terraform'
 
 # ALIAS FUNCTIONS
@@ -128,7 +141,8 @@ _mise_local_autoload() {
         fi
         # Dynamically load the project environment without affecting global tools
         echo "mise detected, enabling hooks"
-        eval "$(mise hook-env -s zsh)"
+        # eval "$(mise hook-env -s zsh)"
+        source <(mise activate zsh)
     elif [[ -n "$__MISE_ORIG_PATH" ]]; then
         echo "restoring PATH..."
         # Restore your original system PATH when leaving a mise project

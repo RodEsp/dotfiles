@@ -24,6 +24,7 @@ brew "ripgrep" # grep but better and written in Rust
 brew "starship" # Lightweight multiplatform terminal prompt
 brew "stow" # a symlink farm manager
 brew "superhtml" # HTML LSP
+brew "terminal-notifier" 
 brew "uv" # python version & package manager
 brew "witr" # Why is this running?
 brew "xan" # CSV file viewer & processor
