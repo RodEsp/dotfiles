@@ -1,4 +1,5 @@
 # Personal
+brew "anomalyco/tap/opencode" # AI agent TUI
 brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "biome" # JS linter & formatter
