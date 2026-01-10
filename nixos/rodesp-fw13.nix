@@ -292,9 +292,9 @@ in {
     glib # system libraries in C, mainly for GNOME stuff
     google-chrome
     grim # screenshot tool (grabs images from wayland compositors)
-    # hyprgui # GUI for configuring Hyprland -- Was removed in 25.05
     hyprpicker # wlroot-compatible wayland screen color picker
     hyprpolkitagent # a polkit authentication daemon. It is required for GUI applications to be able to request elevated privileges.
+    hyprviz # GUI for configuring Hyprland
     legcord # Discord client
     libnotify # notification library
     libreoffice
@@ -305,8 +305,8 @@ in {
     pavucontrol # sound/volume device controller
     pciutils # Collection of programs for inspecting and manipulating configuration of PCI devices
     playerctl
-    rofi-power-menu
     rofi # app launcher/system level menu
+    rofi-power-menu
     satty # screenshot/image annotation tool
     signal-desktop
     slack
@@ -319,6 +319,8 @@ in {
     zulip # IM client
 
     # terminal related
+    asciinema_3 # terminal session recorder
+    dyff # Diff tool for yaml and sometimes JSON
     bat # better cat
     btop # tui system resource monitor
     blesh # Better BASH autocomplete
@@ -342,6 +344,7 @@ in {
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
+    unstable.witr # Why is this runing? CLI to find out why processes are running
 
     # overrides
     (flameshot.override {enableWlrSupport = true;})

@@ -74,8 +74,8 @@ in {
     python312Packages.python-lsp-ruff
     python312Packages.python-lsp-server
     ruff # python linter & formatter
+    superhtml # HTML LSP
     taplo # TOML toolkit (formatter)
-    # typescript-language-server
     vscode-langservers-extracted
 
     # nixos-unstable branch
