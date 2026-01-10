@@ -59,7 +59,7 @@ stdenv.mkDerivation rec {
       exec = "vintagestory";
       icon = "vintagestory";
       comment = "Innovate and explore in a sandbox world";
-      categories = ["Game"];
+      categories = [ "Game" ];
     })
 
     (makeDesktopItem {
@@ -67,7 +67,7 @@ stdenv.mkDerivation rec {
       desktopName = "Vintage Story 1-click Mod Install Handler";
       comment = "Handler for vintagestorymodinstall:// URI scheme";
       exec = "vintagestory -i %u";
-      mimeTypes = ["x-scheme-handler/vintagestorymodinstall"];
+      mimeTypes = [ "x-scheme-handler/vintagestorymodinstall" ];
       noDisplay = true;
       terminal = false;
     })
@@ -105,7 +105,7 @@ stdenv.mkDerivation rec {
     description = "In-development indie sandbox game about innovation and exploration";
     homepage = "https://www.vintagestory.at/";
     license = lib.licenses.unfree;
-    sourceProvenance = [lib.sourceTypes.binaryBytecode];
+    sourceProvenance = [ lib.sourceTypes.binaryBytecode ];
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [
       rodesp

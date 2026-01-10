@@ -1,33 +1,45 @@
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
-[[language]]
-name = "rust"
-auto-format = true
-
-[language-server.nil]
-command = "nil"
-args = ["--stdio"]
-
-[[language]]
-name = "nix"
-file-types = ["nix"]
-formatter = { command = "alejandra" }
-language-servers = ["nil"]
-auto-format = true
-indent = { tab-width = 2, unit = "  " }
-
 [language-server.biome]
 command = "biome"
 args = ["lsp-proxy"]
 provideFormatter = true
 display-messages = true
 
+[language-server.hyprls]
+command = "hyprls"
+
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "nix"
+file-types = ["nix"]
+formatter = { command = "alejandra" }
+language-servers = ["nixd"]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
 [[language]]
 name = "html"
-file-types = ["html", "htm", "shtml", "xhtml", "xht", "jsp", "asp", "aspx", "jshtm", "volt", "rhtml", "cshtml"]
-language-servers = [ "superhtml" ]
-formatter = { command ="superhtml" , args = ["fmt", "-"] }
+file-types = [
+  "html",
+  "htm",
+  "shtml",
+  "xhtml",
+  "xht",
+  "jsp",
+  "asp",
+  "aspx",
+  "jshtm",
+  "volt",
+  "rhtml",
+  "cshtml"
+]
+language-servers = ["superhtml"]
+formatter = { command = "superhtml", args = ["fmt", "-"] }
 auto-format = true
 
 [[language]]
@@ -84,7 +96,10 @@ indent = { tab-width = 2, unit = "  " }
 [[language]]
 name = "python"
 roots = ["pyproject.toml"]
-formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+formatter = { command = "bash", args = [
+  "-c",
+  "ruff check --fix - | ruff format -"
+] }
 auto-format = true
 
 [[language]]
@@ -96,9 +111,6 @@ indent = { tab-width = 2, unit = "  " }
 name = "dockerfile"
 language-servers = ["docker-langserver"]
 indent = { tab-width = 2, unit = "  " }
-
-[language-server.hyprls]
-command = "hyprls"
 
 [[language]]
 name = "hyprlang"
@@ -115,4 +127,3 @@ formatter = { command = "dprint", args = [
   "md",
 ] }
 indent = { tab-width = 2, unit = "  " }
-

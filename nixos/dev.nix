@@ -2,8 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  _config,
-  _lib,
+  # config,
+  # lib,
   pkgs,
   ...
 }: let
@@ -14,11 +14,11 @@
         allowUnfree = true;
       };
     };
-  _master = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master") {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  # master = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master") {
+  # config = {
+  # allowUnfree = true;
+  # };
+  # };
 in {
   # ===== Docker =====
   virtualisation.docker.enable = true;
@@ -69,7 +69,7 @@ in {
     alejandra # nix language formatter
     docker-language-server
     hyprls # hypr config language lsp
-    nil # nix lsp
+    nixd # nix lsp
     nixfmt-rfc-style # official formatter for Nix code
     python312Packages.python-lsp-ruff
     python312Packages.python-lsp-server

@@ -60,4 +60,14 @@
     "light": "One Light",
     "dark": "Everforest Blurred",
   },
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "alejandra", // or "nixfmt"
+          "arguments": ["--quiet", "--"],
+        },
+      },
+    },
+  },
 }
