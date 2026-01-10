@@ -325,7 +325,6 @@ in {
     eza # modern alternative to ls
     fastfetch # system information display tool (better neofetch)
     glow # terminal markdown renderer
-    kitty # terminal emulator
     nano
     nix-search-cli # nix-search command
     ripgrep # grep but better and written in Rust
