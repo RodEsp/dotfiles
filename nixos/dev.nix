@@ -2,8 +2,8 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  config,
-  lib,
+  _config,
+  _lib,
   pkgs,
   ...
 }: let
@@ -14,7 +14,7 @@
         allowUnfree = true;
       };
     };
-  master = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master") {
+  _master = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/master") {
     config = {
       allowUnfree = true;
     };
@@ -88,7 +88,7 @@ in {
     unstable.shellcheck # shellscript/bash linter
     unstable.shfmt # shellscript/bash formatter
     unstable.smartgit
-    unstable.vscode
+    unstable.zed-editor
   ];
 
   # ===== System Env Vars =====
