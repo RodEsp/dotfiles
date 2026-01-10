@@ -88,9 +88,7 @@ in {
     unstable.shellcheck # shellscript/bash linter
     unstable.shfmt # shellscript/bash formatter
     unstable.smartgit
-
-    # custom
-    (callPackage ./cursor/default.nix {})
+    unstable.vscode
   ];
 
   # ===== System Env Vars =====
