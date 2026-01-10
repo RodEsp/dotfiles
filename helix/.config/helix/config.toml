@@ -2,3 +2,6 @@ theme = "everforest_dark_high_contrast"
 
 [editor]
 auto-save = true
+
+[editor.file-picker]
+hidden = false

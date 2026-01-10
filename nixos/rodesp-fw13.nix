@@ -14,6 +14,21 @@
         allowUnfree = true;
       };
     };
+
+  droidcamObs =
+    (pkgs.obs-studio-plugins.droidcam-obs.override {
+      ffmpeg_7 = pkgs.ffmpeg;
+    }).overrideAttrs
+    (prev: {
+      version = "2.4.2-unstable-2025-10-14";
+
+      src = pkgs.fetchFromGitHub {
+        owner = "dev47apps";
+        repo = "droidcam-obs-plugin";
+        rev = "161cb95b8dc5fe77185e52a9783dc45c6d137165";
+        sha256 = "sha256-3GClykaJjjmasEnSVGU5jnz+xoznaSYTxBz7jkhj0m4=";
+      };
+    });
 in {
   imports = [
     ./dev.nix
@@ -239,6 +254,17 @@ in {
     hyprlock.enable = true;
     nix-index.enable = true;
     nix-ld.enable = true;
+    obs-studio = {
+      enable = true;
+      enableVirtualCamera = true;
+
+      plugins = with pkgs.obs-studio-plugins; [
+        droidcamObs
+        obs-pipewire-audio-capture
+        obs-vkcapture # vulkan/opengl game capture
+        wlrobs # allows screen capture on wlroots based wayland compositors
+      ];
+    };
     winbox.enable = true;
     waybar.enable = true;
     yazi = {
