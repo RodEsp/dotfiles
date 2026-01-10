@@ -18,6 +18,7 @@ alias bat='bat --paging=never'
 alias cdi='zi'
 alias cr='cargo run -q --'
 alias cx="cargo xtask"
+alias du='dust -r'
 alias ff='fastfetch'
 alias ft='framework_tool'
 alias k="kubectl"
@@ -80,6 +81,7 @@ export PATH="/home/rodesp/.config/../bin:$PATH"
 
 # fzf
 eval "$(fzf --bash)"
+# theme generated at https://vitormv.github.io/fzf-themes
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=fg:-1,fg+:#d3c6aa,bg:-1,bg+:#262626
   --color=hl:#83c092,hl+:#83c092,info:#a7c080,marker:#83c092

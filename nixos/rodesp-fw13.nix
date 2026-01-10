@@ -101,6 +101,23 @@ in {
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+      settings = {
+        General = {
+          # Shows battery charge of connected devices on supported
+          # Bluetooth adapters. Defaults to 'false'.
+          Experimental = true;
+          # When enabled other devices can connect faster to us, however
+          # the tradeoff is increased power consumption. Defaults to
+          # 'false'.
+          FastConnectable = true;
+        };
+        Policy = {
+          # Enable all controllers when they are found. This includes
+          # adapters present on start as well as adapters that are plugged
+          # in later on. Defaults to 'true'.
+          AutoEnable = true;
+        };
+      };
     };
     keyboard.zsa.enable = true;
   };
@@ -159,7 +176,7 @@ in {
   };
 
   # ===== System Services =====
-
+  systemd.user.services.hypridle.enable = lib.mkForce false; # remove when hypridle is enabled below
   services = {
     blueman.enable = true;
     espanso = {
@@ -167,7 +184,7 @@ in {
       package = pkgs.espanso-wayland;
     };
     fprintd.enable = true; # Enable fingerprint sensor
-    hypridle.enable = true;
+    # hypridle.enable = true; # Re-enable once https://github.com/NixOS/nixpkgs/issues/347651 is resolved, and remove exec-once = hypridle from hyprland.conf and unmask service in systemd (systemctl --user unmask hypridle.service)
     # tailscale.enable = true;
     pipewire = {
       enable = true;
@@ -178,6 +195,7 @@ in {
     };
     power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
     printing.enable = true; # Enable CUPS to print documents.
+    resolved.enable = true; # Enable systemd DNS resolver daemon
     udev.extraRules = ''
       # Always authorize thunderbolt connections when they are plugged in.
       # This is to make sure the USB hub of Thunderbolt is working.
@@ -324,6 +342,7 @@ in {
     bat # better cat
     btop # tui system resource monitor
     blesh # Better BASH autocomplete
+    dust # disk space viwer (like du but better)
     eza # modern alternative to ls
     fastfetch # system information display tool (better neofetch)
     glow # terminal markdown renderer
