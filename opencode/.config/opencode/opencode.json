@@ -15,7 +15,10 @@
 			"*.env.*": "deny",
 			"*.env.example": "allow"
 		},
-		"task": "ask",
+		"task": {
+			"*": "ask",
+			"explore": "allow"
+		},
 		"todoread": "allow",
 		"todowrite": "allow",
 		"websearch": "allow",

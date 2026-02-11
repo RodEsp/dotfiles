@@ -29,6 +29,7 @@ alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'
 alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 alias ls='eza --icons --sort=type -l'
+alias tf='terraform'
 
 # ALIAS FUNCTIONS
 function y() {
@@ -62,6 +63,9 @@ eval "$(zoxide init zsh)"
 # Enable fnm
 eval "$(fnm env --shell zsh)"
 
+# Enable fzf
+source <(fzf --zsh)
+
 # Completions
 fpath+=($ZDOTDIR/completions)
 
@@ -71,7 +75,7 @@ rustup completions zsh cargo > $ZDOTDIR/completions/_cargo
 autoload -Uz compinit
 compinit
 
-# eval "$(uv generate-shell-completion zsh)"
+eval "$(uv generate-shell-completion zsh)"
 
 # Enable shift+arrow-key selection in terminal
 source ~/git/zsh-shift-select/zsh-shift-select.plugin.zsh

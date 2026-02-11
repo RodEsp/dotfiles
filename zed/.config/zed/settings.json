@@ -7,22 +7,52 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
+  "inlay_hints": {
+    "enabled": false,
+  },
+  "minimap": {
+    "max_width_columns": 80,
+    "current_line_highlight": "all",
+    "thumb_border": "none",
+    "thumb": "always",
+    "show": "auto",
+  },
   "helix_mode": true,
   "agent": {
+    "default_profile": "ask",
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^ls\\s"
+            }
+          ]
+        },
+        "fetch": {
+          "default": "allow"
+        }
+      }
+    },
+    "play_sound_when_agent_done": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5",
+      "model": "claude-sonnet-4.6",
     },
-    "favorite_models": [],
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "gemini-3-pro-preview",
+      },
+    ],
     "model_parameters": [],
   },
   "edit_predictions": {
+    "provider": "copilot",
     "copilot": {
       "enable_next_edit_suggestions": false,
     },
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
   },
   "telemetry": {
     "diagnostics": true,

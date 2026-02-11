@@ -23,18 +23,20 @@ brew "stow" # a symlink farm manager
 brew "superhtml" # HTML LSP
 brew "uv" # python version & package manager
 brew "witr" # Why is this running?
+brew "xan" # CSV file viewer & processor
 cask "affine" # mind mapping & note taking tool
 cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps
+cask "espanso" # text replacer
 cask "flameshot" # screenshot tool
 cask "font-fira-code-nerd-font" # font for coding w/ ligatures
 cask "ghostty" # Terminal
 cask "legcord" # OpenSource Discord Client 
 cask "maccy" # clipboard manager
-cask "obs"
+cask "obs" # video recording & live streaming
 cask "rectangle" # window manger for mac
-cask "slack"
-cask "zed"
+cask "slack" # instant messaging
+cask "zed" # IDE
 
 # for yazi
 brew "fd" # for file searching
@@ -54,3 +56,4 @@ brew "awscli"
 brew "gh"
 brew "mise"
 cask "notion"
+

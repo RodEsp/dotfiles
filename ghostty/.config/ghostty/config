@@ -7,5 +7,9 @@ maximize = true
 window-height = 9999
 window-width = 9999
 
+# Allow ctrl + c/v copy/paste on Linux
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = performable:ctrl+v=paste_from_clipboard
+
+# Paste into search/find box
+keybind = super+v=paste_from_clipboard
