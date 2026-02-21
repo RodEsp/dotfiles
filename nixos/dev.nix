@@ -54,6 +54,7 @@ in {
   environment.systemPackages = with pkgs; [
     cruise # docker TUI
     fnm # nodejs version manager
+    fzf # command line fuzzy finder
     gcc # c compiler
     git
     gnumake

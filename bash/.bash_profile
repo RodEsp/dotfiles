@@ -4,15 +4,26 @@ export PATH="$PATH"
 # ENV VARS
 source ~/.env
 
+# HISTORY
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE="l:ls:ll:clear"
+export HISTTIMEFORMAT='%F %T - '
+shopt -s histappend
+export PROMPT_COMMAND="history -a; history -n"
+
 # ALIASES
 alias bat='bat --paging=never'
 alias cdi='zi'
+alias cr='cargo run -q --'
+alias cx="cargo xtask"
 alias ff='fastfetch'
 alias ft='framework_tool'
 alias k="kubectl"
 alias l='eza --icons --hyperlink --sort=type -la'
 alias list-generations="nixos-rebuild list-generations"
-alias nixRS='/home/rodesp/dotfiles/nixos/nixos-rebuild.sh'
+alias open="xdg-open"
 
 # ALIAS FUNCTIONS
 function nix-shell-unstable() {
@@ -48,7 +59,7 @@ fi
 case $- in
   *i*) # Interactive shell 
     alias cd='z'
-    alias grep="rg -i --colors='match:fg:yellow'"
+    alias grep="rg -. -i --colors='match:fg:yellow'"
 		alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
 		alias ls='eza --icons --sort=type -l'
 
@@ -66,3 +77,6 @@ complete -o default -F __start_kubectl k
 
 # uv
 export PATH="/home/rodesp/.config/../bin:$PATH"
+
+# fzf
+eval "$(fzf --bash)"
