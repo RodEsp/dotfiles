@@ -1,0 +1,8 @@
+.control-center {
+  background-color: alpha(black, .7);
+  font-family: "FiraCode Nerd Font 16";
+}
+
+.notification-group {
+  background-color: black;
+}
