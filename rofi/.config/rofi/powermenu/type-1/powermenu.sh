@@ -64,9 +64,9 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
+			hyprshutdown -t 'Shutting down...' --post-cmd 'systemctl poweroff'
 		elif [[ $1 == '--reboot' ]]; then
-			systemctl reboot
+			hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
@@ -97,11 +97,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
-		fi
+    hyprlock
         ;;
     $suspend)
 		run_cmd --suspend

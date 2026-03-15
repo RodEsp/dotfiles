@@ -208,9 +208,15 @@ in {
       unifiPackage = pkgs.unifi;
       mongodbPackage = pkgs.mongodb-ce;
     };
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "rodesp";
+      };
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
     xserver = {
       enable = true;
@@ -362,6 +368,7 @@ in {
     unstable.affine # second-brain/note taking app
     unstable.ghostty # terminal emulator
     unstable.helix # terminal text/code editor
+    unstable.hyprshutdown
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
     unstable.witr # Why is this runing? CLI to find out why processes are running
 
