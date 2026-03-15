@@ -1,4 +1,4 @@
-# espanso match file
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
 
@@ -7,8 +7,6 @@
 
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
-
-# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
   # Simple text replacement
