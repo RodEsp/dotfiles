@@ -7,7 +7,7 @@ battery_percentage=$(cat /sys/class/power_supply/BAT1/capacity)
 battery_status=$(cat /sys/class/power_supply/BAT1/status)
 
 # Define the battery icons for each 10% segment
-battery_icons=("󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰁹")
+battery_icons=("󰂃" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹")
 
 # Define the charging icon
 charging_icon="󰂄"
