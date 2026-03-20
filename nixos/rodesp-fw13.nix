@@ -203,11 +203,11 @@ in {
     '';
     gvfs.enable = true; # GNOME virtual file system - allows things to interact with various filesystems & protocols
     udisks2.enable = true; # daemon that implements D-Bus interfaces used to query & manipulate storage devices
-    unifi = {
-      enable = true;
-      unifiPackage = pkgs.unifi;
-      mongodbPackage = pkgs.mongodb-ce;
-    };
+    # unifi = {
+    #   enable = true;
+    #   unifiPackage = pkgs.unifi;
+    #   mongodbPackage = pkgs.mongodb-ce;
+    # };
     displayManager = {
       autoLogin = {
         enable = true;
@@ -377,6 +377,7 @@ in {
 
     # games
     (callPackage ./vintagestory/default.nix {})
+    (callPackage ./boosteroid.nix {})
   ];
 
   # ===== System Env Vars =====
