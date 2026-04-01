@@ -120,6 +120,10 @@ in {
       };
     };
     keyboard.zsa.enable = true;
+    logitech.wireless = {
+      enable = true;
+      enableGraphical = true;
+    };
   };
 
   # ===== Security =====
@@ -194,12 +198,15 @@ in {
       jack.enable = true;
     };
     power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
+    upower.enable = true;;
     printing.enable = true; # Enable CUPS to print documents.
     resolved.enable = true; # Enable systemd DNS resolver daemon
     udev.extraRules = ''
       # Always authorize thunderbolt connections when they are plugged in.
       # This is to make sure the USB hub of Thunderbolt is working.
       ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
+      # Extra udev rule for Wayland input simulation
+      KERNEL=="uinput", SUBSYSTEM=="misc", TAG+="uaccess", OPTIONS+="static_node=uinput"
     '';
     gvfs.enable = true; # GNOME virtual file system - allows things to interact with various filesystems & protocols
     udisks2.enable = true; # daemon that implements D-Bus interfaces used to query & manipulate storage devices
