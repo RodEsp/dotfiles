@@ -73,6 +73,9 @@ case $- in
 esac
 
 # Auto completion
+source $HOME/dotfiles/bash/fzf-bash-completion.sh
+bind -x '"\t": fzf_bash_completion'
+
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
 
