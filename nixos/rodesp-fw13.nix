@@ -197,8 +197,8 @@ in {
       pulse.enable = true;
       jack.enable = true;
     };
-    power-profiles-daemon.enable = lib.mkDefault true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
-    upower.enable = true;;
+    power-profiles-daemon.enable = true; # AMD has better battery life with PPD over TLP: https://community.frame.work/t/responded-amd-7040-sleep-states/38101/1
+    upower.enable = true;
     printing.enable = true; # Enable CUPS to print documents.
     resolved.enable = true; # Enable systemd DNS resolver daemon
     udev.extraRules = ''
@@ -297,7 +297,7 @@ in {
       ];
     };
     winbox.enable = true;
-    waybar.enable = true;
+    # waybar.enable = true;
     yazi = {
       enable = true;
       settings = {
@@ -343,7 +343,7 @@ in {
     slack
     slurp # region selector for wayland compositors (for screenshots)
     stow # symlink farm manager (for adding dotfiles to ~/.config folder)
-    swaynotificationcenter # notification daemon
+    # swaynotificationcenter # notification daemon
     swww # wallpaper daemon
     vlc # media player
     xcur2png # converts x cursor images to PNG
@@ -377,6 +377,7 @@ in {
     unstable.helix # terminal text/code editor
     unstable.hyprshutdown
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
+    unstable.noctalia-shell # everything needed for a desktop environment
     unstable.witr # Why is this runing? CLI to find out why processes are running
 
     # overrides
