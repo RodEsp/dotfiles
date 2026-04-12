@@ -33,13 +33,13 @@
 }:
 stdenv.mkDerivation {
   pname = "boosteroid";
-  version = "portable";
+  version = "1.10.9 (beta)";
 
   # They don't provide a way to download a specific version, and I didn't find developer contacts yet.
   src = fetchurl {
     url = "https://boosteroid.com/linux/installer/boosteroid-install-x64.deb";
     curlOpts = "--user-agent 'Mozilla/5.0'";
-    hash = "sha256-wT769xaCEJ20YPMZhQy1VhPkwIAW4luPx5VXiIH+flE=";
+    hash = "sha256-62mgMlpEMqugq7Zjia+xJ8Ff7O3Vc4zE/Z/F+8wwQZE=";
   };
   unpackPhase = "dpkg-deb -x $src .";
 
@@ -55,12 +55,12 @@ stdenv.mkDerivation {
     pulseaudio
 
     libva-minimal
-    xz #  liblzma.so.5
-    libva #  libva-x11.so.2
-    libvdpau #  libvdpau.so.1
-    libxfixes #  libXfixes.so.3
-    libxi #  libXi.so.6
-    libx11 #  libX11-xcb.so.1
+    xz # liblzma.so.5
+    libva # libva-x11.so.2
+    libvdpau # libvdpau.so.1
+    libxfixes # libXfixes.so.3
+    libxi # libXi.so.6
+    libx11 # libX11-xcb.so.1
     libxcb
     libxcb-wm
     libxcb-image
@@ -69,12 +69,12 @@ stdenv.mkDerivation {
     libxkbcommon
     wayland
     libgcc.lib
-    freetype #  libfreetype.so.6
-    systemd #  libudev.so.1
-    alsa-lib #  libasound.so.2
-    fontconfig #  libfontconfig.so.1
-    pcre2 #  libpcre2-16.so.0
-    dbus.lib #  libdbus-1.so.3
+    freetype # libfreetype.so.6
+    systemd # libudev.so.1
+    alsa-lib # libasound.so.2
+    fontconfig # libfontconfig.so.1
+    pcre2 # libpcre2-16.so.0
+    dbus.lib # libdbus-1.so.3
   ];
 
   desktopItems = [
@@ -92,14 +92,14 @@ stdenv.mkDerivation {
     mkdir -p $out/bin
 
     install -m755 "opt/BoosteroidGamesS.R.L./bin/Boosteroid" $out/bin/Boosteroid
-    install -dm755 "$out/usr/share/applications"
-    install -dm755 "$out/usr/share/icons/Boosteroid"
-    install -m644 "usr/share/applications/Boosteroid.desktop" "$out/usr/share/applications/Boosteroid.desktop"
-    install -m644 "usr/share/icons/Boosteroid/icon.svg" "$out/usr/share/icons/Boosteroid/icon.svg"
+    install -dm755 "$out/share/applications"
+    install -dm755 "$out/share/icons/Boosteroid"
+    install -m644 "usr/share/applications/Boosteroid.desktop" "$out/share/applications/Boosteroid.desktop"
+    install -m644 "usr/share/icons/Boosteroid/icon.svg" "$out/share/icons/Boosteroid/icon.svg"
 
-    substituteInPlace $out/usr/share/applications/Boosteroid.desktop \
+    substituteInPlace $out/share/applications/Boosteroid.desktop \
       --replace "/opt/BoosteroidGamesS.R.L./bin/Boosteroid" "$out/bin/Boosteroid" \
-      --replace "/usr/share/icons/Boosteroid/icon.svg" "$out/usr/share/icons/Boosteroid/icon.svg"
+      --replace "/usr/share/icons/Boosteroid/icon.svg" "$out/share/icons/Boosteroid/icon.svg"
 
     # Doesn't work in Wayland — tries to call XGetKeyboardControl from libX11 and dumps stack.
     wrapProgram $out/bin/Boosteroid \
@@ -115,5 +115,5 @@ stdenv.mkDerivation {
     platforms = ["x86_64-linux"];
   };
 
-  mainProgram = "boosteroid";
+  mainProgram = "Boosteroid";
 }
