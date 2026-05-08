@@ -1,5 +1,5 @@
 # PATH
-export PATH="$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # ENV VARS
 source ~/.env
