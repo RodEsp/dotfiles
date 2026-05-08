@@ -16,6 +16,7 @@ log = 'all()'
 "diff added token" = { fg = "#abbf86", underline = false }
 
 [ui]
+default-command = ["log", "-n", "10"]
 graph.style = "ascii-large"
 
 [template-aliases]
