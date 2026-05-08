@@ -362,7 +362,6 @@ in {
     nano
     nix-search-cli # nix-search command
     ripgrep # grep but better and written in Rust
-    starship # terminal prompt manager
     ueberzugpp # allows drawing images on the terminal on Wayland (for yazi image preview)
     wl-clipboard # commandline copy/paste utils for wayland
     zoxide # smarter cd command
@@ -378,6 +377,7 @@ in {
     unstable.hyprshutdown
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
     unstable.noctalia-shell # everything needed for a desktop environment
+    unstable.starship # terminal prompt manager
     unstable.witr # Why is this runing? CLI to find out why processes are running
 
     # overrides
