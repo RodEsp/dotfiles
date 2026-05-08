@@ -16,15 +16,18 @@
   libglvnd,
   pipewire,
   libpulseaudio,
+  libx11,
+  libxi,
+  libxcursor,
   dotnet-runtime_8,
 }:
 stdenv.mkDerivation rec {
   pname = "vintagestory";
-  version = "1.21.6";
+  version = "1.22.6";
 
   src = fetchurl {
-    url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_1.21.6.tar.gz";
-    hash = "sha256-LkiL/8W9MKpmJxtK+s5JvqhOza0BLap1SsaDvbLYR0c=";
+    url = "https://cdn.vintagestory.at/gamefiles/stable/vs_client_linux-x64_${version}.tar.gz";
+    hash = "sha256-xJPyaYklEq2BeUX9+7hNPI6WC6ibcQDS+sKeqKYSh3A=";
   };
 
   nativeBuildInputs = [
@@ -32,25 +35,21 @@ stdenv.mkDerivation rec {
     copyDesktopItems
   ];
 
-  runtimeLibs = lib.makeLibraryPath (
-    [
-      gtk2
-      sqlite
-      openal
-      cairo
-      libGLU
-      SDL2
-      freealut
-      libglvnd
-      pipewire
-      libpulseaudio
-    ]
-    ++ (with xorg; [
-      libX11
-      libXi
-      libXcursor
-    ])
-  );
+  runtimeLibs = lib.makeLibraryPath [
+    gtk2
+    sqlite
+    openal
+    cairo
+    libGLU
+    SDL2
+    freealut
+    libglvnd
+    pipewire
+    libpulseaudio
+    libx11
+    libxi
+    libxcursor
+  ];
 
   desktopItems = [
     (makeDesktopItem {
@@ -59,7 +58,7 @@ stdenv.mkDerivation rec {
       exec = "vintagestory";
       icon = "vintagestory";
       comment = "Innovate and explore in a sandbox world";
-      categories = [ "Game" ];
+      categories = ["Game"];
     })
 
     (makeDesktopItem {
@@ -67,7 +66,7 @@ stdenv.mkDerivation rec {
       desktopName = "Vintage Story 1-click Mod Install Handler";
       comment = "Handler for vintagestorymodinstall:// URI scheme";
       exec = "vintagestory -i %u";
-      mimeTypes = [ "x-scheme-handler/vintagestorymodinstall" ];
+      mimeTypes = ["x-scheme-handler/vintagestorymodinstall"];
       noDisplay = true;
       terminal = false;
     })
@@ -78,7 +77,7 @@ stdenv.mkDerivation rec {
 
     mkdir -p $out/share/vintagestory $out/bin $out/share/pixmaps $out/share/fonts/truetype
     cp -r * $out/share/vintagestory
-    cp $out/share/vintagestory/assets/gameicon.xpm $out/share/pixmaps/vintagestory.xpm
+    cp $out/share/vintagestory/assets/gameicon.png $out/share/pixmaps/vintagestory.png
     cp $out/share/vintagestory/assets/game/fonts/*.ttf $out/share/fonts/truetype
 
     runHook postInstall
@@ -105,7 +104,7 @@ stdenv.mkDerivation rec {
     description = "In-development indie sandbox game about innovation and exploration";
     homepage = "https://www.vintagestory.at/";
     license = lib.licenses.unfree;
-    sourceProvenance = [ lib.sourceTypes.binaryBytecode ];
+    sourceProvenance = [lib.sourceTypes.binaryBytecode];
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [
       rodesp

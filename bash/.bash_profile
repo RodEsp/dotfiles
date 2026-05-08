@@ -21,8 +21,12 @@ alias cx="cargo xtask"
 alias du='dust -r'
 alias ff='fastfetch'
 alias ft='framework_tool'
+alias ghprs='gh search prs --state open "user-review-requested:@me"'
 alias k="kubectl"
 alias l='eza --icons --hyperlink --sort=type -la'
+alias path='echo "$PATH" | sed '\''s/:/\n/g'\'
+alias p='pnpm'
+alias px='pnpx'
 alias list-generations="nixos-rebuild list-generations"
 alias open="xdg-open"
 

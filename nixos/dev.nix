@@ -71,7 +71,7 @@ in {
     docker-language-server
     hyprls # hypr config language lsp
     nixd # nix lsp
-    nixfmt-rfc-style # official formatter for Nix code
+    nixfmt # official formatter for Nix code
     python312Packages.python-lsp-ruff
     python312Packages.python-lsp-server
     ruff # python linter & formatter

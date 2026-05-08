@@ -33,13 +33,13 @@
 }:
 stdenv.mkDerivation {
   pname = "boosteroid";
-  version = "1.10.9 (beta)";
+  version = "1.10.13 (beta)";
 
   # They don't provide a way to download a specific version, and I didn't find developer contacts yet.
   src = fetchurl {
     url = "https://boosteroid.com/linux/installer/boosteroid-install-x64.deb";
     curlOpts = "--user-agent 'Mozilla/5.0'";
-    hash = "sha256-kZToO9YpLGU2voT6Z9sFwiwOR1NPLeEibs+bdArbOnw=";
+    hash = "sha256-WKJqJO8L1kKp9fV6PRUbS/xobhhhmJUiEB/4Ta6UCEg=";
   };
   unpackPhase = "dpkg-deb -x $src .";
 

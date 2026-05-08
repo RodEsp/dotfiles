@@ -8,27 +8,25 @@
   ...
 }: let
   unstable =
-    import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixos-unstable")
+    import (fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixos-unstable")
     {
       config = {
         allowUnfree = true;
       };
     };
-
-  droidcamObs =
-    (pkgs.obs-studio-plugins.droidcam-obs.override {
-      ffmpeg_7 = pkgs.ffmpeg;
-    }).overrideAttrs
-    (prev: {
-      version = "2.4.2-unstable-2025-10-14";
-
-      src = pkgs.fetchFromGitHub {
-        owner = "dev47apps";
-        repo = "droidcam-obs-plugin";
-        rev = "161cb95b8dc5fe77185e52a9783dc45c6d137165";
-        sha256 = "sha256-3GClykaJjjmasEnSVGU5jnz+xoznaSYTxBz7jkhj0m4=";
-      };
-    });
+  # droidcamObs =
+  #   (pkgs.obs-studio-plugins.droidcam-obs.override {
+  #     ffmpeg = pkgs.ffmpeg;
+  #   }).overrideAttrs
+  #   (prev: {
+  #     version = "2.4.2-unstable-2025-10-14";
+  #     src = pkgs.fetchFromGitHub {
+  #       owner = "dev47apps";
+  #       repo = "droidcam-obs-plugin";
+  #       rev = "161cb95b8dc5fe77185e52a9783dc45c6d137165";
+  #       sha256 = "sha256-3GClykaJjjmasEnSVGU5jnz+xoznaSYTxBz7jkhj0m4=";
+  #     };
+  #   });
 in {
   imports = [
     ./dev.nix
@@ -88,10 +86,10 @@ in {
   services.fwupd.enable = true;
   # we need fwupd 1.9.7 to downgrade the fingerprint sensor firmware
   services.fwupd.package =
-    (import (builtins.fetchTarball {
+    (import (fetchTarball {
       url = "https://github.com/NixOS/nixpkgs/archive/bb2009ca185d97813e75736c2b8d1d8bb81bde05.tar.gz";
       sha256 = "sha256:003qcrsq5g5lggfrpq31gcvj82lb065xvr7bpfa8ddsw8x4dnysk";
-    }) {inherit (pkgs) system;}).fwupd;
+    }) {inherit (pkgs.stdenv.hostPlatform) system;}).fwupd;
 
   # ===== Hardware Configuration =====
 
@@ -220,10 +218,7 @@ in {
         enable = true;
         user = "rodesp";
       };
-      gdm = {
-        enable = true;
-        wayland = true;
-      };
+      gdm.enable = true;
     };
     xserver = {
       enable = true;
@@ -290,7 +285,7 @@ in {
       enableVirtualCamera = true;
 
       plugins = with pkgs.obs-studio-plugins; [
-        droidcamObs
+        droidcam-obs
         obs-pipewire-audio-capture
         obs-vkcapture # vulkan/opengl game capture
         wlrobs # allows screen capture on wlroots based wayland compositors
@@ -350,7 +345,7 @@ in {
     zulip # IM client
 
     # terminal related
-    asciinema_3 # terminal session recorder
+    asciinema # terminal session recorder
     dyff # Diff tool for yaml and sometimes JSON
     bat # better cat
     btop # tui system resource monitor
@@ -396,5 +391,6 @@ in {
     XDG_CONFIG_HOME = "$HOME/.config/";
     EDITOR = "hx";
     TERMINAL = "ghostty";
+    NOCTALIA_PAM_SERVICE = "/etc/pam.d/hyprlock";
   };
 }
