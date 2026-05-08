@@ -344,7 +344,7 @@ in {
     slurp # region selector for wayland compositors (for screenshots)
     stow # symlink farm manager (for adding dotfiles to ~/.config folder)
     # swaynotificationcenter # notification daemon
-    swww # wallpaper daemon
+    # swww # wallpaper daemon
     vlc # media player
     xcur2png # converts x cursor images to PNG
     zulip # IM client

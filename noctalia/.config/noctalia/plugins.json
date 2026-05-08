@@ -1,0 +1,17 @@
+{
+    "sources": [
+        {
+            "enabled": true,
+            "name": "Noctalia Plugins",
+            "url": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        {
+            "enabled": true,
+            "name": "Noctalia GH",
+            "url": "https://github.com/noctalia-dev/noctalia-plugins/tree/main"
+        }
+    ],
+    "states": {
+    },
+    "version": 2
+}
