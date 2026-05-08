@@ -177,7 +177,8 @@
                     "id": "Tray",
                     "pinned": [
                         "indicator-solaar",
-                        "Boosteroid"
+                        "Boosteroid",
+                        "steam"
                     ]
                 },
                 {
@@ -414,7 +415,7 @@
         },
         "language": "",
         "lockOnSuspend": true,
-        "lockScreenAnimations": false,
+        "lockScreenAnimations": true,
         "lockScreenBlur": 0,
         "lockScreenCountdownDuration": 3000,
         "lockScreenMonitors": [
@@ -478,7 +479,7 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": false,
+        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "list",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
