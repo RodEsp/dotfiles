@@ -38,13 +38,12 @@ alias tf='terraform'
 
 # ALIAS FUNCTIONS
 function y() {
-        local tmp
-        tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-        yazi "$@" --cwd-file="$tmp"
-        if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-                builtin cd -- "$cwd" || exit
-        fi
-        rm -f -- "$tmp"
+	local tmp
+	tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || exit
+	command rm -f -- "$tmp"
 }
 
 highlight() {
@@ -56,7 +55,8 @@ highlight() {
 }
 
 tn() {
-  local exit_code=$?
+  local exit_code
+  exit_code=$?
   local cmd=${__tn_last_cmd%%' && tn'}
   cmd=${cmd%%'; tn'}
   cmd=${cmd%%'| tn'}
@@ -68,6 +68,36 @@ tn() {
 }
 preexec() {
   __tn_last_cmd=$1
+}
+
+mov2gif() {
+    # 1. Read input filename and optional width argument
+    local input="$1"
+    local width="${2:-}"
+    local output="${input%.*}.gif"
+
+    # 2. Check if input file exists
+    if [ ! -f "$input" ]; then
+        echo "Error: File '$input' not found."
+        return 1
+    fi
+
+    # 3. Dynamically build the scale filter string if width is provided
+    local scale_filter=""
+    if [ -n "$width" ]; then
+        scale_filter="scale=${width}:-1:flags=lanczos,"
+    fi
+
+    echo "Converting $input to $output..."
+
+    # 4. Generate the palette and render the GIF in a clean one-liner
+    ffmpeg -i "$input" -vf "${scale_filter}fps=15,palettegen" -y /tmp/palette.png && \
+    ffmpeg -i "$input" -i /tmp/palette.png -filter_complex "${scale_filter}fps=15[x];[x][1:v]paletteuse" -y "$output"
+
+    # 5. Clean up temporary files
+    rm /tmp/palette.png
+    echo "Done! Saved to $output";
+    tn;
 }
 
 # Quickly ask Opencode a question
@@ -119,6 +149,7 @@ complete -C '/opt/homebrew/bin/aws_completer' aws
 _opencode_yargs_completions() {
   local reply
   local si=$IFS
+  # shellcheck disable=SC2207,SC2154
   IFS=$'
 ' reply=($(COMP_CWORD="$((CURRENT - 1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" opencode --get-yargs-completions "${words[@]}"))
   IFS=$si
@@ -128,6 +159,7 @@ _opencode_yargs_completions() {
     _default
   fi
 }
+# shellcheck disable=SC2154,2193
 if [[ "'${zsh_eval_context[-1]}" == "loadautofunc" ]]; then
   _opencode_yargs_completions "$@"
 else

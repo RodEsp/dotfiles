@@ -56,7 +56,7 @@ color = "Magenta"
 behind_symbol = "⇡"
 surround_with_quotes = false
 ignore_empty_commits = "None"
-max_length = 10
+max_length = 15
 
 [[module]]
 type = "Metrics"
