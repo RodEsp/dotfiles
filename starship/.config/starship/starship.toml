@@ -3,7 +3,7 @@
 scan_timeout = 30 # Timeout for starship to scan files (in milliseconds).
 command_timeout = 1000 # Timeout for commands executed by starship (in milliseconds).
 
-format = '''[┌─\[](green)$time[\] $directory](green)$fill $all$custom
+format = '''[┌─\[](green)$time[\] $directory](green)$fill $cmd_duration$all$custom
 [└─$os ](green)'''
 add_newline = false
 
