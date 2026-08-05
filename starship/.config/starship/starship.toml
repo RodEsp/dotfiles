@@ -3,15 +3,14 @@
 scan_timeout = 30 # Timeout for starship to scan files (in milliseconds).
 command_timeout = 1000 # Timeout for commands executed by starship (in milliseconds).
 
-format = '''[┌─\[](green)$time[\] $directory](green)$fill $all
-[│](green) $custom
+format = '''[┌─\[](green)$time[\] $directory](green)$fill $all$custom
 [└─$os ](green)'''
 add_newline = false
 
 # Custom
 [custom.jj]
-command = "prompt"#
-format = "$output"
+command = "prompt"
+format = "(\n[│](green) $output)"
 ignore_timeout = true
 shell = ["starship-jj", "--ignore-working-copy", "starship"]
 use_stdin = false

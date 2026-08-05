@@ -26,7 +26,7 @@ alias cx='cargo xtask'
 alias derapi="restish derapi"
 alias ff='fastfetch'
 alias ghprs='gh search prs --state open "user-review-requested:@me"'
-alias grep="rg --colors='match:fg:yellow'"
+alias grep="rg -i --colors='match:fg:yellow'"
 alias gt="jj diff --name-only| xargs -I {} dirname {} | sort -u | xargs -I {} go test "./{}/...""
 alias jp="jj-hp push"
 alias k='kubectl'
