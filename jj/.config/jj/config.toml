@@ -30,13 +30,26 @@ merge-editor = "smerge"
 # See https://docs.jj-vcs.dev/latest/templates/#signature-type for possible values
 'format_short_signature(signature)' = 'signature.name()'
 # See https://docs.jj-vcs.dev/latest/templates/#timestamp-type for possible values
-'format_timestamp(timestamp)' = 'timestamp.format("%a %b,%-e %k:%M:%S")'
+'format_timestamp(timestamp)' = 'timestamp.local().format("%a %b %-e %Y %k:%M:%S")'
 
 [aliases]
 push = ["util", "exec", "--", "jj-hp", "push"]
 f = ["git", "fetch"]
 e = ["edit"]
 d = ["describe", "-m"]
+nm = ["new", "main"]
 
 [jj-hooks]
 advance-bookmarks = true
+
+[[jj-hooks.setup]]
+name = "share node_modules"
+run = ["bash", "-c", """
+  set -e
+  [ -d "$JJ_HOOKS_WORKSPACE" ] || exit 0
+  find "$JJ_HOOKS_WORKSPACE" -maxdepth 4 -type d -name node_modules -not -path '*/node_modules/*/node_modules' 2>/dev/null | while read -r src; do
+    rel="${src#$JJ_HOOKS_WORKSPACE/}"
+    mkdir -p "$(dirname "$rel")"
+    cp -al "$src" "$rel" 2>/dev/null || cp -a "$src" "$rel"
+  done
+"""]
