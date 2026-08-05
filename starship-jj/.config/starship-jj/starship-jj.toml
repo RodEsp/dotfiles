@@ -42,7 +42,7 @@ color = "Yellow"
 [[module]]
 type = "Commit"
 previous_message_symbol = "⇣"
-max_length = 24
+# max_length = 24
 show_previous_if_empty = false
 empty_text = "(no desc)"
 surround_with_quotes = false
@@ -56,7 +56,7 @@ color = "Magenta"
 behind_symbol = "⇡"
 surround_with_quotes = false
 ignore_empty_commits = "None"
-max_length = 15
+# max_length = 15
 
 [[module]]
 type = "Metrics"

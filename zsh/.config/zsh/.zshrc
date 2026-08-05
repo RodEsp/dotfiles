@@ -225,6 +225,24 @@ _mise_local_autoload() {
     fi
   elif [[ -n "$__MISE_ORIG_PATH" ]]; then
     echo "restoring PATH..."
+    # `mise deactivate` only emits its teardown script when PWD is still the
+    # entered project dir. Called from here (a chpwd hook, which by
+    # definition runs after PWD has already changed) it silently does
+    # nothing, so we replicate its static teardown manually: remove the
+    # chpwd/precmd hooks mise registered and clear its session state
+    # (__MISE_SESSION, __MISE_DIFF, MISE_SHELL). Without this, mise still
+    # thinks the project is "entered" next time we cd back in, and `enter`
+    # hooks (e.g. completions) silently stop firing.
+    add-zsh-hook -d precmd _mise_hook_precmd 2>/dev/null
+    add-zsh-hook -d chpwd _mise_hook_chpwd 2>/dev/null
+    (( $+functions[_mise_hook_precmd] )) && unset -f _mise_hook_precmd
+    (( $+functions[_mise_hook_chpwd] )) && unset -f _mise_hook_chpwd
+    (( $+functions[_mise_hook] )) && unset -f _mise_hook
+    (( $+functions[_mise_hook_env_state] )) && unset -f _mise_hook_env_state
+    (( $+functions[mise] )) && unset -f mise
+    unset MISE_SHELL __MISE_DIFF __MISE_SESSION
+    unset __MISE_ZSH_PRECMD_RUN __MISE_ZSH_CHPWD_RAN
+    unset __MISE_ZSH_ACTIVATE_PATH __MISE_ZSH_ACTIVATE_ENV
     # Restore your original system PATH when leaving a mise project
     export PATH="$__MISE_ORIG_PATH"
     unset __MISE_ORIG_PATH

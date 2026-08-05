@@ -3,9 +3,10 @@
 scan_timeout = 30 # Timeout for starship to scan files (in milliseconds).
 command_timeout = 1000 # Timeout for commands executed by starship (in milliseconds).
 
-format = '''
-[┌─\[](green)$directory\] $custom$fill $all
+format = '''[┌─\[](green)$time[\] $directory](green)$fill $all
+[│](green) $custom
 [└─$os ](green)'''
+add_newline = false
 
 # Custom
 [custom.jj]
@@ -34,6 +35,10 @@ format = "[$symbol](green)"
 [vcs]
 disabled = false
 order = ["jujutsu", "git"]
+
+[time]
+disabled = false
+format = '$time'
 
 [git_branch]
 disabled = true
