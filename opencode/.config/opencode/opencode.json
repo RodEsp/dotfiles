@@ -23,20 +23,52 @@
     "todowrite": "allow",
     "websearch": "allow",
     "bash": {
-      "cat": "ask",
-      "echo": "allow",
-      "find": "allow",
-      "git": "ask",
+      "*": "ask",
+      "awk": "ask",
+      "brew": "ask",
+      "cat *": "ask",
+      "echo *": "allow",
+      "find *": "allow",
+      "gh issue view *": "allow",
+      "gh pr diff *": "allow",
+      "gh pr view *": "allow",
+      "git *": "ask",
+      "go build *": "allow",
+      "go test *": "allow",
+      "go vet *": "allow",
+      "golangci-lint *": "allow",
       "golangci-lint": "allow",
-      "grep": "allow",
+      "grep *": "allow",
       "head": "allow",
-      "jj": "ask",
+      "head *": "allow",
+      "jj *": "ask",
+      "jj bookmark list": "allow",
+      "jj diff *": "allow",
+      "jj log *": "allow",
+      "jj log": "allow",
+      "jj status *": "allow",
+      "jj status": "allow",
+      "ls *": "allow",
       "ls": "allow",
-      "rg": "allow",
+      "npm run build *": "allow",
+      "npm run typecheck *": "allow",
+      "npx biome *": "allow",
+      "npx tsc *": "allow",
+      "npx vitest *": "allow",
+      "perl": "ask",
+      "python": "ask",
+      "python3": "ask",
+      "rg *": "allow",
+      "sed -n *": "allow",
       "sed": "ask",
-      "sort": "allow",
-      "tail": "allow",
-      "tree": "allow"
+      "sort *": "allow",
+      "tail *": "allow",
+      "tee": "ask",
+      "terraform fmt *": "allow",
+      "tree *": "allow",
+      "wc *": "allow",
+      "xargs *": "allow",
+      "xargs": "allow"
     },
     "skill": {
       "caveman": "allow"
@@ -49,6 +81,9 @@
       "tools": {
         "write": false,
         "edit": false
+      },
+      "permission": {
+        "edit": "deny"
       }
     },
     "code-reviewer": {
@@ -60,17 +95,8 @@
       }
     }
   },
-  "mcp": {
-    "jj": {
-      "type": "local",
-      "command": ["npx", "-y", "jj-mcp-server"],
-      "enabled": true,
-      "environment": {
-        "MY_ENV_VAR": "my_env_var_value"
-      }
-    }
-  },
-  "plugin": ["file://~/.config/opencode/plugins/copilot-1m.ts"],
+  "mcp": {},
+  "plugin": ["file://~/.config/opencode/plugins/notifications.ts"],
   "provider": {
     "github-copilot": {
       "models": {

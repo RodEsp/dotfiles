@@ -27,22 +27,25 @@ alias derapi="restish derapi"
 alias ff='fastfetch'
 alias ghprs='gh search prs --state open "user-review-requested:@me"'
 alias grep="rg --colors='match:fg:yellow'"
+alias gt="jj diff --name-only| xargs -I {} dirname {} | sort -u | xargs -I {} go test "./{}/...""
+alias jp="jj-hp push"
 alias k='kubectl'
 alias l='eza --icons --hyperlink --sort=type -la'
-alias ll='eza --icons --hyperlink --sort=type -lahgo --git'
+alias ll='eza --icons --hyperlink --sort=created -lahgo --git'
 alias ls='eza --icons --sort=type -l'
-alias path='echo "$PATH" | sed '\''s/:/\n/g'\'
 alias p='pnpm'
+alias path='echo "$PATH" | sed '\''s/:/\n/g'\'
 alias px='pnpx'
 alias tf='terraform'
 
 # ALIAS FUNCTIONS
 function y() {
-	local tmp
-	tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  # shellcheck disable=SC2155
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
 	IFS= read -r -d '' cwd < "$tmp"
-	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || exit
+	# shellcheck disable=SC2164
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
 	command rm -f -- "$tmp"
 }
 
@@ -100,6 +103,13 @@ mov2gif() {
     tn;
 }
 
+getJoinFlowURL() {
+  local flow_id="$1"
+  local vendor="${2}"
+  local env="${3:-stg}"
+  restish -p "$env" derapi get-join-flow-authorize "$flow_id" "$vendor" -v 2>&1 | grep -e "^< Location:"
+}
+
 # Quickly ask Opencode a question
 function _o() {
   local cmd="opencode run \"$*\" -m opencode/deepseek-v4-flash-free"
@@ -138,12 +148,18 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit
 compinit
 
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+eval "$(jj-hp completions zsh)"
 eval "$(uv generate-shell-completion zsh)"
 # shellcheck disable=SC1090
 source <(restish completion zsh)
 compdef _restish restish
 # shellcheck disable=SC1090
 source <(COMPLETE=zsh jj)
+# shellcheck disable=SC1090
+source <(corepack pnpm completion zsh)
+
 complete -C '/opt/homebrew/bin/aws_completer' aws
 
 _opencode_yargs_completions() {

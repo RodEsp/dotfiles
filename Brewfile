@@ -28,9 +28,11 @@ brew "stow" # a symlink farm manager
 brew "superhtml" # HTML LSP
 brew "terminal-notifier" 
 brew "uv" # python version & package manager
+brew "vscode-langservers-extracted"
 brew "witr" # Why is this running?
 brew "xan" # CSV file viewer & processor
 brew "yq" # command line yaml processor
+brew "hashicorp/tap/terraform"
 cask "affine" # mind mapping & note taking tool
 cask "beekeeper-studio" # DB IDE
 cask "bluesnooze" # Disable bluetooth when Mac sleeps

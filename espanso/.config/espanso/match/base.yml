@@ -47,6 +47,10 @@ matches:
   - trigger: ":DELTA"
     replace: "Δ"
 
+  # Degree symbol
+  - trigger: ":DEG"
+    replace: "°"
+
   # PR template
   - trigger: ":ghpr"
     replace: "What does this PR do?\n---\n"

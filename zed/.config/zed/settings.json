@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "format_on_save": "on",
   "lsp": {
     "vtsls": {
       "settings": {
@@ -181,10 +182,12 @@
       },
     },
     "Markdown": {
+      "format_on_save": "off",
+      "allow_rewrap": "in_selections",
       "formatter": {
         "external": {
           "command": "dprint",
-          "arguments": ["fmt", "--stdin", "{buffer_path}"],
+          "arguments": ["fmt", "-c", "~/.config/dprint/dprint.jsonc", "--stdin", "{buffer_path}"],
         },
       },
     },

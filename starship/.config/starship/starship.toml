@@ -1,6 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-scan_timeout = 30
+scan_timeout = 30 # Timeout for starship to scan files (in milliseconds).
+command_timeout = 1000 # Timeout for commands executed by starship (in milliseconds).
 
 format = '''
 [┌─\[](green)$directory\] $custom$fill $all
