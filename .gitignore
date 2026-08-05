@@ -1,3 +1,6 @@
+/jj/.config/jj/repos/*
+/jj/.config/jj/workspaces/*
+
 dconf/.config/dconf/user
 
 clipse/.config/clipse/clipboard_history.json
@@ -9,3 +12,4 @@ zsh/.config/zsh/completions
 zsh/.config/zsh/.zsh_sessions
 hypr/.config/hypr/monitors.conf
 hypr/.config/hypr/monitors.conf-bak
+helix/.config/helix/runtime/grammars/*

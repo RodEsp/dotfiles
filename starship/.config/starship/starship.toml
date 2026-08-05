@@ -8,13 +8,12 @@ format = '''
 
 # Custom
 [custom.jj]
-command = "prompt"
+command = "prompt"#
 format = "$output"
 ignore_timeout = true
 shell = ["starship-jj", "--ignore-working-copy", "starship"]
 use_stdin = false
 when = true
-
 
 # Customization
 [directory]
@@ -28,11 +27,11 @@ truncate_to_repo = false
 symbol = ' '
 
 [os]
-format = "[$symbol](green)"
 disabled = false
+format = "[$symbol](green)"
 
 [vcs]
-disabled = true
+disabled = false
 order = ["jujutsu", "git"]
 
 [git_branch]
@@ -59,6 +58,10 @@ staged = '[$count󰸩 ](green)'
 renamed = ' '
 deleted = '🗑 '
 
+# Enabled
+[kubernetes]
+disabled = false
+
 # Disabled
 [character]
 disabled = true
@@ -66,12 +69,16 @@ disabled = true
 [line_break]
 disabled = true
 
-[kubernetes]
-disabled = false
+[package]
+symbol = "󰏗 "
+disabled = true
 
 # Nerd Font Symbols
 [aws]
-symbol = "  "
+symbol = " "
+# format = '[$symbol($profile) (\($region\)) (\[$duration\])]($style)'
+format = '[$symbol($profile) ($duration)]($style)'
+expiration_symbol = ' '
 
 [buf]
 symbol = " "
@@ -99,6 +106,7 @@ symbol = " "
 
 [deno]
 symbol = " "
+format = '[$symbol($version )]($style)'
 
 [docker_context]
 symbol = " "
@@ -120,6 +128,7 @@ symbol = "  "
 
 [golang]
 symbol = " "
+format= '[$symbol($version )]($style)'
 
 [guix_shell]
 symbol = " "
@@ -159,9 +168,11 @@ symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
+format = '[$symbol$state( \($name\))]($style)'
 
 [nodejs]
 symbol = "󰎙 "
+format = '[$symbol($version )]($style)'
 
 [ocaml]
 symbol = " "
@@ -213,9 +224,6 @@ Unknown = " "
 Void = " "
 Windows = "󰍲 "
 
-[package]
-symbol = "󰏗 "
-
 [perl]
 symbol = " "
 
@@ -230,6 +238,7 @@ symbol = "󰏗 "
 
 [python]
 symbol = " "
+format = '[${symbol}${pyenv_prefix}(${version}) (\($virtualenv\)) ]($style)'
 
 [rlang]
 symbol = "󰟔 "
@@ -238,7 +247,8 @@ symbol = "󰟔 "
 symbol = " "
 
 [rust]
-symbol = "🦀 "
+symbol = '🦀 '
+format = '[$symbol($version)]($style)'
 
 [scala]
 symbol = " "

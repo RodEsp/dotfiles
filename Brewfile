@@ -1,6 +1,7 @@
 # Personal
 brew "anomalyco/tap/opencode" # AI agent TUI
 brew "asciinema"
+brew "bash-language-server"
 brew "bash" # bourne again shell
 brew "bat" # A cat(1) clone with syntax highlighting and Git integration.
 brew "bellicose100xp/tap/jiq" # interactive jq
@@ -21,6 +22,7 @@ brew "jq" # command line json processor
 brew "llvm" # Compiler infrastructure - for debugging Rust
 brew "marksman" # LSP for markdown
 brew "ripgrep" # grep but better and written in Rust
+brew "shellcheck"
 brew "starship" # Lightweight multiplatform terminal prompt
 brew "stow" # a symlink farm manager
 brew "superhtml" # HTML LSP

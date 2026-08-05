@@ -1,3 +1,5 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
 [user]
 name = "RodEsp"
 email = "1084688+RodEsp@users.noreply.github.com"
@@ -12,11 +14,11 @@ log = 'all()'
 
 [revset-aliases]
 # Make all remote bookmarks (pushed changes) immutable
-'immutable_heads()' = "builtin_immutable_heads() | remote_bookmarks()"
+'immutable_heads()' = "builtin_immutable_heads() | trunk() | tags() | remote_bookmarks()"
 
 [colors]
 # Highlight hunks with background
-"diff removed token" = { fg = "#d88383", underline = false }
+"diff removed token" = { fg = "#d88383", bg = "#493B40", underline = false }
 "diff added token" = { fg = "#abbf86", underline = false }
 
 [ui]
@@ -32,6 +34,9 @@ merge-editor = "smerge"
 
 [aliases]
 push = ["util", "exec", "--", "jj-hp", "push"]
+f = ["git", "fetch"]
+e = ["edit"]
+d = ["describe", "-m"]
 
 [jj-hooks]
 advance-bookmarks = true

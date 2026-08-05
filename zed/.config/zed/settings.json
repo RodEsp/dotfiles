@@ -7,6 +7,36 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+    "dprint": {
+      "binary": {
+        "path": "/opt/homebrew/bin/dprint",
+        "arguments": ["lsp"],
+      },
+      "enable_lsp_tasks": true,
+    },
+    "markdownlint": {
+      "settings": {
+        "MD013": false,
+      },
+    },
+  },
+  "diff_view_style": "unified",
   "cli_default_open_behavior": "new_window",
   "project_panel": {
     "dock": "left",
@@ -36,6 +66,7 @@
     "tool_permissions": {
       "tools": {
         "terminal": {
+          "default": "allow",
           "always_allow": [
             {
               "pattern": "^ls\\s",
@@ -49,10 +80,10 @@
     },
     "play_sound_when_agent_done": "always",
     "default_model": {
-      "effort": "high",
+      "effort": "low",
       "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-sonnet-5",
     },
     "favorite_models": [
       {
@@ -119,5 +150,47 @@
         },
       },
     },
+    "HTML": {
+      "formatter": "language_server",
+    },
+    "JavaScript": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "TypeScript": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "TSX": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+      },
+    },
+    "JSON": {
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+      },
+    },
+    "Markdown": {
+      "formatter": {
+        "external": {
+          "command": "dprint",
+          "arguments": ["fmt", "--stdin", "{buffer_path}"],
+        },
+      },
+    },
+  },
+  "code_actions_on_format": {
+    "source.organizeImports.biome": true,
+    "source.fixAll.biome": true,
   },
 }

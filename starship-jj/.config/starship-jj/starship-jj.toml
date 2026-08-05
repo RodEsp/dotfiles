@@ -11,25 +11,6 @@ symbol = ""
 color = "Blue"
 
 [[module]]
-type = "Bookmarks"
-separator = " "
-color = "Magenta"
-behind_symbol = "⇡"
-surround_with_quotes = false
-ignore_empty_commits = "None"
-
-[[module]]
-type = "Commit"
-previous_message_symbol = "⇣"
-max_length = 24
-show_previous_if_empty = false
-empty_text = "(no description set)"
-surround_with_quotes = false
-
-[module.non_unique]
-color = "Black"
-
-[[module]]
 type = "State"
 separator = " "
 
@@ -57,6 +38,25 @@ color = "Yellow"
 disabled = false
 text = "(HIDDEN)"
 color = "Yellow"
+
+[[module]]
+type = "Commit"
+previous_message_symbol = "⇣"
+max_length = 24
+show_previous_if_empty = false
+empty_text = "(no desc)"
+surround_with_quotes = false
+
+[module.change]
+
+[[module]]
+type = "Bookmarks"
+separator = " "
+color = "Magenta"
+behind_symbol = "⇡"
+surround_with_quotes = false
+ignore_empty_commits = "None"
+max_length = 10
 
 [[module]]
 type = "Metrics"
