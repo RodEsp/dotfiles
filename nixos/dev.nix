@@ -88,7 +88,7 @@ in {
     unstable.opencode # terminal AI coding agent (opensource)
     unstable.shellcheck # shellscript/bash linter
     unstable.shfmt # shellscript/bash formatter
-    unstable.smartgit
+    unstable.starship-jj # https://gitlab.com/lanastara_foss/starship-jj
     unstable.zed-editor
   ];
 

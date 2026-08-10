@@ -39,7 +39,7 @@ stdenv.mkDerivation {
   src = fetchurl {
     url = "https://boosteroid.com/linux/installer/boosteroid-install-x64.deb";
     curlOpts = "--user-agent 'Mozilla/5.0'";
-    hash = "sha256-WKJqJO8L1kKp9fV6PRUbS/xobhhhmJUiEB/4Ta6UCEg=";
+    hash = "sha256-wD3PVaT4/VO+nhz3hRMwkeTQalNxtWTczIRL8fL0hMc=";
   };
   unpackPhase = "dpkg-deb -x $src .";
 

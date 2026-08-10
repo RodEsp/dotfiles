@@ -187,7 +187,7 @@ in {
     };
     fprintd.enable = true; # Enable fingerprint sensor
     # hypridle.enable = true; # Re-enable once https://github.com/NixOS/nixpkgs/issues/347651 is resolved, and remove exec-once = hypridle from hyprland.conf and unmask service in systemd (systemctl --user unmask hypridle.service)
-    # tailscale.enable = true;
+    tailscale.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -348,7 +348,7 @@ in {
     asciinema # terminal session recorder
     dyff # Diff tool for yaml and sometimes JSON
     bat # better cat
-    btop # tui system resource monitor
+    btop-rocm # tui system resource monitor (with rocm for AMD GPU monitoring)
     blesh # Better BASH autocomplete
     dust # disk space viwer (like du but better)
     eza # modern alternative to ls
@@ -360,6 +360,7 @@ in {
     ueberzugpp # allows drawing images on the terminal on Wayland (for yazi image preview)
     wl-clipboard # commandline copy/paste utils for wayland
     zoxide # smarter cd command
+    (callPackage ./hey-cli/default.nix {})
 
     # 3d printing
     bambu-studio
