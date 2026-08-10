@@ -1,7 +1,8 @@
 # Firefox
 
-Install [ArcWTF](https://github.com/KiKaraage/ArcWTF) for an Arc-like experience on Firefox
-Just follow the instructions [here](https://github.com/KiKaraage/ArcWTF#applying-the-theme).
+In `about:config` switch `mousewheel.with_control.action` to `5`.
+This makes the zoom action actually zoom (pinch zoom), instead of
+increase the size of UI elements (reflow zoom).
 
 # Mac Stuff
 
