@@ -1,0 +1,107 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    { "action": "codesearch", "resource": "*", "effect": "allow" },
+    { "action": "external_directory", "resource": "*", "effect": "ask" },
+    { "action": "glob", "resource": "*", "effect": "allow" },
+    { "action": "grep", "resource": "*", "effect": "allow" },
+    { "action": "list", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": "*.env", "effect": "deny" },
+    { "action": "read", "resource": "*.env.*", "effect": "deny" },
+    { "action": "read", "resource": "*.env.example", "effect": "allow" },
+    { "action": "subagent", "resource": "*", "effect": "ask" },
+    { "action": "subagent", "resource": "explore", "effect": "allow" },
+    { "action": "todoread", "resource": "*", "effect": "allow" },
+    { "action": "todowrite", "resource": "*", "effect": "allow" },
+    { "action": "websearch", "resource": "*", "effect": "allow" },
+    { "action": "skill", "resource": "caveman", "effect": "allow" },
+
+    { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "shell", "resource": "awk", "effect": "ask" },
+    { "action": "shell", "resource": "brew", "effect": "ask" },
+    { "action": "shell", "resource": "cat *", "effect": "ask" },
+    { "action": "shell", "resource": "echo *", "effect": "allow" },
+    { "action": "shell", "resource": "find *", "effect": "allow" },
+    { "action": "shell", "resource": "gh issue view *", "effect": "allow" },
+    { "action": "shell", "resource": "gh pr diff *", "effect": "allow" },
+    { "action": "shell", "resource": "gh pr view *", "effect": "allow" },
+    { "action": "shell", "resource": "git *", "effect": "ask" },
+    { "action": "shell", "resource": "go build *", "effect": "allow" },
+    { "action": "shell", "resource": "go test *", "effect": "allow" },
+    { "action": "shell", "resource": "go vet *", "effect": "allow" },
+    { "action": "shell", "resource": "golangci-lint *", "effect": "allow" },
+    { "action": "shell", "resource": "golangci-lint", "effect": "allow" },
+    { "action": "shell", "resource": "grep *", "effect": "allow" },
+    { "action": "shell", "resource": "head", "effect": "allow" },
+    { "action": "shell", "resource": "head *", "effect": "allow" },
+    { "action": "shell", "resource": "jj *", "effect": "ask" },
+    { "action": "shell", "resource": "jj bookmark list", "effect": "allow" },
+    { "action": "shell", "resource": "jj diff *", "effect": "allow" },
+    { "action": "shell", "resource": "jj log *", "effect": "allow" },
+    { "action": "shell", "resource": "jj log", "effect": "allow" },
+    { "action": "shell", "resource": "jj status *", "effect": "allow" },
+    { "action": "shell", "resource": "jj status", "effect": "allow" },
+    { "action": "shell", "resource": "ls *", "effect": "allow" },
+    { "action": "shell", "resource": "ls", "effect": "allow" },
+    { "action": "shell", "resource": "npm run build *", "effect": "allow" },
+    { "action": "shell", "resource": "npm run typecheck *", "effect": "allow" },
+    { "action": "shell", "resource": "npx biome *", "effect": "allow" },
+    { "action": "shell", "resource": "npx tsc *", "effect": "allow" },
+    { "action": "shell", "resource": "npx vitest *", "effect": "allow" },
+    { "action": "shell", "resource": "perl", "effect": "ask" },
+    { "action": "shell", "resource": "python", "effect": "ask" },
+    { "action": "shell", "resource": "python3", "effect": "ask" },
+    { "action": "shell", "resource": "rg *", "effect": "allow" },
+    { "action": "shell", "resource": "sed -n *", "effect": "allow" },
+    { "action": "shell", "resource": "sed", "effect": "ask" },
+    { "action": "shell", "resource": "sort *", "effect": "allow" },
+    { "action": "shell", "resource": "tail *", "effect": "allow" },
+    { "action": "shell", "resource": "tee", "effect": "ask" },
+    { "action": "shell", "resource": "terraform fmt *", "effect": "allow" },
+    { "action": "shell", "resource": "tree *", "effect": "allow" },
+    { "action": "shell", "resource": "wc *", "effect": "allow" },
+    { "action": "shell", "resource": "xargs *", "effect": "allow" },
+    { "action": "shell", "resource": "xargs", "effect": "allow" }
+  ],
+  "agents": {
+    "ask": {
+      "description": "Answers general questions without modifying your code.",
+      "system": "You are an experienced but humble software engineer that can answer questions but does not modify code. You automatically use the webfetch tool to search the internet for relevant information, and also make use of the @explore subagent to understand the codebase deeply. Also, you NEVER modify or write files, no matter what. If you want to modify or write a file, you ALWAYS ask the user to do it for you.",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" }
+      ]
+    },
+    "code-reviewer": {
+      "description": "Reviews code for best practices and potential issues",
+      "system": "You are a code reviewer. Focus on security, performance, and maintainability.",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" }
+      ]
+    }
+  },
+  "providers": {
+    "github-copilot": {
+      "models": {
+        "claude-opus-4-6": {
+          "limit": { "context": 1000000, "output": 128000 }
+        },
+        "claude-sonnet-4-6": {
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-sonnet-4-5": {
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-sonnet-4-20250514": {
+          "limit": { "context": 1000000, "output": 64000 }
+        }
+      }
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "buffer": 10000
+  }
+  // V1 plugin not ported (V1 plugins don't run in V2); the file also no longer exists:
+  // "plugins": ["file://~/.config/opencode/plugins/notifications.ts"]
+}

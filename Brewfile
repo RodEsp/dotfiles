@@ -1,5 +1,5 @@
 # Personal
-brew "anomalyco/tap/opencode" # AI agent TUI
+brew "anomalyco/tap/opencode-v2" # AI agent TUI
 brew "asciinema"
 brew "bash-language-server"
 brew "bash" # bourne again shell
