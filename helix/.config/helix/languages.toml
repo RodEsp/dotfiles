@@ -10,6 +10,10 @@ display-messages = true
 [language-server.hyprls]
 command = "hyprls"
 
+[language-server.typescript-language-server]
+command = "vtsls"
+args = ["--stdio"]
+
 # [[language]]
 # name = "rust"
 # auto-format = true
