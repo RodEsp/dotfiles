@@ -187,7 +187,7 @@ in {
     };
     fprintd.enable = true; # Enable fingerprint sensor
     # hypridle.enable = true; # Re-enable once https://github.com/NixOS/nixpkgs/issues/347651 is resolved, and remove exec-once = hypridle from hyprland.conf and unmask service in systemd (systemctl --user unmask hypridle.service)
-    tailscale.enable = true;
+    # tailscale.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -326,6 +326,7 @@ in {
     libreoffice
     nautilus
     networkmanagerapplet
+    noctalia-shell # everything needed for a desktop environment
     nwg-displays # GUI for managing monitors/displays
     nwg-look # GTK3 settings editor for wlroots-based Wayland environments
     pavucontrol # sound/volume device controller
@@ -372,7 +373,6 @@ in {
     unstable.helix # terminal text/code editor
     unstable.hyprshutdown
     unstable.mission-center # Resource monitor (CPU, Memory, Disk, Network, GPU)
-    unstable.noctalia-shell # everything needed for a desktop environment
     unstable.starship # terminal prompt manager
     unstable.witr # Why is this runing? CLI to find out why processes are running
 
@@ -381,7 +381,7 @@ in {
 
     # games
     (callPackage ./vintagestory/default.nix {})
-    (callPackage ./boosteroid.nix {})
+    # (callPackage ./boosteroid.nix {})
   ];
 
   # ===== System Env Vars =====
