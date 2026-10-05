@@ -10,6 +10,7 @@ zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/.zsh_history
 zsh/.config/zsh/completions
 zsh/.config/zsh/.zsh_sessions
+hypr/.config/hypr/monitors.lua
 hypr/.config/hypr/monitors.conf
 hypr/.config/hypr/monitors.conf-bak
 helix/.config/helix/runtime/grammars/*
